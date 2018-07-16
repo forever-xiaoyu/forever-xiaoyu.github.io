@@ -7,7 +7,7 @@ title: Hexo
 subtitle:
 description:
 keywords:
-author: John Doe
+author: Xiaoyu
 language:
 timezone:
 
@@ -79,5 +79,6 @@ theme: hexo-theme-snippet
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/forever-xiaoyu/forever-xiaoyu.github.io.git
-  branch: master
+  repo: https://github.com/forever-xiaoyu/forever-xiaoyu.github.io.git,master
+  coding: https://git.coding.net/forever-xiaoyu/forever-xiaoyu.coding.me.git,master
+  # branch: master
