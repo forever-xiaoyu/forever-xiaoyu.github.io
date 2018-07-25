@@ -11,6 +11,7 @@ window.onload = function() {
         $gitcomment = document.getElementById("gitcomment"),
         $backToTop = document.getElementById("back-to-top"),
         $toc = document.getElementById("article-toc"),
+        $tocTop = $toc.offsetTop,
         timer = null;
 
     //设备判断
@@ -81,7 +82,8 @@ window.onload = function() {
     //监听滚动事件
     window.addEventListener('scroll', function() {
         if($toc){
-            var top = $toc.offsetTop;
+            // var top = $toc.offsetTop;
+            var top = $tocTop;
             var left = $toc.offsetLeft;
             var width = $toc.offsetWidth;
             if(getScrollTop() <= top){

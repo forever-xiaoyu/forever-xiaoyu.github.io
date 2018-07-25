@@ -231,7 +231,7 @@ pre {
 }
 .carousel img {
   width: 100%;
-  max-height: 200px;
+  max-height: 130px;
 }
 /*====================================================
     header
@@ -270,7 +270,7 @@ pre {
 }
 .main-header .main-header-box .branding h2 {
   font-family: "STXingkai", "KaiTi", "Microsoft YaHei", "SimSun", sans-serif;
-  width: 320px;
+  width: 327px;
   margin: 0 auto;
   letter-spacing: 3px;
   color: #e67e22;
@@ -455,8 +455,8 @@ pre {
 .post .post-media {
   position: relative;
   margin-right: 15px;
-  width: 220px;
-  height: 160px;
+  width: 180px;
+  height: 140px;
   float: left;
   overflow: hidden;
 }
@@ -1061,7 +1061,7 @@ pre {
   padding-top: 1em;
   background-color: #fff;
   top: 0;
-  bottom: 70px;
+  /*bottom: 70px;*/
   overflow-y: auto;
 }
 #article-toc ol {

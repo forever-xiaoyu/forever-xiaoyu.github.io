@@ -5,19 +5,19 @@
 
 ## menu
 menu:
-- page: home
+- page: Home
   url: /
   icon:
-- page: 前端
-  url: /categories/前端/
+- page: FE
+  url: /categories/fe/
   icon:
-# - page: 后端
-#   url: /categories/后端/
+- page: Diary
+  url: /categories/diary/
 #   icon:
 # - page: 工具
 #   url: /categories/工具/
 #   icon:
-- page: 时间轴
+- page: TimeLine
   url: /archives/
   icon:
 
@@ -29,7 +29,7 @@ rss: /atom.xml
 
 ## Carousel
 carousel:
-  img: img/banner.jpg
+  img: img/cyber-spy.jpg
 
 # 各个小工具的设置
 
@@ -56,7 +56,7 @@ jsonContent:
 
 ## 网站公告设置
 notification: |-
-            <p>欢迎来到小于的博客 ~ <br/>
+            <p>欢迎来到于策的个人博客 ~ <br/>
             <hr/>
             </p>
 
@@ -95,12 +95,13 @@ arch_config:
 ## 友链设置
 links:
   # - 个人博客: http://www.shenliyang.com
+  - ruanyifeng: http://www.ruanyifeng.com/blog/
 
 
 # 主题自定义个性化配置
 
 ## 网站宣传语
-branding: '笔直向前，说到做到'
+branding: 'Go straight ahead, keep my words'
 
 ## 设置banner背景图片
 banner:
@@ -117,7 +118,7 @@ defaultImgs:
 excerptLength: 120
 
 ## 是否开启文章目录
-toc: false
+toc: true
 
 ## 代码高亮配置
 highlightTheme:
@@ -138,7 +139,7 @@ declaration:
   enable: true
   title: '转载声明'
   tip: |-
-      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Xiaoyu</a>
+      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">yuce</a>
 
 
 ## 主题评论
