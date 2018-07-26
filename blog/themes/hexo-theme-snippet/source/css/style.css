@@ -258,9 +258,9 @@ pre {
 }
 .main-header .main-header-box a.header-avatar img {
   width: 82px;
-  height: 82px;
+  /*height: 82px;*/
   max-width: 100%;
-  border-radius: 50%;
+  /*border-radius: 50%;*/
 }
 .main-header .main-header-box a.header-avatar:hover {
   text-decoration: none;
@@ -1065,7 +1065,8 @@ pre {
   overflow-y: auto;
 }
 #article-toc ol {
-  list-style: none;
+  /*list-style: none;*/
+  list-style-type: square;
 }
 #article-toc .toc {
   padding-left: 2em;

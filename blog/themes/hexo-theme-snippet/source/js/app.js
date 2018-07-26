@@ -1,7 +1,7 @@
 /*!========================================================================
  *  hexo-theme-snippet: app.js v1.0.0
  * ======================================================================== */
-window.onload = function() {
+var initFn = function() {
     var $body = document.body,
         $mnav = document.getElementById("mnav"), //获取导航三角图标
         $mainMenu = document.getElementById("main-menu"), //手机导航
@@ -11,8 +11,10 @@ window.onload = function() {
         $gitcomment = document.getElementById("gitcomment"),
         $backToTop = document.getElementById("back-to-top"),
         $toc = document.getElementById("article-toc"),
-        $tocTop = $toc.offsetTop,
+        $tocTop,
         timer = null;
+
+    $toc && ($tocTop = $toc.offsetTop);
 
     //设备判断
     var isPC = true;
@@ -116,3 +118,4 @@ window.onload = function() {
 	};
 
 };
+window.addEventListener('DOMContentLoaded', initFn, false);
