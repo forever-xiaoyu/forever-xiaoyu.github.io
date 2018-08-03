@@ -237,6 +237,11 @@ pre {
 /*====================================================
     header
 ====================================================*/
+@keyframes minHeader {
+	0% { background-position: 0 0; }
+	/*50% { background-position: -500px -500px; }*/
+	100% { background-position: -800px -200px; }
+}
 .main-header {
   position: relative;
   text-align: center;
@@ -246,6 +251,8 @@ pre {
   background: #fff url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg);
   background-repeat: repeat;
   overflow: hidden;
+  transition: all 2s;
+  animation: minHeader 20s infinite alternate linear;
 }
 .main-header .banneriframe {
   width: 100%;
@@ -1495,4 +1502,13 @@ pre .javascript .function {
     content: "";
     margin-bottom: 10px;
   }
+}
+.main-content > h3 {
+    display: inline-block;
+    border: 1px solid #fff;
+    background: #e67e22;
+    min-width: 70px;
+    padding: 8px 0;
+    text-align: center;
+    color: #ffffff;
 }
