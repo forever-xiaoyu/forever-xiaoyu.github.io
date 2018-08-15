@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="于策的个人博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.yc609.cn">
+    <!--SEO-->
+
+<meta name="description" content="小于博客,分享技术知识的个人博客网站"/>
+
+
+
+<meta name="keywords" content="小于博客,个人博客,技术博客,博客"/>
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>grunt html 压缩简单配置 | 于策的个人博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="于策的个人博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0068125b378895915c918b9428715e7e";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='小于'>
+            <img src="/img/xiaoyu.png" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> Go straight ahead, keep my words </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.yc609.cn">于策的个人博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/fe/"><i class="fa "></i>FE</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/diary/"><i class="fa "></i>Diary</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>TimeLine</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="grunt html 压缩简单配置">
+            
+	            grunt html 压缩简单配置
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/fe">
+            fe
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/grunt" title='grunt'>
+                        grunt
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2018/08/01</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <p><strong> html 压缩插件 </strong></p>
+<p>这里需要用到 grunt-contrib-htmlmin </p>
+<hr>
+<h2 id="具体配置"><a href="#具体配置" class="headerlink" title="具体配置"></a>具体配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">module.exports = function(grunt)&#123;</span><br><span class="line"></span><br><span class="line">    //初始化grunt 配置</span><br><span class="line">    grunt.initConfig(&#123;</span><br><span class="line">       //获取package.json的信息</span><br><span class="line">       pkg: grunt.file.readJSON(&apos;package.json&apos;),</span><br><span class="line">        </span><br><span class="line">       //压缩HTML</span><br><span class="line">       htmlmin: &#123;</span><br><span class="line">         options: &#123;</span><br><span class="line">           removeComments: true,//移除注释</span><br><span class="line">           removeCommentsFromCDATA: true,//移除&lt;script&gt;和&lt;style&gt;标签内的HTML注释</span><br><span class="line">           collapseWhitespace: true,//移除文档树中文本节点的空白。不会影响重大的空白，比如在SCRIPT,STYLE,PRE或TEXTAREA等元素内容</span><br><span class="line">           customAttrSurround: [],//允许支持自定义属性环绕变大时的正则表达式数组（例如&lt;input &#123;&#123;#if value&#125;&#125;checked=&quot;checked&quot;&#123;&#123;/if&#125;&#125;&gt;）</span><br><span class="line">           customAttrAssign: true,//允许支持自定义属性赋值表达式的正则表达式数组（例如&apos;&lt;div flex?=&quot;&#123;&#123;mode != cover&#125;&#125;&quot;&gt;&lt;/div&gt;&apos;）</span><br><span class="line">           customEventAttributes: true,//允许支持自定义事件属性的正则表达式数组minifyJS（例如ng-click）</span><br><span class="line">           collapseBooleanAttributes: true,//删除Boolean属性</span><br><span class="line">           removeAttributeQuotes: true,//删除属性的引号，当安全的情况下</span><br><span class="line">           removeRedundantAttributes: true,//删除多余的属性，像type=&quot;text/javascript&quot;</span><br><span class="line">           useShortDoctype: true,//用短的HTML5的&lt;!DOCTYPE html&gt;代替doctype</span><br><span class="line">           processScripts: [&apos;text/javascript&apos;],//对应于类型脚本的元素串的阵列通过minifier处理（例如text/ng-template，text/x-handlebars-template等）</span><br><span class="line">           removeEmptyAttributes: true,//删除空（或空白）属性</span><br><span class="line">           removeOptionalTags: true,//一些元素允许省略标签，像&lt;/td&gt;</span><br><span class="line">           ignoreCustomFragments: [ /\&#123;\&#123;[\s\S]*?\&#125;\&#125;/ ]//忽略定制的片段</span><br><span class="line">         &#125;,</span><br><span class="line">         html: &#123;</span><br><span class="line">           files: [</span><br><span class="line">             &#123;expand: true, cwd: &apos;html&apos;, src: [&apos;*.html&apos;], dest: &apos;dist&apos;&#125;</span><br><span class="line">           ]</span><br><span class="line">         &#125;</span><br><span class="line">       &#125;,</span><br><span class="line"></span><br><span class="line">       //watch自动化</span><br><span class="line">       watch:&#123;</span><br><span class="line">           build:&#123;</span><br><span class="line">               files:[&apos;html/*.html&apos;],</span><br><span class="line">               tasks: [&apos;htmlmin&apos;],</span><br><span class="line">               options:&#123;spawn:false&#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    //告诉grunt我们将使用插件</span><br><span class="line">    grunt.loadNpmTasks(&apos;grunt-contrib-htmlmin&apos;);</span><br><span class="line">    grunt.loadNpmTasks(&apos;grunt-contrib-watch&apos;);</span><br><span class="line">    grunt.registerInitTask(&apos;default&apos;,[&apos;htmlmin&apos;,&apos;watch&apos;]);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1563339494,4060447026&amp;fm=27&amp;gp=0.jpg" alt="universe" title="universe"></p>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">yuce</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/08/03/FE-interview-questions/" class="pre-post btn btn-default" title='FE interview questions'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">FE interview questions</span>
+        </a>
+    
+    
+        <a href="/2018/07/25/hexo使用心得/" class="next-post btn btn-default" title='hexo使用心得'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">hexo使用心得</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'NW5yLVHpuX6jQ83iFAtqsClI-gzGzoHsz',
+            appKey: 'KabgKFnv69fyuCNMbqMtNAjg',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: true,
+            avatar: '',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#具体配置"><span class="toc-number">1.</span> <span class="toc-text">具体配置</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <!--<span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | -->
+                <!--<span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span> |-->
+                <p style="display: inline; padding-left: 10px;">
+                    Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!---->
+
+<script src="/js/search.js?rev=@@hash"></script>
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
