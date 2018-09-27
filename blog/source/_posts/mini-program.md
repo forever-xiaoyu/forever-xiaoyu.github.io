@@ -1,13 +1,14 @@
 ---
 title: Mini Program
-date: 2018-09-05 16:11:04
 tags: Mini Program
 category: fe
+date: 2018-09-05 16:11:04
 ---
+
 
 ## Mini Program
 
-	Mini Program
+	小程序上线以来，依附微信的社交场景及自身特性，迅速普及起来，各大公司产品都在跟进小程序的开发。
 
 ---------------
 
@@ -82,5 +83,98 @@ app.json 是当前小程序的全局配置，包括了小程序的所有页面�
 
  * onPageScroll(Object)
  Object: scrollTop 页面在垂直方向已滚动的距离（单位px）
+
+## Pit
+### 1. modify the object property values
+Sometimes we need to modify a value of the object instead of modifying the entire object.
+ ```
+ handler () {
+    this.setData({
+    	['Object.key']: value
+    })
+ }
+ ```
+### 2. modify one value of array
+
+ ```
+ handler () {
+    let key = "arr[" + index + "]"
+      this.setData({
+	  	[key]: value
+    })
+ }
+ ```
+
+### 3. stop event bubbling
+```
+ <view catchtap='handler'></view>
+```
+
+### 4. ios8 compatibility of wxss
+ios8 is not very good for flex compatibility, flx needs to complete the suffix.
+```
+.style { 
+    display: -webkit-box; 
+    display: -webkit-flex;
+    display: flex;
+ }
+```
+
+### 5. canvas notice
+* When the drawn text is too long, we need to handle the line break yourself.
+```
+textByteLength(text, num) {
+    let strLength = 0;
+    let rows = 1;
+    let str = 0;
+    let arr = [];
+    for (let j = 0; j < text.length; j++) {
+      if (text.charCodeAt(j) > 255) {
+        strLength += 2;
+        if (strLength > rows * num) {
+          strLength++;
+          arr.push(text.slice(str, j));
+          str = j;
+          rows++;
+        }
+      } else {
+        strLength++;
+        if (strLength > rows * num) {
+          arr.push(text.slice(str, j));
+          str = j;
+          rows++;
+        }
+      }
+    }
+    arr.push(text.slice(str, text.length));
+    return [strLength, arr, rows]   //  [text byte length，text displayed per line，rows]
+},
+```
+
+* Since drawing is an async process, use canvasToTempFilePath api after drawing is complete.
+```
+ctx.draw(false, () => {
+    //your code
+})
+```
+
+### 6. wxParse related issues
+wxParse can parse html code into mini program components, and the images rendered width wxParse can view large images.
+But There're some problems:
+* When images are many, the page is too laggy, affect user experience.
+* Native rich-text reqires high inline style format, and easily render error.Meanwhile, it can't view large images.
+* There is no perfect solution, using web-view may be better.
+
+### 7. query node information
+mini program is data-driven and don't support DOM operations, so you need to use a specific api to query related information.
+```
+handler () {
+    let query = wx.createSelectorQuery();
+    query.select("#ele").boundingClientRect();
+    query.exec(function (res) {
+    	//your code	
+    })
+}
+```
 
 ![universe](https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3546744997,114540464&fm=11&gp=0.jpg)
