@@ -158,12 +158,16 @@ ctx.draw(false, () => {
 })
 ```
 
+* When using clip api to crop the image, there may be a problem that the clipping does not take effect, probably cause there is no stroke, which is a bug in the mini program.
+
 ### 6. wxParse related issues
 wxParse can parse html code into mini program components, and the images rendered width wxParse can view large images.
 But There're some problems:
 * When images are many, the page is too laggy, affect user experience.
 * Native rich-text reqires high inline style format, and easily render error.Meanwhile, it can't view large images.
 * There is no perfect solution, using web-view may be better.
+
+Sometimes we might meet situations where wxParse can't parse the content, the reason is in lines 112 and 119 of wxparse/html2json.js, there is a console.dir, comment out the function, the content can be resolved.
 
 ### 7. query node information
 mini program is data-driven and don't support DOM operations, so you need to use a specific api to query related information.
@@ -174,6 +178,17 @@ handler () {
     query.exec(function (res) {
     	//your code	
     })
+}
+```
+
+### 8. swiper infinite sliding
+if you use setData in bindchange event callback function to change the current value, it may cause setData to be called continuously.
+Therefore, in general, please check the source field before changing the current value to determine whether it is caused by user touch.
+```
+swiperChange (e) {
+    if(e.detail.source == "touch") {
+        //your code
+    }
 }
 ```
 
