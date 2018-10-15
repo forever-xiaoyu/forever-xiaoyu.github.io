@@ -218,6 +218,8 @@
 <li><p>Since drawing is an async process, use canvasToTempFilePath api after drawing is complete.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ctx.draw(false, () =&gt; &#123;</span><br><span class="line">    //your code</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>When using clip api to crop the image, there may be a problem that the clipping does not take effect, probably cause there is no stroke, which is a bug in the mini program.</p>
+</li>
 </ul>
 <h3 id="6-wxParse-related-issues"><a href="#6-wxParse-related-issues" class="headerlink" title="6. wxParse related issues"></a>6. wxParse related issues</h3><p>wxParse can parse html code into mini program components, and the images rendered width wxParse can view large images.<br>But There’re some problems:</p>
 <ul>
