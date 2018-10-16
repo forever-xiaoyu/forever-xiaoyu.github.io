@@ -3,6 +3,7 @@ title: Mini Program
 tags: Mini Program
 category: fe
 date: 2018-09-05 16:11:04
+img: https://ss1.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3546744997,114540464&fm=11&gp=0.jpg
 ---
 
 
