@@ -1,0 +1,324 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="于策的个人博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.yc609.cn">
+    <!--SEO-->
+
+<meta name="description" content="小于博客,分享技术知识的个人博客网站"/>
+
+
+
+<meta name="keywords" content="小于博客,个人博客,技术博客,博客"/>
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>开发常见问题（html/css篇） | 于策的个人博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="于策的个人博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0068125b378895915c918b9428715e7e";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(/img/banner2.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='小于'>
+            <img src="/img/xiaoyu.png" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> Go straight ahead, keep my words </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.yc609.cn">于策的个人博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/fe/"><i class="fa "></i>FE</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/diary/"><i class="fa "></i>Diary</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>TimeLine</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="开发常见问题（html/css篇）">
+            
+	            开发常见问题（html/css篇）
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/fe">
+            fe
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/html/css" title='html/css'>
+                        html/css
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/10/16</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <pre><code>在日常开发中，时常会碰到各种各样的坑，本文总结了开发过程中碰到的常见问题。
+</code></pre><hr>
+<h2 id="1-margin-重叠问题"><a href="#1-margin-重叠问题" class="headerlink" title="1. margin 重叠问题"></a>1. margin 重叠问题</h2><p>这是一个比较常见的经常在开发中碰到的问题，这里就不多说了，常见解决办法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 创建新的 BFC 如 overflow: hidden;</span><br><span class="line">2. 使用 padding</span><br><span class="line">3. 尽量使用同一方向的 margin</span><br></pre></td></tr></table></figure>
+<h2 id="2-placeholder-自定义样式"><a href="#2-placeholder-自定义样式" class="headerlink" title="2. placeholder 自定义样式"></a>2. placeholder 自定义样式</h2><p>之前开发项目中碰到的需求，兼容写法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/* IE 9 及以下版本不支持 */</span><br><span class="line">input:-ms-input-placeholder &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">input:-moz-placeholder &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">input::-moz-placeholder &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">input::-webkit-input-placeholder &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-伪类和伪元素"><a href="#3-伪类和伪元素" class="headerlink" title="3. 伪类和伪元素"></a>3. 伪类和伪元素</h2><p>这两者很容易混淆，说的简单的一点，两者的区别在于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CSS 伪类用于向某些选择器添加特殊的效果。</span><br><span class="line">CSS 伪元素用于将特殊的效果添加到某些选择器。</span><br></pre></td></tr></table></figure>
+<h2 id="4-title-超出省略"><a href="#4-title-超出省略" class="headerlink" title="4. title 超出省略"></a>4. title 超出省略</h2><p>在移动端标题超出部分还是比较常见的，兼容性也 ok：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">display: -webkit-box;</span><br><span class="line">overflow: hidden;</span><br><span class="line">text-overflow: ellipsis;</span><br><span class="line">word-break: break-all;</span><br><span class="line">-webkit-box-orient: vertical;</span><br><span class="line">-webkit-line-clamp: 1;</span><br></pre></td></tr></table></figure>
+<h2 id="5-scroll-自定义样式"><a href="#5-scroll-自定义样式" class="headerlink" title="5. scroll 自定义样式"></a>5. scroll 自定义样式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/* Chrome */</span><br><span class="line">::-webkit-scrollbar    //滚动条整体部分</span><br><span class="line">::-webkit-scrollbar-button   //滚动条两端的按钮</span><br><span class="line">::-webkit-scrollbar-track   // 外层轨道</span><br><span class="line">::-webkit-scrollbar-track-piece    //内层轨道，滚动条中间部分（除去）</span><br><span class="line">::-webkit-scrollbar-thumb //滚动条里面可以拖动的那个</span><br><span class="line">::-webkit-scrollbar-corner   //边角</span><br><span class="line">::-webkit-resizer   ///定义右下角拖动块的样式</span><br><span class="line"></span><br><span class="line">/* IE */</span><br><span class="line">  scrollbar-base-color: #C0C0C0;</span><br><span class="line">  scrollbar-base-color: #C0C0C0;</span><br><span class="line">  scrollbar-3dlight-color: #C0C0C0;</span><br><span class="line">  scrollbar-highlight-color: #C0C0C0;</span><br><span class="line">  scrollbar-track-color: #EBEBEB;</span><br><span class="line">  scrollbar-arrow-color: black;</span><br><span class="line">  scrollbar-shadow-color: #C0C0C0;</span><br><span class="line">  scrollbar-dark-shadow-color: #C0C0C0;</span><br></pre></td></tr></table></figure>
+<p>Chrome 几乎可以完整修改 scrollbar 样式，但是 IE 比较有局限性，只能修改颜色，如果想要完美兼容，那么只能自己模拟实现一个 scrollbar 了。</p>
+<h2 id="6-IE-绝对定位被-img-覆盖问题"><a href="#6-IE-绝对定位被-img-覆盖问题" class="headerlink" title="6. IE 绝对定位被 img 覆盖问题"></a>6. IE 绝对定位被 img 覆盖问题</h2><p>有这样一个场景，给浏览器插入一张 img ，其中有一些链接，通过绝对定位的办法，定位到 img 对应的位置，在chrome，firefox 中均没有问题，但是在 IE 中测试发现，链接被 img 挡住了。遇到这种问题，可以分两种方式解决。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 使用 css 背景图片替换 img</span><br><span class="line">2. 给链接添加如下属性：</span><br><span class="line">    background: url(about:blank);</span><br></pre></td></tr></table></figure>
+<h2 id="7-IOS-元素点击触发高亮"><a href="#7-IOS-元素点击触发高亮" class="headerlink" title="7. IOS 元素点击触发高亮"></a>7. IOS 元素点击触发高亮</h2><p>-webkit-tap-highlight-color 是一个 不规范的属性（unsupported WebKit property），它没有出现在 CSS 规范草案中。</p>
+<p>当用户点击iOS的Safari浏览器中的链接或JavaScript的可点击的元素时，覆盖显示的高亮颜色。</p>
+<p>该属性可以只设置透明度。如果未设置透明度，iOS Safari使用默认的透明度。当透明度设为0，则会禁用此属性；当透明度设为1，元素在点击时不可见<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-webkit-tap-highlight-color：color</span><br></pre></td></tr></table></figure></p>
+<h2 id="8-超出宽度横向滚动"><a href="#8-超出宽度横向滚动" class="headerlink" title="8. 超出宽度横向滚动"></a>8. 超出宽度横向滚动</h2><p>通常情况下，使用 white-space 和 overflow 即可解决<br><br>   </p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ol>
+<li><a href="https://segmentfault.com/a/1190000000484493" target="_blank" rel="noopener">详解 CSS 属性 - 伪类和伪元素的区别</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS" target="_blank" rel="noopener">CSS | MDN</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">yuce</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/10/18/开发常见问题—（js篇）/" class="pre-post btn btn-default" title='开发常见问题（js篇）'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">开发常见问题（js篇）</span>
+        </a>
+    
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'NW5yLVHpuX6jQ83iFAtqsClI-gzGzoHsz',
+            appKey: 'KabgKFnv69fyuCNMbqMtNAjg',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: true,
+            avatar: '',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-margin-重叠问题"><span class="toc-number">1.</span> <span class="toc-text">1. margin 重叠问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-placeholder-自定义样式"><span class="toc-number">2.</span> <span class="toc-text">2. placeholder 自定义样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-伪类和伪元素"><span class="toc-number">3.</span> <span class="toc-text">3. 伪类和伪元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-title-超出省略"><span class="toc-number">4.</span> <span class="toc-text">4. title 超出省略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-scroll-自定义样式"><span class="toc-number">5.</span> <span class="toc-text">5. scroll 自定义样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-IE-绝对定位被-img-覆盖问题"><span class="toc-number">6.</span> <span class="toc-text">6. IE 绝对定位被 img 覆盖问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-IOS-元素点击触发高亮"><span class="toc-number">7.</span> <span class="toc-text">7. IOS 元素点击触发高亮</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-超出宽度横向滚动"><span class="toc-number">8.</span> <span class="toc-text">8. 超出宽度横向滚动</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文献"><span class="toc-number"></span> <span class="toc-text">参考文献</span></a>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <!--<span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | -->
+                <!--<span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span> |-->
+                <p style="display: inline; padding-left: 10px;">
+                    Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!---->
+
+<script src="/js/search.js?rev=@@hash"></script>
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>

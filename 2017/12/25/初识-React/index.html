@@ -1,0 +1,429 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="于策的个人博客">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://www.yc609.cn">
+    <!--SEO-->
+
+<meta name="description" content="小于博客,分享技术知识的个人博客网站"/>
+
+
+
+<meta name="keywords" content="小于博客,个人博客,技术博客,博客"/>
+
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+
+<title>初识 React | 于策的个人博客</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="于策的个人博客" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?0068125b378895915c918b9428715e7e";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+</head>
+
+
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header"  style="background-image:url(/img/banner2.jpg)"  >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='小于'>
+            <img src="/img/xiaoyu.png" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                <h2> Go straight ahead, keep my words </h2>
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://www.yc609.cn">于策的个人博客</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/fe/"><i class="fa "></i>FE</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/diary/"><i class="fa "></i>Diary</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>TimeLine</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="初识 React">
+            
+	            初识 React
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/fe">
+            fe
+        </a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/react" title='react'>
+                        react
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/12/25</span>
+        </span>
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <pre><code>React 作为时下最流行的框架之一，不可否认其在前端框架当中的地位，很多的项目也都在使用 React；作为一名 Front-end engineer，学习 React 无论是对于项目开发还是自身的水平都会有一定程度的帮助。
+</code></pre><p>最近开始简单的学习了 <a href="https://doc.react-china.org/" target="_blank" rel="noopener">React</a>，所以在此简单的总结一下。<br><br>    </p>
+<h1 id="关于脚手架的简单使用"><a href="#关于脚手架的简单使用" class="headerlink" title="关于脚手架的简单使用"></a>关于脚手架的简单使用</h1><hr>
+<pre><code>在网上看到了很多 React 的脚手架工具，这里我使用的是 create-react-app ，创建项目也比较简单。
+</code></pre><ul>
+<li>安装 create-react-app</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-react-app</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建一个 React 项目</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create-react-app my-app</span><br></pre></td></tr></table></figure>
+<ul>
+<li>启动项目</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h1 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h1><hr>
+<p>项目创建后，如图，目录结构也比较清晰：</p>
+<p><div align="center"><img src="/2017/12/25/初识-React/pic_1.png" alt="clipboard.png"></div></p>
+<ul>
+<li>node_modules：存放项目依赖</li>
+<li>public：存放项目入口文件</li>
+<li>src：存放项目代码以及项目资源</li>
+<li>package.json：项目依赖管理</li>
+</ul>
+<p>关于目录结构，可以依据实际项目需求进行划分，如下图结构：</p>
+<p><div align="center"><img src="/2017/12/25/初识-React/pic_2.png" alt="clipboard.png"></div></p>
+<ul>
+<li>assets – 存放项目静态资源</li>
+<li>components – 存放组件</li>
+<li>css – 样式表</li>
+<li>page – 存放各个页面组件（也可称作父组件）<br>随着项目的复杂程度，项目结构划分的也更可加精细。</li>
+</ul>
+<h1 id="React-简单上手"><a href="#React-简单上手" class="headerlink" title="React 简单上手"></a>React 简单上手</h1><hr>
+<p>写了一些 demo，总体感觉 React 还是很有意思的，因为之前接触过 Vue 的关系，所以觉得上手还是相对简单的，当然 React 和 Vue 也有很多不同点，如 React 组件有独立状态机，大大提高了组件的独立性、可操作性；React 支持 Jsx 语法，对于开发者来说可以一定程度提高开发效率；再配合 ES6 语法， 代码写起来会很舒服。</p>
+<p>当然，随着对 React 更加深入的学习与了解，学习的梯度也会越来越高。作为开发者我们都知道 React 强大完整的生态体系，它已不单单是一个框架，而是已经发展为一个行业的解决方案。<br><br></p>
+<h1 id="简单总结上手碰到的坑"><a href="#简单总结上手碰到的坑" class="headerlink" title="简单总结上手碰到的坑"></a>简单总结上手碰到的坑</h1><hr>
+<ol>
+<li>关于 getInitialState</li>
+<li>getDefaultProps 的疑惑</li>
+<li>关于请求数据</li>
+<li>关于事件传参</li>
+<li>React 中的 this</li>
+<li>关于组件的生命周期</li>
+<li>父子组件之间的传值</li>
+<li>react-router 的使用</li>
+</ol>
+<h2 id="关于-getInitialState"><a href="#关于-getInitialState" class="headerlink" title="关于 getInitialState"></a>关于 getInitialState</h2><p> 一开始看了阮大神的文章，殊不知在 ES6 中需要在 constructor 中定义 state ，导致了程序报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">constructor(props) &#123;</span><br><span class="line">    super(props);</span><br><span class="line">    this.state = &#123;flag: false&#125;;</span><br><span class="line">    this.handle = () =&gt;&#123;</span><br><span class="line">        //setState 是异步执行的，render时才会调用，可以写入回调函数</span><br><span class="line">        this.setState(&#123;flag: !this.state.flag&#125;, () =&gt; &#123;</span><br><span class="line">            //code</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="getDefaultProps-的疑惑"><a href="#getDefaultProps-的疑惑" class="headerlink" title="getDefaultProps 的疑惑"></a>getDefaultProps 的疑惑</h2><p>在创建了一个组件后，使用 getDefaultProps 设置默认属性时，控制台报了这样一条警告：</p>
+<p><div align="center"><img src="/2017/12/25/初识-React/pic_3.png" alt="clipboard.png"></div></p>
+<p>经查阅后了解到： getDefaultProps 方法是用在使用 React.createClass 方式创建组件的，应该使用 ES6 语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">static defaultProps = &#123;</span><br><span class="line">    content: &apos;&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="关于请求数据"><a href="#关于请求数据" class="headerlink" title="关于请求数据"></a>关于请求数据</h2><p>React 请求数据有很多方法如 $.ajax(), fetch api, axios, ajax() 等等，这里我简单使用了一下 fetch() 方法，fetch() 方法返回了一个 Promise 对象，reslove 时会返回 response 对象，一个最基本的用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">fetch(api)</span><br><span class="line">.then(function(response) &#123;</span><br><span class="line">  return response.json()</span><br><span class="line">&#125;).then(function(json) &#123;</span><br><span class="line">  //resolve callback</span><br><span class="line">  console.log(&apos;parsed json&apos;, json)</span><br><span class="line">&#125;).catch(function(ex) &#123;</span><br><span class="line">  //reject callback</span><br><span class="line">  console.log(&apos;parsing failed&apos;, ex)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>当然，因为 babel 对部分 ES7 的支持，也可以使用 await/async 进行请求，把异步代码当做同步代码来写，开发体验要比写回调好很多</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//必须声明 async</span><br><span class="line">async getData() &#123;</span><br><span class="line">    let response = await fetch(api)</span><br><span class="line">    let data = await response.json();</span><br><span class="line">    console.log(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注：在请求本地文件时需将资源放到 public 目录下，请求路径为 ‘/xx.json’，也可以使用 import 引入文件。</p>
+<hr>
+<h2 id="关于事件传参"><a href="#关于事件传参" class="headerlink" title="关于事件传参"></a>关于事件传参</h2><p>在为元素绑定事件的过程中，如果需要传参，可以使用 bind 方法进行传参：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span className=&quot;g-data&quot; onClick=&#123;this.handle.bind(this, this.props.source)&#125;&gt; </span><br><span class="line">    //code</span><br><span class="line"> &lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<p>其中，bind 的第一个参数 this 是指改变函数运行时的指针，如：在 render() 中使用该方法，则 this 指向组件的实例，这样才能准确访问组件的属性和方法。 </p>
+<p>同样的，也可以使用箭头函数进行传参：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span className=&quot;g-data&quot; onClick=&#123; () =&gt; this.handle(this.props.source) &#125;&gt; </span><br><span class="line">    //code</span><br><span class="line"> &lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="React-中的-this"><a href="#React-中的-this" class="headerlink" title="React 中的 this"></a>React 中的 this</h2><p>一开始在我为组件绑定事件的时候，发现在绑定事件中无法拿到 props 属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span className=&quot;g-data&quot; onClick=&#123;this.handle&#125;&gt; </span><br><span class="line">    //code</span><br><span class="line"> &lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<p>最初我的理解是:绑定事件的函数中, this 应该是指向 class 创建的实例的。事实证明，我的理解是错误的：事件的回调函数是在全局环境下执行的，也就是 window 。于是我在 handle 中试着输出 this ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">handle() &#123;</span><br><span class="line">    console.log(this); //undefined</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出了 undefined，又是一个大写的问号，于是我找了一下 ES6 的相关规范：在 class 中，定义类的时候默认使用严格模式，而在严格模式下，this 不能指向全局变量，因此变成了 undefined。所以，为了解决这个问题，大致有如下几种办法：</p>
+<ul>
+<li>在组件渲染时绑定 this</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span className=&quot;g-data&quot; onClick=&#123;this.handle.bind(this)&#125;&gt; </span><br><span class="line">    //code</span><br><span class="line"> &lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在 constructor 内绑定</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">constructor() &#123;</span><br><span class="line">    this.handle = this.handle.bind(this);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用箭头函数绑定</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">handle = () =&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者在 DOM 结构中写箭头函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span className=&quot;g-data&quot; onClick= &#123; () =&gt; this.handle() &#125; &gt; </span><br><span class="line">    //code</span><br><span class="line"> &lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="关于组件的生命周期"><a href="#关于组件的生命周期" class="headerlink" title="关于组件的生命周期"></a>关于组件的生命周期</h2><p>每一个组件都有几个你可以重写以让代码在处理环节的特定时期运行的“生命周期方法”。方法中带有前缀 will 的在特定环节之前被调用，而带有前缀 did 的方法则会在特定环节之后被调用。如：</p>
+<ul>
+<li>componentWillMount( )<br>表示组件即将渲染之前会调用，即在 render() 之前调用。</li>
+<li>componentDidMount( )<br>表示组件渲染完成立即调用，这个生命周期设置状态会触发重新渲染。</li>
+<li>componentWillUnmount( )<br>表示组件将要被移除之前调用，在这里可以进行一系列的清理工作。</li>
+</ul>
+<p>更多组件生命周期请移步 <a href="https://doc.react-china.org/" target="_blank" rel="noopener">React 官方文档</a> 。</p>
+<h2 id="父子组件之间的传值"><a href="#父子组件之间的传值" class="headerlink" title="父子组件之间的传值"></a>父子组件之间的传值</h2><ul>
+<li>父组件给子组件传值<br>在父组件中为子组件添加属性和属性值，在子组件中通过 props 属性获得父组件对应的属性值。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//父组件</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;child title=&quot;This is title&quot; /&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">//子组件</span><br><span class="line">&lt;div&gt;&#123;this.props.title&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>子组件给父组件传值<br>可以在父组件的子组件中添加一个回调函数；子组件中设置状态值，当子组件中的值改变时，修改状态值会触发重渲，通过 props 拿到父组件的回调函数，并将新的状态值作为参数传入，这样父组件就可以拿到子组件的值并进行后续操作。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">//父组件</span><br><span class="line">constructor(props) &#123;</span><br><span class="line">    super(props)</span><br><span class="line">    this.state = &#123;</span><br><span class="line">        childState: &apos;&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">handleChange(childState) &#123;</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">        childState: childState</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render() &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;div className=&quot;parent&quot;&gt;</span><br><span class="line">            &lt;Child callBack=&#123;this.handleChange.bind(this)&#125; /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//子组件</span><br><span class="line">constructor(props) &#123;</span><br><span class="line">    super(props)</span><br><span class="line">    this.state = &#123;</span><br><span class="line">        childState: &apos;childState&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">handleChange(e) &#123;</span><br><span class="line">    //setState 是异步的，所以要先拿到 childState 的值，</span><br><span class="line">    //或者写入 setState 的回调函数中</span><br><span class="line">    var childState = e.target.value</span><br><span class="line">    this.setState(&#123;</span><br><span class="line">        childState : e.target.value</span><br><span class="line">    &#125;)</span><br><span class="line">    this.props.callBack(childState)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">render() &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;div className=&quot;child&quot;&gt;</span><br><span class="line">            &lt;input type=&quot;text&quot; onChange=&#123;this.handleChange.bind(this)&#125; /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="react-router-的使用"><a href="#react-router-的使用" class="headerlink" title="react-router 的使用"></a>react-router 的使用</h2><p>一开始的时候，参考了一些文章试着使用了一下 react-router ，结果一直报错，后来发现版本更新导致部分语法改变，这里我使用的是 4.x 版本，一个比较基本的路由实现：<br>首先，引入 react-router：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import &#123;</span><br><span class="line">    BrowserRouter as Router,</span><br><span class="line">    Route,</span><br><span class="line">    Link</span><br><span class="line">&#125; from &apos;react-router-dom</span><br></pre></td></tr></table></figure>
+<p>接下来进行路由配置，告诉路由如何进行匹配以及匹配后如何执行代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;Router&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;Link to=&quot;/&quot;&gt;Home&lt;/Link&gt;</span><br><span class="line">        &lt;Link to=&quot;/About&quot;&gt;About&lt;/Link&gt;</span><br><span class="line">        </span><br><span class="line">        //exact（bool）：为true时，则要求路径与location.pathname必须完全匹配；</span><br><span class="line">        &lt;Route exact path=&quot;/&quot; component=&#123;Home&#125;/&gt;</span><br><span class="line">        &lt;Route path=&quot;/About&quot; component=&#123;About&#125;/&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/Router&gt;</span><br></pre></td></tr></table></figure>
+<p>在路由跳转到另一个页面时，如果当前页面存在路由跳转，则涉及到路由嵌套：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">render() &#123;</span><br><span class="line">    let match = this.props.match</span><br><span class="line">    return (</span><br><span class="line">        &lt;Router&gt;</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Link to=&#123;match.url&#125;&gt;Tab One&lt;/Link&gt;</span><br><span class="line">                &lt;Link to=&#123;`$&#123;match.url&#125;/Two`&#125;&gt;Tab Two&lt;/Link&gt;</span><br><span class="line">                &lt;Route exact path=&#123;match.url&#125; render=&#123;()=&gt;(&lt;h3&gt;1&lt;/h3&gt;)&#125; /&gt;</span><br><span class="line">                //:param 可以理解为一种匹配模式，可以通过 params 拿到对应属性值</span><br><span class="line">                &lt;Route path=&#123;`$&#123;match.url&#125;/:param`&#125; component=&#123;Topic&#125; /&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/Router&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>match 对象中存储着路由路径的相关信息，通过 match 对象可以拿到一级路径，然后再根据二级路径进行匹配即可。</p>
+<p>有些情况，在进行路由跳转时需要传递一些参数，当参数比较多的时候，通过路由路径传递参数就不是一个好的选择了，可以通过 query/state 传参：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//通过 location 对象取值</span><br><span class="line">&lt;Link to=&#123;&#123;pathname:&apos;/Message&apos;,query:&#123;name:&apos;react&apos;&#125;,state:&#123;name:&apos;react&apos;&#125;&#125;&#125; &gt;Message&lt;/Link&gt;</span><br><span class="line"></span><br><span class="line">//使用 js 传参</span><br><span class="line">this.props.router.push(&#123;pathname:&apos;/Message&apos;,query:&#123;name:&apos;react&apos;&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><hr>
+<p>通过简单上手 React ，我觉得用来开发项目很方便， 因为 React 使用了 virtual dom 所以在性能方面也比较给力，加上组件化开发、Jsx 和 ES6 语法的加持以及完善的生态体系，我想这大概就是 React 成为时下热门框架的原因之一吧。<br><br></p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><hr>
+<ol>
+<li><a href="http://www.ruanyifeng.com/blog/2015/03/react.html" target="_blank" rel="noopener">React 入门实例教程</a></li>
+<li><a href="https://doc.react-china.org/" target="_blank" rel="noopener">React - 用于构建用户界面的 JavaScript 库</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/27713910" target="_blank" rel="noopener">从 React 绑定 this，看 JS 语言发展和框架设计</a></li>
+<li><a href="http://web.jobbole.com/84924/" target="_blank" rel="noopener">深入浅出Fetch API</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes#%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener">类 - JavaScript | MDN</a></li>
+<li><a href="https://segmentfault.com/a/1190000004044592" target="_blank" rel="noopener">React 组件之间如何交流</a></li>
+<li><a href="https://react-guide.github.io/react-router-cn/index.html" target="_blank" rel="noopener">React Router 中文文档</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">yuce</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2018/07/24/Hello-Xiaoyu/" class="pre-post btn btn-default" title='Hello Xiaoyu'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Hello Xiaoyu</span>
+        </a>
+    
+    
+        <a href="/2017/10/18/开发常见问题—（js篇）/" class="next-post btn btn-default" title='开发常见问题（js篇）'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">开发常见问题（js篇）</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+    
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'NW5yLVHpuX6jQ83iFAtqsClI-gzGzoHsz',
+            appKey: 'KabgKFnv69fyuCNMbqMtNAjg',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: true,
+            avatar: '',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关于脚手架的简单使用"><span class="toc-number">1.</span> <span class="toc-text">关于脚手架的简单使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目结构"><span class="toc-number">2.</span> <span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#React-简单上手"><span class="toc-number">3.</span> <span class="toc-text">React 简单上手</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简单总结上手碰到的坑"><span class="toc-number">4.</span> <span class="toc-text">简单总结上手碰到的坑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-getInitialState"><span class="toc-number">4.1.</span> <span class="toc-text">关于 getInitialState</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#getDefaultProps-的疑惑"><span class="toc-number">4.2.</span> <span class="toc-text">getDefaultProps 的疑惑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于请求数据"><span class="toc-number">4.3.</span> <span class="toc-text">关于请求数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于事件传参"><span class="toc-number">4.4.</span> <span class="toc-text">关于事件传参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-中的-this"><span class="toc-number">4.5.</span> <span class="toc-text">React 中的 this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于组件的生命周期"><span class="toc-number">4.6.</span> <span class="toc-text">关于组件的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#父子组件之间的传值"><span class="toc-number">4.7.</span> <span class="toc-text">父子组件之间的传值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#react-router-的使用"><span class="toc-number">4.8.</span> <span class="toc-text">react-router 的使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小结"><span class="toc-number">5.</span> <span class="toc-text">小结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文献"><span class="toc-number">6.</span> <span class="toc-text">参考文献</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12"> 
+                <span>Copyright &copy; 2018
+                </span> | 
+                <!--<span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> | -->
+                <!--<span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span> |-->
+                <p style="display: inline; padding-left: 10px;">
+                    Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!---->
+
+<script src="/js/search.js?rev=@@hash"></script>
+<script src="/js/app.js?rev=@@hash"></script>
+
+
+</body>
+</html>
