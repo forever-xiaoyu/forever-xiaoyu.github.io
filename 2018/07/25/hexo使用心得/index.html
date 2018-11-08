@@ -31,7 +31,7 @@
     <!--Title-->
 
 
-<title>hexo使用心得 | 于策的个人博客</title>
+<title>hexo 使用心得 | 于策的个人博客</title>
 
 
     <link rel="alternate" href="/atom.xml" title="于策的个人博客" type="application/atom+xml">
@@ -141,9 +141,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="hexo使用心得">
+        <h1 id="hexo 使用心得">
             
-	            hexo使用心得
+	            hexo 使用心得
             
         </h1>
         <div class="post-meta">
@@ -195,7 +195,16 @@
 <h2 id="开始部署"><a href="#开始部署" class="headerlink" title="开始部署"></a>开始部署</h2><p>安装部署依赖<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
 <p>开始部署<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
 <h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><p>移步 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo主题</a> 选择主题</p>
-<h2 id="多端使用"><a href="#多端使用" class="headerlink" title="多端使用"></a>多端使用</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1532503444822&amp;di=de5d99915c0f2abd91bba4d0ac9a2465&amp;imgtype=0&amp;src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F12%2F85%2F89M58PICwUr_1024.jpg" alt="universe" title="universe"></p>
+<h2 id="开启图片上传"><a href="#开启图片上传" class="headerlink" title="开启图片上传"></a>开启图片上传</h2><p>在配置文件中启用设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure></p>
+<p>然后安装相关插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure></p>
+<p>创建文章会生成同名文件夹，只需要将图片放在该路径中，使用时使用相对路径引用即可，eg：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div align=center&gt;![test.png](article/test.png)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Markdown-语法"><a href="#Markdown-语法" class="headerlink" title="Markdown 语法"></a>Markdown 语法</h2><p>hexo 是使用 Markdown 编辑文章的，使用简洁，详见 <a href="https://markdown-zh.readthedocs.io/en/latest/" target="_blank" rel="noopener">Markdown 官方文档</a></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
+<li>使用 git clone 修改 hexo 主题时，如果是在 hexo 项目中，删掉主题中的 .git 文件</li>
+<li>使用 hexo new page 生成单页面</li>
+<li>修改语言时，依据当前主题的 languages 中的语言进行修改，每个主题都会有所差异<br><br><br></li>
+</ul>
+<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1532503444822&amp;di=de5d99915c0f2abd91bba4d0ac9a2465&amp;imgtype=0&amp;src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F12%2F85%2F89M58PICwUr_1024.jpg" alt="universe" title="universe"></p>
 
     </div>
 
@@ -213,9 +222,9 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2018/08/01/grunt-html-压缩简单配置/" class="pre-post btn btn-default" title='grunt html 压缩简单配置'>
+        <a href="/2018/08/01/grunt-html-压缩简单配置/" class="pre-post btn btn-default" title='grunt 常用配置'>
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">grunt html 压缩简单配置</span>
+            <span class="hidden-xs">grunt 常用配置</span>
         </a>
     
     
@@ -264,7 +273,7 @@
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用前提"><span class="toc-number">1.</span> <span class="toc-text">使用前提</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用npm安装Hexo"><span class="toc-number">2.</span> <span class="toc-text">使用npm安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建项目"><span class="toc-number">3.</span> <span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用指令"><span class="toc-number">4.</span> <span class="toc-text">常用指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-配置部署"><span class="toc-number">5.</span> <span class="toc-text">hexo 配置部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开始部署"><span class="toc-number">6.</span> <span class="toc-text">开始部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主题"><span class="toc-number">7.</span> <span class="toc-text">主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多端使用"><span class="toc-number">8.</span> <span class="toc-text">多端使用</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用前提"><span class="toc-number">1.</span> <span class="toc-text">使用前提</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用npm安装Hexo"><span class="toc-number">2.</span> <span class="toc-text">使用npm安装Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建项目"><span class="toc-number">3.</span> <span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用指令"><span class="toc-number">4.</span> <span class="toc-text">常用指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-配置部署"><span class="toc-number">5.</span> <span class="toc-text">hexo 配置部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开始部署"><span class="toc-number">6.</span> <span class="toc-text">开始部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#主题"><span class="toc-number">7.</span> <span class="toc-text">主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启图片上传"><span class="toc-number">8.</span> <span class="toc-text">开启图片上传</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown-语法"><span class="toc-number">9.</span> <span class="toc-text">Markdown 语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意事项"><span class="toc-number">10.</span> <span class="toc-text">注意事项</span></a></li></ol>
         
     </div>
 </aside>
