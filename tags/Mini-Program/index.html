@@ -53,16 +53,8 @@
 <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
@@ -79,17 +71,17 @@
 
 
 
-<meta name="description" content="小于博客,分享技术知识的个人博客网站">
+<meta name="description" content="go straight ahead">
 <meta name="keywords" content="小于博客,个人博客,技术博客,博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="于策的个人博客">
 <meta property="og:url" content="http://www.yc609.cn/tags/Mini-Program/index.html">
 <meta property="og:site_name" content="于策的个人博客">
-<meta property="og:description" content="小于博客,分享技术知识的个人博客网站">
+<meta property="og:description" content="go straight ahead">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="于策的个人博客">
-<meta name="twitter:description" content="小于博客,分享技术知识的个人博客网站">
+<meta name="twitter:description" content="go straight ahead">
 
 
 
@@ -318,8 +310,12 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/images/xiaoyu.png"
+                alt="小于" />
+            
               <p class="site-author-name" itemprop="name">小于</p>
-              <p class="site-description motion-element" itemprop="description">小于博客,分享技术知识的个人博客网站</p>
+              <p class="site-description motion-element" itemprop="description">go straight ahead</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -362,6 +358,22 @@
           
 
           
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/forever-xiaoyu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yc609.cn@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
 
           
           
@@ -398,18 +410,16 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
-  <span class="post-meta-divider">|</span>
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
-
-
+<p style="display: inline; padding-left: 10px;">
+    Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
+</p>
 
         
 
@@ -565,6 +575,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'NW5yLVHpuX6jQ83iFAtqsClI-gzGzoHsz',
+        appKey: 'KabgKFnv69fyuCNMbqMtNAjg',
+        placeholder: 'Just go go',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
