@@ -1,193 +1,352 @@
-<!DOCTYPE HTML>
-<html lang="">
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
 <head>
-    <!--Setting-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="于策的个人博客">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no,email=no,adress=no">
-    <meta name="browsermode" content="application">
-    <meta name="screen-orientation" content="portrait">
-    <link rel="dns-prefetch" href="http://www.yc609.cn">
-    <!--SEO-->
-
-<meta name="description" content="小于博客,分享技术知识的个人博客网站"/>
-
-
-
-<meta name="keywords" content="小于博客,个人博客,技术博客,博客"/>
-
-
-
-<meta name="robots" content="all" />
-<meta name="google" content="all" />
-<meta name="googlebot" content="all" />
-<meta name="verify" content="all" />
-    <!--Title-->
-
-
-<title>Mini Program | 于策的个人博客</title>
-
-
-    <link rel="alternate" href="/atom.xml" title="于策的个人博客" type="application/atom+xml">
-
-
-    <link rel="icon" href="/favicon.ico">
-
-    
-
-
-
-<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
-<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
-<link rel="stylesheet" href="/css/style.css?rev=@@hash">
-
-
-
-
-    
-	<div class="hide">
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
 
 
 
 
-    
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?0068125b378895915c918b9428715e7e";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Mini Program," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Mini Program小程序上线以来，依附微信的社交场景及自身特性，迅速普及起来，各大公司产品都在跟进小程序的开发。  app.jsonapp.json 是当前小程序的全局配置，包括了小程序的所有页面路径、界面表现、网络超时时间、底部 tab 等。">
+<meta name="keywords" content="Mini Program">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mini Program">
+<meta property="og:url" content="http://www.yc609.cn/2018/09/05/mini-program/index.html">
+<meta property="og:site_name" content="于策的个人博客">
+<meta property="og:description" content="Mini Program小程序上线以来，依附微信的社交场景及自身特性，迅速普及起来，各大公司产品都在跟进小程序的开发。  app.jsonapp.json 是当前小程序的全局配置，包括了小程序的所有页面路径、界面表现、网络超时时间、底部 tab 等。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://ss1.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3546744997,114540464&fm=11&gp=0.jpg">
+<meta property="og:updated_time" content="2018-11-28T08:16:08.909Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mini Program">
+<meta name="twitter:description" content="Mini Program小程序上线以来，依附微信的社交场景及自身特性，迅速普及起来，各大公司产品都在跟进小程序的开发。  app.jsonapp.json 是当前小程序的全局配置，包括了小程序的所有页面路径、界面表现、网络超时时间、底部 tab 等。">
+<meta name="twitter:image" content="https://ss1.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3546744997,114540464&fm=11&gp=0.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.yc609.cn/2018/09/05/mini-program/"/>
+
+
+
+
+
+  <title>Mini Program | 于策的个人博客</title>
+  
+
+
+
+
+
+
+
 
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
-<!--[if lte IE 8]>
-<style>
-    html{ font-size: 1em }
-</style>
-<![endif]-->
-<!--[if lte IE 9]>
-<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
-<![endif]-->
+  
+  
+    
+  
 
-<body>
-    <header class="main-header"  style="background-image:url(/img/banner2.jpg)"  >
-    <div class="main-header-box">
-        <a class="header-avatar" href="/" title='小于'>
-            <img src="/img/xiaoyu.png" alt="logo头像" class="img-responsive center-block">
-        </a>
-        <div class="branding">
-        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
-            
-                <h2> Go straight ahead, keep my words </h2>
-            
-    	</div>
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">于策的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-</header>
-    <nav class="main-navigation">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only"></span>
-                        <i class="fa fa-bars"></i>
-                    </span>
-                    <a class="navbar-brand" href="http://www.yc609.cn">于策的个人博客</a>
-                </div>
-                <div class="collapse navbar-collapse" id="main-menu">
-                    <ul class="menu">
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa "></i>Home</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/fe/"><i class="fa "></i>FE</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/diary/"><i class="fa "></i>Diary</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/archives/"><i class="fa "></i>TimeLine</a>
-                            </li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-    <section class="content-wrap">
-        <div class="container">
-            <div class="row">
-                <main class="col-md-8 main-content m-post">
-                    <p id="process"></p>
-<article class="post">
-    <div class="post-head">
-        <h1 id="Mini Program">
-            
-	            Mini Program
-            
-        </h1>
-        <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/fe">
-            fe
-        </a>
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/Mini Program" title='Mini Program'>
-                        Mini Program
-                    </a>
-                
-            
-        </span>
-    </span>
-    
+      
+        <p class="site-subtitle">小于博客</p>
+      
+  </div>
 
-    
-        
-        <span class="fa-wrap">
-            <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2018/09/05</span>
-        </span>
-    
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
             
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-    </div>
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
     
-    <div class="post-body post-content">
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.yc609.cn/2018/09/05/mini-program/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小于">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="于策的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Mini Program</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-05T16:11:04+08:00">
+                2018-09-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/fe/" itemprop="url" rel="index">
+                    <span itemprop="name">fe</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         <h2 id="Mini-Program"><a href="#Mini-Program" class="headerlink" title="Mini Program"></a>Mini Program</h2><pre><code>小程序上线以来，依附微信的社交场景及自身特性，迅速普及起来，各大公司产品都在跟进小程序的开发。
 </code></pre><hr>
-<h2 id="app-json"><a href="#app-json" class="headerlink" title="app.json"></a>app.json</h2><p>app.json 是当前小程序的全局配置，包括了小程序的所有页面路径、界面表现、网络超时时间、底部 tab 等。</p>
+<h2 id="app-json"><a href="#app-json" class="headerlink" title="app.json"></a>app.json</h2><p>app.json 是当前小程序的全局配置，包括了小程序的所有页面路径、界面表现、网络超时时间、底部 tab 等。<br><a id="more"></a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	//用于描述当前小程序所有页面路径，这是为了让微信客户端知道当前你的小程序页面定义在哪个目录。</span><br><span class="line">	&quot;pages&quot;: [</span><br><span class="line">		/pages/demo/demo</span><br><span class="line">	],</span><br><span class="line">	//定义小程序所有页面的顶部背景颜色，文字颜色定义等</span><br><span class="line">	&quot;window&quot;: &#123;</span><br><span class="line">	    &quot;backgroundTextStyle&quot;: &quot;dark&quot;,</span><br><span class="line">	    &quot;navigationBarBackgroundColor&quot;: &quot;#fff&quot;,</span><br><span class="line">	    &quot;navigationBarTitleText&quot;: &quot;this is nav title&quot;,</span><br><span class="line">	    &quot;navigationBarTextStyle&quot;: &quot;black&quot;,</span><br><span class="line">	    &quot;enablePullDownRefresh&quot;: true</span><br><span class="line">	  &#125;,</span><br><span class="line">	&quot;tabBar&quot;: &#123;</span><br><span class="line">	    &quot;color&quot;: &quot;#433D33&quot;,</span><br><span class="line">	    &quot;selectedColor&quot;: &quot;#CC2729&quot;,</span><br><span class="line">	    &quot;backgroundColor&quot;: &quot;#fff&quot;,</span><br><span class="line">	    &quot;borderStyle&quot;: &quot;white&quot;,</span><br><span class="line">	    &quot;list&quot;: [</span><br><span class="line">	      &#123;</span><br><span class="line">	        &quot;pagePath&quot;: &quot;pages/index/index&quot;,</span><br><span class="line">	        &quot;text&quot;: &quot;home&quot;,</span><br><span class="line">	        &quot;iconPath&quot;: &quot;images/home.png&quot;,</span><br><span class="line">	        &quot;selectedIconPath&quot;: &quot;images/home.png&quot;</span><br><span class="line">	      &#125;</span><br><span class="line">	    ],</span><br><span class="line">	    &quot;position&quot;: &quot;bottom&quot;</span><br><span class="line">	  &#125;,</span><br><span class="line">	  &quot;networkTimeout&quot;: 5000</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Launch"><a href="#Launch" class="headerlink" title="Launch"></a>Launch</h2><p>&#8195;微信客户端在打开小程序之前，会把整个小程序的代码包下载到本地。紧接着通过 app.json 的 pages 字段就可以知道你当前小程序的所有页面路径。<br>&#8195;这个配置说明在 QuickStart 项目定义了两个页面，分别位于 pages/index/index 和 pages/logs/logs。而写在 pages 字段的第一个页面就是这个小程序的首页（打开小程序看到的第一个页面）。<br>&#8195;于是微信客户端就把首页的代码装载进来，通过小程序底层的一些机制，就可以渲染出这个首页。<br>&#8195;小程序启动之后，在 app.js 定义的 App 实例的 onLaunch 回调会被执行。整个小程序只有一个 App 实例，是全部页面共享的。</p>
 <h2 id="Statement-Period"><a href="#Statement-Period" class="headerlink" title="Statement Period"></a>Statement Period</h2><ul>
@@ -232,122 +391,390 @@
 <h3 id="8-swiper-infinite-sliding"><a href="#8-swiper-infinite-sliding" class="headerlink" title="8. swiper infinite sliding"></a>8. swiper infinite sliding</h3><p>if you use setData in bindchange event callback function to change the current value, it may cause setData to be called continuously.<br>Therefore, in general, please check the source field before changing the current value to determine whether it is caused by user touch.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">swiperChange (e) &#123;</span><br><span class="line">    if(e.detail.source == &quot;touch&quot;) &#123;</span><br><span class="line">        //your code</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://ss1.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3546744997,114540464&amp;fm=11&amp;gp=0.jpg" alt="universe"></p>
 
+      
     </div>
+    
+    
+    
 
-    <div class="post-footer">
-        <div>
-            
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">yuce</a>
-            
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mini-Program/" rel="tag"># Mini Program</a>
+          
         </div>
-        <div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/08/15/Two-Sum/" rel="next" title="Two Sum">
+                <i class="fa fa-chevron-left"></i> Two Sum
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/26/开发常见问题（IDE篇）/" rel="prev" title="开发常见问题（IDE篇）">
+                开发常见问题（IDE篇） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
         </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
-</article>
+  </div>
 
-<div class="article-nav prev-next-wrap clearfix">
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
     
-        <a href="/2018/10/26/开发常见问题（IDE篇）/" class="pre-post btn btn-default" title='开发常见问题（IDE篇）'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">开发常见问题（IDE篇）</span>
-        </a>
-    
-    
-        <a href="/2018/08/15/Two-Sum/" class="next-post btn btn-default" title='Two Sum'>
-            <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">Two Sum</span><i class="fa fa-angle-right fa-fw"></i>
-        </a>
-    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">小于</p>
+              <p class="site-description motion-element" itemprop="description">小于博客,分享技术知识的个人博客网站</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mini-Program"><span class="nav-number">1.</span> <span class="nav-text">Mini Program</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#app-json"><span class="nav-number">2.</span> <span class="nav-text">app.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Launch"><span class="nav-number">3.</span> <span class="nav-text">Launch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Statement-Period"><span class="nav-number">4.</span> <span class="nav-text">Statement Period</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-Handling"><span class="nav-number">5.</span> <span class="nav-text">Event Handling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pit"><span class="nav-number">6.</span> <span class="nav-text">Pit</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-modify-the-object-property-values"><span class="nav-number">6.1.</span> <span class="nav-text">1. modify the object property values</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-modify-one-value-of-array"><span class="nav-number">6.2.</span> <span class="nav-text">2. modify one value of array</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-stop-event-bubbling"><span class="nav-number">6.3.</span> <span class="nav-text">3. stop event bubbling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-ios8-compatibility-of-wxss"><span class="nav-number">6.4.</span> <span class="nav-text">4. ios8 compatibility of wxss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-canvas-notice"><span class="nav-number">6.5.</span> <span class="nav-text">5. canvas notice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-wxParse-related-issues"><span class="nav-number">6.6.</span> <span class="nav-text">6. wxParse related issues</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-query-node-information"><span class="nav-number">6.7.</span> <span class="nav-text">7. query node information</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-swiper-infinite-sliding"><span class="nav-number">6.8.</span> <span class="nav-text">8. swiper infinite sliding</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小于</span>
+
+  
 </div>
 
 
-    <div id="comments">
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
         
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
     
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
-
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'NW5yLVHpuX6jQ83iFAtqsClI-gzGzoHsz',
-            appKey: 'KabgKFnv69fyuCNMbqMtNAjg',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: true,
-            avatar: '',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: ''.toLowerCase()
-        })
-    </script>
-
-
-    </div>
-
-
-
-
-
-                </main>
-                
-                    <aside id="article-toc" role="navigation" class="col-md-4">
-    <div class="widget">
-        <h3 class="title">Table of Contents</h3>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mini-Program"><span class="toc-number">1.</span> <span class="toc-text">Mini Program</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#app-json"><span class="toc-number">2.</span> <span class="toc-text">app.json</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Launch"><span class="toc-number">3.</span> <span class="toc-text">Launch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Statement-Period"><span class="toc-number">4.</span> <span class="toc-text">Statement Period</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Event-Handling"><span class="toc-number">5.</span> <span class="toc-text">Event Handling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pit"><span class="toc-number">6.</span> <span class="toc-text">Pit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-modify-the-object-property-values"><span class="toc-number">6.1.</span> <span class="toc-text">1. modify the object property values</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-modify-one-value-of-array"><span class="toc-number">6.2.</span> <span class="toc-text">2. modify one value of array</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-stop-event-bubbling"><span class="toc-number">6.3.</span> <span class="toc-text">3. stop event bubbling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-ios8-compatibility-of-wxss"><span class="toc-number">6.4.</span> <span class="toc-text">4. ios8 compatibility of wxss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-canvas-notice"><span class="toc-number">6.5.</span> <span class="toc-text">5. canvas notice</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-wxParse-related-issues"><span class="toc-number">6.6.</span> <span class="toc-text">6. wxParse related issues</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-query-node-information"><span class="toc-number">6.7.</span> <span class="toc-text">7. query node information</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-swiper-infinite-sliding"><span class="toc-number">6.8.</span> <span class="toc-text">8. swiper infinite sliding</span></a></li></ol></li></ol>
-        
-    </div>
-</aside>
+      </div>
+    
 
-                
-            </div>
-        </div>
-    </section>
-    <footer class="main-footer">
-    <div class="container">
-        <div class="row">
-        </div>
-    </div>
-</footer>
+    
 
-<a id="back-to-top" class="icon-btn hide">
-	<i class="fa fa-chevron-up"></i>
-</a>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
 
 
-    <div class="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12"> 
-                <span>Copyright &copy; 2018
-                </span> | 
-                <!--<span>
-                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> | -->
-                <!--<span>
-                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
-                </span> |-->
-                <p style="display: inline; padding-left: 10px;">
-                    Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
 
 
-<!---->
-
-<script src="/js/search.js?rev=@@hash"></script>
-<script src="/js/app.js?rev=@@hash"></script>
 
 
-</body>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":130},"mobile":{"show":true},"log":false});</script></body>
 </html>

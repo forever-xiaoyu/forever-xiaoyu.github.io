@@ -1,192 +1,353 @@
-<!DOCTYPE HTML>
-<html lang="">
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
 <head>
-    <!--Setting-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="于策的个人博客">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no,email=no,adress=no">
-    <meta name="browsermode" content="application">
-    <meta name="screen-orientation" content="portrait">
-    <link rel="dns-prefetch" href="http://www.yc609.cn">
-    <!--SEO-->
-
-<meta name="description" content="小于博客,分享技术知识的个人博客网站"/>
-
-
-
-<meta name="keywords" content="小于博客,个人博客,技术博客,博客"/>
-
-
-
-<meta name="robots" content="all" />
-<meta name="google" content="all" />
-<meta name="googlebot" content="all" />
-<meta name="verify" content="all" />
-    <!--Title-->
-
-
-<title>初识 React | 于策的个人博客</title>
-
-
-    <link rel="alternate" href="/atom.xml" title="于策的个人博客" type="application/atom+xml">
-
-
-    <link rel="icon" href="/favicon.ico">
-
-    
-
-
-
-<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
-<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
-<link rel="stylesheet" href="/css/style.css?rev=@@hash">
-
-
-
-
-    
-	<div class="hide">
-		<script type="text/javascript">
-			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
 
 
 
 
-    
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?0068125b378895915c918b9428715e7e";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="react," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="React 作为时下最流行的框架之一，不可否认其在前端框架当中的地位，很多的项目也都在使用 React；作为一名 Front-end engineer，学习 React 无论是对于项目开发还是自身的水平都会有一定程度的帮助。 最近开始简单的学习了 React，所以在此简单的总结一下。">
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识 React">
+<meta property="og:url" content="http://www.yc609.cn/2017/12/25/初识-React/index.html">
+<meta property="og:site_name" content="于策的个人博客">
+<meta property="og:description" content="React 作为时下最流行的框架之一，不可否认其在前端框架当中的地位，很多的项目也都在使用 React；作为一名 Front-end engineer，学习 React 无论是对于项目开发还是自身的水平都会有一定程度的帮助。 最近开始简单的学习了 React，所以在此简单的总结一下。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://www.yc609.cn/2017/12/25/初识-React/pic_1.png">
+<meta property="og:image" content="http://www.yc609.cn/2017/12/25/初识-React/pic_2.png">
+<meta property="og:image" content="http://www.yc609.cn/2017/12/25/初识-React/pic_3.png">
+<meta property="og:updated_time" content="2018-11-28T08:16:21.085Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初识 React">
+<meta name="twitter:description" content="React 作为时下最流行的框架之一，不可否认其在前端框架当中的地位，很多的项目也都在使用 React；作为一名 Front-end engineer，学习 React 无论是对于项目开发还是自身的水平都会有一定程度的帮助。 最近开始简单的学习了 React，所以在此简单的总结一下。">
+<meta name="twitter:image" content="http://www.yc609.cn/2017/12/25/初识-React/pic_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.yc609.cn/2017/12/25/初识-React/"/>
+
+
+
+
+
+  <title>初识 React | 于策的个人博客</title>
+  
+
+
+
+
+
+
+
 
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
-<!--[if lte IE 8]>
-<style>
-    html{ font-size: 1em }
-</style>
-<![endif]-->
-<!--[if lte IE 9]>
-<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
-<![endif]-->
+  
+  
+    
+  
 
-<body>
-    <header class="main-header"  style="background-image:url(/img/banner2.jpg)"  >
-    <div class="main-header-box">
-        <a class="header-avatar" href="/" title='小于'>
-            <img src="/img/xiaoyu.png" alt="logo头像" class="img-responsive center-block">
-        </a>
-        <div class="branding">
-        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
-            
-                <h2> Go straight ahead, keep my words </h2>
-            
-    	</div>
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">于策的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-</header>
-    <nav class="main-navigation">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                    <span class="sr-only"></span>
-                        <i class="fa fa-bars"></i>
-                    </span>
-                    <a class="navbar-brand" href="http://www.yc609.cn">于策的个人博客</a>
-                </div>
-                <div class="collapse navbar-collapse" id="main-menu">
-                    <ul class="menu">
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/"><i class="fa "></i>Home</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/fe/"><i class="fa "></i>FE</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/categories/diary/"><i class="fa "></i>Diary</a>
-                            </li>
-                        
-                            <li role="presentation" class="text-center">
-                                <a href="/archives/"><i class="fa "></i>TimeLine</a>
-                            </li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-    <section class="content-wrap">
-        <div class="container">
-            <div class="row">
-                <main class="col-md-8 main-content m-post">
-                    <p id="process"></p>
-<article class="post">
-    <div class="post-head">
-        <h1 id="初识 React">
-            
-	            初识 React
-            
-        </h1>
-        <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/fe">
-            fe
-        </a>
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/react" title='react'>
-                        react
-                    </a>
-                
-            
-        </span>
-    </span>
-    
+      
+        <p class="site-subtitle">小于博客</p>
+      
+  </div>
 
-    
-        
-        <span class="fa-wrap">
-            <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2017/12/25</span>
-        </span>
-    
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
             
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-    </div>
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
     
-    <div class="post-body post-content">
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.yc609.cn/2017/12/25/初识-React/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="小于">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="于策的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">初识 React</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-25T21:08:24+08:00">
+                2017-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/fe/" itemprop="url" rel="index">
+                    <span itemprop="name">fe</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         <pre><code>React 作为时下最流行的框架之一，不可否认其在前端框架当中的地位，很多的项目也都在使用 React；作为一名 Front-end engineer，学习 React 无论是对于项目开发还是自身的水平都会有一定程度的帮助。
-</code></pre><p>最近开始简单的学习了 <a href="https://doc.react-china.org/" target="_blank" rel="noopener">React</a>，所以在此简单的总结一下。<br><br>    </p>
+</code></pre><p>最近开始简单的学习了 <a href="https://doc.react-china.org/" target="_blank" rel="noopener">React</a>，所以在此简单的总结一下。<br><br><br><a id="more"></a></p>
 <h1 id="关于脚手架的简单使用"><a href="#关于脚手架的简单使用" class="headerlink" title="关于脚手架的简单使用"></a>关于脚手架的简单使用</h1><hr>
 <pre><code>在网上看到了很多 React 的脚手架工具，这里我使用的是 create-react-app ，创建项目也比较简单。
 </code></pre><ul>
@@ -308,122 +469,390 @@
 <li><a href="https://react-guide.github.io/react-router-cn/index.html" target="_blank" rel="noopener">React Router 中文文档</a></li>
 </ol>
 
+      
     </div>
+    
+    
+    
 
-    <div class="post-footer">
-        <div>
-            
-                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">yuce</a>
-            
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react/" rel="tag"># react</a>
+          
         </div>
-        <div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/10/18/开发常见问题—（js篇）/" rel="next" title="开发常见问题（js篇）">
+                <i class="fa fa-chevron-left"></i> 开发常见问题（js篇）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/24/Hello-Xiaoyu/" rel="prev" title="Hello Xiaoyu">
+                Hello Xiaoyu <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
         </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
     </div>
-</article>
+  </div>
 
-<div class="article-nav prev-next-wrap clearfix">
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
     
-        <a href="/2018/07/24/Hello-Xiaoyu/" class="pre-post btn btn-default" title='Hello Xiaoyu'>
-            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">Hello Xiaoyu</span>
-        </a>
-    
-    
-        <a href="/2017/10/18/开发常见问题—（js篇）/" class="next-post btn btn-default" title='开发常见问题（js篇）'>
-            <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">开发常见问题（js篇）</span><i class="fa fa-angle-right fa-fw"></i>
-        </a>
-    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">小于</p>
+              <p class="site-description motion-element" itemprop="description">小于博客,分享技术知识的个人博客网站</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关于脚手架的简单使用"><span class="nav-number">1.</span> <span class="nav-text">关于脚手架的简单使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目结构"><span class="nav-number">2.</span> <span class="nav-text">项目结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-简单上手"><span class="nav-number">3.</span> <span class="nav-text">React 简单上手</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单总结上手碰到的坑"><span class="nav-number">4.</span> <span class="nav-text">简单总结上手碰到的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于-getInitialState"><span class="nav-number">4.1.</span> <span class="nav-text">关于 getInitialState</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#getDefaultProps-的疑惑"><span class="nav-number">4.2.</span> <span class="nav-text">getDefaultProps 的疑惑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于请求数据"><span class="nav-number">4.3.</span> <span class="nav-text">关于请求数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于事件传参"><span class="nav-number">4.4.</span> <span class="nav-text">关于事件传参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-中的-this"><span class="nav-number">4.5.</span> <span class="nav-text">React 中的 this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于组件的生命周期"><span class="nav-number">4.6.</span> <span class="nav-text">关于组件的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#父子组件之间的传值"><span class="nav-number">4.7.</span> <span class="nav-text">父子组件之间的传值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#react-router-的使用"><span class="nav-number">4.8.</span> <span class="nav-text">react-router 的使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">6.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小于</span>
+
+  
 </div>
 
 
-    <div id="comments">
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
         
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
     
-    <div id="vcomments" class="valine"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="/assets/valine.min.js"></script>
-
-    <script>
-        new Valine({
-            av: AV,
-            el: '#vcomments',
-            appId: 'NW5yLVHpuX6jQ83iFAtqsClI-gzGzoHsz',
-            appKey: 'KabgKFnv69fyuCNMbqMtNAjg',
-            placeholder: '说点什么吧',
-            notify: false,
-            verify: true,
-            avatar: '',
-            meta: 'nick,mail'.split(','),
-            pageSize: '10',
-            path: window.location.pathname,
-            lang: ''.toLowerCase()
-        })
-    </script>
-
-
-    </div>
-
-
-
-
-
-                </main>
-                
-                    <aside id="article-toc" role="navigation" class="col-md-4">
-    <div class="widget">
-        <h3 class="title">Table of Contents</h3>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
         
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关于脚手架的简单使用"><span class="toc-number">1.</span> <span class="toc-text">关于脚手架的简单使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目结构"><span class="toc-number">2.</span> <span class="toc-text">项目结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#React-简单上手"><span class="toc-number">3.</span> <span class="toc-text">React 简单上手</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简单总结上手碰到的坑"><span class="toc-number">4.</span> <span class="toc-text">简单总结上手碰到的坑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于-getInitialState"><span class="toc-number">4.1.</span> <span class="toc-text">关于 getInitialState</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#getDefaultProps-的疑惑"><span class="toc-number">4.2.</span> <span class="toc-text">getDefaultProps 的疑惑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于请求数据"><span class="toc-number">4.3.</span> <span class="toc-text">关于请求数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于事件传参"><span class="toc-number">4.4.</span> <span class="toc-text">关于事件传参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React-中的-this"><span class="toc-number">4.5.</span> <span class="toc-text">React 中的 this</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于组件的生命周期"><span class="toc-number">4.6.</span> <span class="toc-text">关于组件的生命周期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#父子组件之间的传值"><span class="toc-number">4.7.</span> <span class="toc-text">父子组件之间的传值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#react-router-的使用"><span class="toc-number">4.8.</span> <span class="toc-text">react-router 的使用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小结"><span class="toc-number">5.</span> <span class="toc-text">小结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考文献"><span class="toc-number">6.</span> <span class="toc-text">参考文献</span></a></li></ol>
-        
-    </div>
-</aside>
+      </div>
+    
 
-                
-            </div>
-        </div>
-    </section>
-    <footer class="main-footer">
-    <div class="container">
-        <div class="row">
-        </div>
-    </div>
-</footer>
+    
 
-<a id="back-to-top" class="icon-btn hide">
-	<i class="fa fa-chevron-up"></i>
-</a>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
 
 
-    <div class="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12"> 
-                <span>Copyright &copy; 2018
-                </span> | 
-                <!--<span>
-                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> | -->
-                <!--<span>
-                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
-                </span> |-->
-                <p style="display: inline; padding-left: 10px;">
-                    Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
 
 
-<!---->
-
-<script src="/js/search.js?rev=@@hash"></script>
-<script src="/js/app.js?rev=@@hash"></script>
 
 
-</body>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":70,"height":130},"mobile":{"show":true},"log":false});</script></body>
 </html>
