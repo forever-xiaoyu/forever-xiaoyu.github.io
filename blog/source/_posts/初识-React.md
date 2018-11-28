@@ -9,7 +9,7 @@ img: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539667
     React 作为时下最流行的框架之一，不可否认其在前端框架当中的地位，很多的项目也都在使用 React；作为一名 Front-end engineer，学习 React 无论是对于项目开发还是自身的水平都会有一定程度的帮助。
 最近开始简单的学习了 [React][1]，所以在此简单的总结一下。
 <br/>    
-
+<!-- more -->
 关于脚手架的简单使用
 ====
 ----------

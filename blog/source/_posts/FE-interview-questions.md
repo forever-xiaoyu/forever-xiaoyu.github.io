@@ -20,6 +20,8 @@ categories: fe
 + 移动端垂直居中的方式
 + animation定义的动画怎么设置进度
 
+<!-- more -->
+
 --------------
 
 ## javascript

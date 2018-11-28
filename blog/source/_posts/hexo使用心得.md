@@ -19,6 +19,7 @@ Git
 npm install -g hexo-cli
 
 ```
+<!-- more -->
 
 ## 创建项目
 ```
@@ -74,6 +75,12 @@ npm install hexo-asset-image --save
 创建文章会生成同名文件夹，只需要将图片放在该路径中，使用时使用相对路径引用即可，eg：
 ```
 <div align=center>![test.png](article/test.png)
+```
+
+## 开启搜索
+需要安装 hexo-generator-searchdb，安装后到配置文件中开启相关选项即可
+```
+npm install hexo-generator-searchdb --save
 ```
 
 ## Markdown 语法

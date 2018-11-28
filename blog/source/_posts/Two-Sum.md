@@ -14,6 +14,7 @@ Output: [0, 1]
 ## idea
 The direct way to see this is to traverse the summation through two layers of loops.
 This is one of the solutions, but it consumes performance.
+<!-- more -->
 
 We can think in reverse, if the sum of the two numbers meets the conditions, then the two numbers must exist, or the value must exist as their attribute. for example, we can use value in the nums as ths key to stored in the temporary object, 2 and 7 satisfy the condition, so obj[2] and obj[7] must exist, so obj[9-7] must exist, and it is naturally solved.
 

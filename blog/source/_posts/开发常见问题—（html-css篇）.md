@@ -17,6 +17,7 @@ tags: html/css
 2. 使用 padding
 3. 尽量使用同一方向的 margin
 ```
+<!-- more -->
 ## placeholder 自定义样式 ##
 之前开发项目中碰到的需求，兼容写法如下：
 

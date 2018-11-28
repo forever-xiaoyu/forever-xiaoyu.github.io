@@ -16,6 +16,7 @@ img: https://ss1.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3546744997,114540
 ## app.json
 
 app.json 是当前小程序的全局配置，包括了小程序的所有页面路径、界面表现、网络超时时间、底部 tab 等。
+<!-- more -->
 
 ```
 {
