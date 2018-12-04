@@ -4,7 +4,7 @@ date: 2018-08-24 09:36:45
 tags: 
 - Promise 
 - es6
-categories: fe
+categories: 
 ---
 
 ```

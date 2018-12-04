@@ -1,8 +1,8 @@
 ---
 title: FE interview questions
-date: 2018-08-03 10:24:28
-tags: interview
-categories: fe
+date: 2018-07-18 10:24:28
+tags: Interview
+categories: Others
 ---
 
 ## html/css

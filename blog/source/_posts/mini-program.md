@@ -1,13 +1,13 @@
 ---
-title: Mini Program
-tags: Mini Program
-category: fe
+title: Mini Programs
+tags: Mini Programs
+category: Framework
 date: 2018-09-05 16:11:04
 img: https://ss1.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3546744997,114540464&fm=11&gp=0.jpg
 ---
 
 
-## Mini Program
+## Mini Programs
 
 	小程序上线以来，依附微信的社交场景及自身特性，迅速普及起来，各大公司产品都在跟进小程序的开发。
 

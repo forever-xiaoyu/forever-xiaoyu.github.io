@@ -1,8 +1,8 @@
 ---
 title: 开发常见问题（html/css篇）
 date: 2017-10-16 20:40:28
-categories: fe
-tags: html/css
+categories: Others
+tags: HTML/CSS
 ---
 
     在日常开发中，时常会碰到各种各样的坑，本文总结了开发过程中碰到的常见问题。
@@ -55,6 +55,7 @@ word-break: break-all;
 -webkit-line-clamp: 1;
 ```
 ## scroll 自定义样式 ##
+<div align=center>![clipboard.png](开发常见问题—（html-css篇）/scroll-info.png)
 
 ```
 /* Chrome */

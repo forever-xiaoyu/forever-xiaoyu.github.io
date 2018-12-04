@@ -2,9 +2,7 @@
 title: Two Sum
 date: 2018-08-15 20:44:02
 tags: 
-- forward
-- logic
-categories: fe
+categories: Others
 ---
 
 ## eg

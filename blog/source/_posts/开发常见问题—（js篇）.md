@@ -1,7 +1,7 @@
 ---
 title: 开发常见问题（js篇）
 date: 2017-10-18 21:24:46
-categories: fe
+categories: Others
 tags: JavaScript
 ---
 

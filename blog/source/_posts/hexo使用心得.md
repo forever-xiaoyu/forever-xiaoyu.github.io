@@ -1,8 +1,8 @@
 ---
-title: hexo 使用心得
+title: Hexo 使用心得
 date: 2018-07-25 12:22:38
-tags: hexo
-categories: fe
+tags: Hexo
+categories: Framework
 ---
 
 ** Hexo **

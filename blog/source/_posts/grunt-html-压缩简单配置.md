@@ -1,8 +1,8 @@
 ---
-title: grunt 常用配置
+title: Grunt 常用配置
 date: 2018-08-01 15:03:17
-tags: grunt
-categories: fe
+tags: Grunt
+categories: Utility
 ---
 
     grunt 运用配置的思想来写打包脚本，一切皆配置，所以会出现比较多的配置项，诸如 option, src, dest 等等。而且不同的插件可能会有自己扩展字段，导致认知成本的提高，运用的时候要搞懂各种插件的配置规则。

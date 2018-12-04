@@ -1,7 +1,7 @@
 ---
 title: 开发常见问题（IDE篇）
 date: 2018-10-26 18:52:29
-categories: fe
+categories: Others
 tags: IDE
 ---
 
