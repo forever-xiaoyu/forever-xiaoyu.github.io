@@ -5,4 +5,5 @@ type: "about"
 comments: false
 ---
 
-<br/>欢迎来到于策的个人博客
+<br/>
+	我是于策，一名为梦而行的 Front-end Engineer。
