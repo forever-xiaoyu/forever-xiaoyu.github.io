@@ -80,7 +80,7 @@
 <meta property="og:description" content="Hexo hexo 是一个十分简洁的框架，上手也相对容易。  使用前提Node.jsGit 使用npm安装Hexo1npm install -g hexo-cli">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532503444822&di=de5d99915c0f2abd91bba4d0ac9a2465&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F12%2F85%2F89M58PICwUr_1024.jpg">
-<meta property="og:updated_time" content="2018-11-30T07:14:56.423Z">
+<meta property="og:updated_time" content="2018-12-18T08:36:46.764Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 使用心得">
 <meta name="twitter:description" content="Hexo hexo 是一个十分简洁的框架，上手也相对容易。  使用前提Node.jsGit 使用npm安装Hexo1npm install -g hexo-cli">
@@ -176,7 +176,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">xiaoyu blog</p>
+        <h1 class="site-subtitle" itemprop="description">xiaoyu blog</h1>
       
   </div>
 
@@ -329,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo 使用心得</h1>
+          <h2 class="post-title" itemprop="name headline">Hexo 使用心得</h2>
         
 
         <div class="post-meta">
@@ -426,7 +426,11 @@
 <p>然后安装相关插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure></p>
 <p>创建文章会生成同名文件夹，只需要将图片放在该路径中，使用时使用相对路径引用即可，eg：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div align=center&gt;![test.png](article/test.png)</span><br></pre></td></tr></table></figure></p>
 <h2 id="开启搜索"><a href="#开启搜索" class="headerlink" title="开启搜索"></a>开启搜索</h2><p>需要安装 hexo-generator-searchdb，安装后到配置文件中开启相关选项即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure></p>
+<h2 id="启用-CodePen"><a href="#启用-CodePen" class="headerlink" title="启用 CodePen"></a>启用 CodePen</h2><p>安装 hexo-codepen<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-codepen --save</span><br></pre></td></tr></table></figure></p>
+<p>使用方法（详见 <a href="https://github.com/maliMirkec/hexo-tag-codepen" target="_blank" rel="noopener">hexo-codepen</a>）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codepen userId|anonymous|anon slugHash theme [result [height [width]]] %&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="hexo-blog-encrypt"><a href="#hexo-blog-encrypt" class="headerlink" title="hexo-blog-encrypt"></a>hexo-blog-encrypt</h2><p>详见 <a href="https://github.com/MikeCoder/hexo-blog-encrypt" target="_blank" rel="noopener">hexo-blog-encrypt</a></p>
 <h2 id="Markdown-语法"><a href="#Markdown-语法" class="headerlink" title="Markdown 语法"></a>Markdown 语法</h2><p>hexo 是使用 Markdown 编辑文章的，使用简洁，详见 <a href="https://markdown-zh.readthedocs.io/en/latest/" target="_blank" rel="noopener">Markdown 官方文档</a></p>
+<h2 id="hexo-常用语法"><a href="#hexo-常用语法" class="headerlink" title="hexo 常用语法"></a>hexo 常用语法</h2><p>引用站内文章<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% post_link 文章文件名（不要后缀） 文章标题（可选） %&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
 <li>使用 git clone 修改 hexo 主题时，如果是在 hexo 项目中，删掉主题中的 .git 文件</li>
 <li>使用 hexo new page 生成单页面</li>
@@ -549,7 +553,7 @@
                 alt="小于" />
             
               <p class="site-author-name" itemprop="name">小于</p>
-              <p class="site-description motion-element" itemprop="description">go straight ahead</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -559,7 +563,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -570,7 +574,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -581,7 +585,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -630,7 +634,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用前提"><span class="nav-number">1.</span> <span class="nav-text">使用前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用npm安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">使用npm安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建项目"><span class="nav-number">3.</span> <span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用指令"><span class="nav-number">4.</span> <span class="nav-text">常用指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-配置部署"><span class="nav-number">5.</span> <span class="nav-text">hexo 配置部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始部署"><span class="nav-number">6.</span> <span class="nav-text">开始部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题"><span class="nav-number">7.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启图片上传"><span class="nav-number">8.</span> <span class="nav-text">开启图片上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启搜索"><span class="nav-number">9.</span> <span class="nav-text">开启搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-语法"><span class="nav-number">10.</span> <span class="nav-text">Markdown 语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">11.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用前提"><span class="nav-number">1.</span> <span class="nav-text">使用前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用npm安装Hexo"><span class="nav-number">2.</span> <span class="nav-text">使用npm安装Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建项目"><span class="nav-number">3.</span> <span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用指令"><span class="nav-number">4.</span> <span class="nav-text">常用指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-配置部署"><span class="nav-number">5.</span> <span class="nav-text">hexo 配置部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始部署"><span class="nav-number">6.</span> <span class="nav-text">开始部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题"><span class="nav-number">7.</span> <span class="nav-text">主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启图片上传"><span class="nav-number">8.</span> <span class="nav-text">开启图片上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启搜索"><span class="nav-number">9.</span> <span class="nav-text">开启搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启用-CodePen"><span class="nav-number">10.</span> <span class="nav-text">启用 CodePen</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-blog-encrypt"><span class="nav-number">11.</span> <span class="nav-text">hexo-blog-encrypt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-语法"><span class="nav-number">12.</span> <span class="nav-text">Markdown 语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-常用语法"><span class="nav-number">13.</span> <span class="nav-text">hexo 常用语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">14.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
             
 
           </div>
