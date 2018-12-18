@@ -82,7 +82,7 @@
 <meta property="og:image" content="http://www.yc609.cn/2018/11/14/GitHub-Pages-启用-https/github.png">
 <meta property="og:image" content="http://www.yc609.cn/2018/11/14/GitHub-Pages-启用-https/github-support.png">
 <meta property="og:image" content="http://www.yc609.cn/2018/11/14/GitHub-Pages-启用-https/github-support2.png">
-<meta property="og:updated_time" content="2018-12-18T08:05:44.920Z">
+<meta property="og:updated_time" content="2018-12-18T12:30:46.074Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GitHub Pages 启用 https">
 <meta name="twitter:description" content="启用 https首先进入到项目中，进入项目的设置项，找到 Github Pages，启用 Enforce HTTPS 就可以了。">
@@ -414,7 +414,7 @@
 
       
         <h2 id="启用-https"><a href="#启用-https" class="headerlink" title="启用 https"></a>启用 https</h2><p>首先进入到项目中，进入项目的设置项，找到 Github Pages，启用 Enforce HTTPS 就可以了。<br><a id="more"></a></p>
-<h2 id="自定义域名问题"><a href="#自定义域名问题" class="headerlink" title="自定义域名问题"></a>自定义域名问题</h2><p>启用 https 之前，需要先添加 CNAME 文件（内容为自定义域名的空子域名）到存储库中，并设置 Custom domain，但是在设置自定义域名的时候，出现了如下的警告：</p>
+<h2 id="自定义域名问题"><a href="#自定义域名问题" class="headerlink" title="自定义域名问题"></a>自定义域名问题</h2><p>启用 https 之前，需要先添加 CNAME 文件（内容为自定义域名的顶级域名，这样 GitHub 会自动为你绑定 www 子域名）到存储库中，GitHub 会根据 CNAME 值设置 Custom domain，但是在设置自定义域名的时候，出现了如下的警告：</p>
 <p><div align="center"><img src="/2018/11/14/GitHub-Pages-启用-https/github.png" alt="github.png"></div></p>
 <p>“the CNAME is already taken”，在网上并没有多少相关的问题，于是给 GitHub Support 发了邮件：</p>
 <p><div align="center"><img src="/2018/11/14/GitHub-Pages-启用-https/github-support.png" alt="github.png"></div></p>
