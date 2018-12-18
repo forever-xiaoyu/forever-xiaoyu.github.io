@@ -12,7 +12,7 @@ categories: Others
 
 ## 自定义域名问题
 
-启用 https 之前，需要先添加 CNAME 文件（内容为自定义域名的空子域名）到存储库中，并设置 Custom domain，但是在设置自定义域名的时候，出现了如下的警告：
+启用 https 之前，需要先添加 CNAME 文件（内容为自定义域名的顶级域名，这样 GitHub 会自动为你绑定 www 子域名）到存储库中，GitHub 会根据 CNAME 值设置 Custom domain，但是在设置自定义域名的时候，出现了如下的警告：
 
 <div align=center>![github.png](github.png)
 
