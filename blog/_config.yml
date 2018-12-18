@@ -87,6 +87,25 @@ live2d:
   mobile:
     show: true
 
+# Security
+##
+encrypt:
+    enable: true
+    default_abstract: the content has been encrypted, enter the password to read.</br>
+    default_message: please enter the pwd.
+    # default_template:
+    #                 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    #                 <div id="hbe-security">
+    #                     <div class="input-container">
+    #                         <input type="password" class="form-control" id="pass" placeholder=" {{message}} " />
+    #                         <label for="pass"> {{message}} </label>
+    #                         <div class="bottom-line"></div>
+    #                     </div>
+    #                 </div>
+    #                 <div id="encrypt-blog" style="display:none">
+    #                     {{content}}
+    #                 </div>
+
 # sitemap
 sitemap: 
   path: sitemap.xml

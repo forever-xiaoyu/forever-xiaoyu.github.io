@@ -2,7 +2,7 @@
 title: Two Sum
 date: 2018-08-15 20:44:02
 tags: 
-categories: Others
+categories: JavaScript
 ---
 
 ## eg

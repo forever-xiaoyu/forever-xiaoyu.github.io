@@ -83,8 +83,27 @@ npm install hexo-asset-image --save
 npm install hexo-generator-searchdb --save
 ```
 
+## 启用 CodePen
+安装 hexo-codepen
+```
+npm install hexo-codepen --save
+```
+使用方法（详见 [hexo-codepen][2]）：
+```
+ {% codepen userId|anonymous|anon slugHash theme [result [height [width]]] %}
+```
+
+## hexo-blog-encrypt
+详见 [hexo-blog-encrypt][3]
+
 ## Markdown 语法
 hexo 是使用 Markdown 编辑文章的，使用简洁，详见 [Markdown 官方文档][1]
+
+## hexo 常用语法
+引用站内文章
+```
+{% post_link 文章文件名（不要后缀） 文章标题（可选） %}
+```
 
 ## 注意事项
 * 使用 git clone 修改 hexo 主题时，如果是在 hexo 项目中，删掉主题中的 .git 文件
@@ -96,3 +115,5 @@ hexo 是使用 Markdown 编辑文章的，使用简洁，详见 [Markdown 官方
 ![universe](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532503444822&di=de5d99915c0f2abd91bba4d0ac9a2465&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F12%2F85%2F89M58PICwUr_1024.jpg "universe")
 
 [1]: https://markdown-zh.readthedocs.io/en/latest/
+[2]: https://github.com/maliMirkec/hexo-tag-codepen
+[3]: https://github.com/MikeCoder/hexo-blog-encrypt
