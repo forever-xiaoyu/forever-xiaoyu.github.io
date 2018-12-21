@@ -60,10 +60,21 @@ hexo deploy
 
 ```
 
-## 主题
+## Markdown 语法
+hexo 是使用 Markdown 编辑文章的，使用简洁，详见 [Markdown 官方文档][1]
+
+## hexo 常用语法
+引用站内文章
+```
+{% post_link 文章文件名（不要后缀） 文章标题（可选） %}
+```
+
+## hexo 扩展
+-----------
+#### 主题
 移步 [hexo主题](https://hexo.io/themes/) 选择主题
 
-## 开启图片上传
+#### 开启图片上传
 在配置文件中启用设置
 ```
 post_asset_folder: true
@@ -77,13 +88,13 @@ npm install hexo-asset-image --save
 <div align=center>![test.png](article/test.png)
 ```
 
-## 开启搜索
+#### 开启搜索
 需要安装 hexo-generator-searchdb，安装后到配置文件中开启相关选项即可
 ```
 npm install hexo-generator-searchdb --save
 ```
 
-## 启用 CodePen
+#### 启用 CodePen
 安装 hexo-codepen
 ```
 npm install hexo-codepen --save
@@ -93,16 +104,19 @@ npm install hexo-codepen --save
  {% codepen userId|anonymous|anon slugHash theme [result [height [width]]] %}
 ```
 
-## hexo-blog-encrypt
+#### hexo-blog-encrypt
 详见 [hexo-blog-encrypt][3]
 
-## Markdown 语法
-hexo 是使用 Markdown 编辑文章的，使用简洁，详见 [Markdown 官方文档][1]
-
-## hexo 常用语法
-引用站内文章
+#### 开启进度条（NexT）
+在主题配置中
 ```
-{% post_link 文章文件名（不要后缀） 文章标题（可选） %}
+pace: true
+```
+
+#### 回顶部百分比（NexT）
+在主题配置中
+```
+scrollpercent: true
 ```
 
 ## 注意事项

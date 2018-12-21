@@ -28,7 +28,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
 
-# Writing
+# Writing 
 new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
@@ -85,7 +85,7 @@ live2d:
     width: 70
     height: 130
   mobile:
-    show: true
+    show: false
 
 # Security
 ##
