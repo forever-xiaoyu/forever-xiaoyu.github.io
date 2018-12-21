@@ -1,5 +1,5 @@
 ---
-title: Grunt 常用配置
+title: Grunt 使用心得
 date: 2018-08-01 15:03:17
 tags: Grunt
 categories: Utility
@@ -211,5 +211,31 @@ module.exports = function(grunt){
     grunt.registerTask('default', ['autoprefixer']);
 };
 ```
+
+## Grunt 注意问题
+1. 在配置 sass 的时候，如下配置：
+```
+sass: {
+    dist: {
+        files: {
+            expand: true,
+            cwd: 'scss',
+            src: ['*.scss'],
+            dest: 'dist/css',
+            ext: '.css'
+        }
+    }
+}，
+watch: {
+    scripts: {
+        files: ['scss/*.scss'],
+        tasks: ['sass'],
+        options: {
+            spawn: false
+        }
+    }
+}
+```
+此时报了 pattern.indexOf is not a function 的错误，是因为此时 files 为 Object，而 Object 是没有 indexOf 方法的，所以要注意 files 一定要用数组。
 
 <div align="center">![universe](https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1563339494,4060447026&fm=27&gp=0.jpg "universe")
