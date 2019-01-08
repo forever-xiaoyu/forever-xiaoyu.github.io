@@ -61,3 +61,8 @@ git add -A : 提交所有变化
 ```
 ignorecase = false
 ```
+
+## 重置密码
+```
+git config --system --unset credential.helper 
+```
