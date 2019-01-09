@@ -1,6 +1,6 @@
 ---
 title: Sass 常用语法
-date: 2019-01-08 21:03:01
+date: 2018-12-21 21:03:01
 tags: 
 - sass
 - css
@@ -211,3 +211,7 @@ sass 允许嵌套导入，将 @import 写在 css 规则内
   width: getValue(350px);
 }
 ```
+
+## 参考文献 ##
+
+[Sass 官方文档](https://www.sass.hk/)
