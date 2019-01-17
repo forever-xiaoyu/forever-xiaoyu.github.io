@@ -8,6 +8,7 @@ categories: JavaScript
 ## 构造函数模式 ##
 ECMAScript中的构造函数可以用来创建特定类型的对象。像Object 和 Array 这样的原生构造函数，在运行时会自动出行在执行环境中。
 此外，也可以创建自定义构造函数，从而定义自定义对象类型的属性和方法。
+<!-- more -->
 ```
 function Person(name, age, job) {
     this.name = name;
@@ -50,7 +51,6 @@ alert(person2 instanceof Person); // true
 ## 单体模式 ##
 单体模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一变量进行访问。
 
-<!-- more -->
 
 单体模式的优点是：
 
@@ -527,3 +527,4 @@ publisher.notice();
 
 ## 参考 ##
 1. JavaScript高级程序设计（第三版）
+2. [Javascript常用的设计模式详解](http://www.cnblogs.com/tugenhua0707/p/5198407.html)
