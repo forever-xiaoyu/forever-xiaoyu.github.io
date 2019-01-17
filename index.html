@@ -429,20 +429,7 @@
 
       
         
-          <h2 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h2><p>ECMAScript中的构造函数可以用来创建特定类型的对象。像Object 和 Array 这样的原生构造函数，在运行时会自动出行在执行环境中。<br>此外，也可以创建自定义构造函数，从而定义自定义对象类型的属性和方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function Person(name, age, job) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.age = age;</span><br><span class="line">    this.job = job;</span><br><span class="line">    this.sayName = function() &#123;</span><br><span class="line">        alert(this.name);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var person1 = new Person(&quot;Nicholas&quot;,29,&quot;software Engineer&quot;);</span><br><span class="line">var person2 = new Person(&quot;Greg&quot;,27,&quot;Doctor&quot;);</span><br></pre></td></tr></table></figure></p>
-<p>这里需要注意：</p>
-<p>构造函数始终都应该以一个大写字母开头，而非构造函数则以一个小写字母开头</p>
-<p>要创建Person的实例，必须使用new操作符。以这种方式调用构造函数实例上会经历以下4个步骤：</p>
-<ol>
-<li>创建一个对象</li>
-<li>将构造函数的作用域赋给新对象（因此this就指向了这个新对象）</li>
-<li>执行构造函数中的代码</li>
-<li>返回新的对象</li>
-</ol>
-<p>在前面例子的最后person1和person2分别保存着Person的一个不同的实例。这两个对象都有一个constructor（构造函数）属性，该属性指向Person,如下所示。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert(person1.constructor == Person); // true</span><br><span class="line">alert(person2.constructor == Person); // true</span><br></pre></td></tr></table></figure>
-<p>对象的constructor属性最初是用来标识对象类型的。但是，提到检测对象类型，还是instanceof操作符要可靠一些。我们在这个例子中创建的所有对象即是Object的实例同时也是Person的实例，这一点通过instanceof操作符可以得到验证。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alert(person1 instanceof Object); // true</span><br><span class="line">alert(person1 instanceof Person); // true</span><br><span class="line">alert(person2 instanceof Object); // true</span><br><span class="line">alert(person2 instanceof Person); // true</span><br></pre></td></tr></table></figure></p>
-<h2 id="单体模式"><a href="#单体模式" class="headerlink" title="单体模式"></a>单体模式</h2><p>单体模式提供了一种将代码组织为一个逻辑单元的手段，这个逻辑单元中的代码可以通过单一变量进行访问。</p>
+          <h2 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h2><p>ECMAScript中的构造函数可以用来创建特定类型的对象。像Object 和 Array 这样的原生构造函数，在运行时会自动出行在执行环境中。<br>此外，也可以创建自定义构造函数，从而定义自定义对象类型的属性和方法。<br></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/01/10/Js设计模式/#more" rel="contents">
@@ -1966,7 +1953,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1988,7 +1975,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
