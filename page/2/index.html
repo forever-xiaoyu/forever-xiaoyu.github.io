@@ -1216,7 +1216,15 @@
 
       
         
-          <h2 id="列表跳详情"><a href="#列表跳详情" class="headerlink" title="列表跳详情"></a>列表跳详情</h2><h3 id="路由传参"><a href="#路由传参" class="headerlink" title="路由传参"></a>路由传参</h3><blockquote>
+          <h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><h3 id="路由模式"><a href="#路由模式" class="headerlink" title="路由模式"></a>路由模式</h3><p>vue-router 默认使用 hash 模式，通过监听 hashchange 事件来实现局部更新，使用此模式，项目的 url 地址会带有 # 符号，如果不希望使用这种模式的话，可以使用自带的另一种模式即 history 模式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const router = new Router(&#123;</span><br><span class="line">  mode: &apos;history&apos;,</span><br><span class="line">  routes: []</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>history 模式是通过 history.pushState API 来完成 SPA 的，但是需要注意的是：</p>
+<blockquote>
+<p>这种模式要玩好，还需要后台配置支持。因为我们的应用是个单页客户端应用，如果后台没有正确的配置，当用户在浏览器直接访问 <a href="http://oursite.com/user/id" target="_blank" rel="noopener">http://oursite.com/user/id</a> 就会返回 404，这就不好看了。</p>
+</blockquote>
+<blockquote>
+<p>所以要在服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 index.html 页面，这个页面就是你 app 依赖的页面。</p>
+</blockquote>
+<h3 id="路由传参"><a href="#路由传参" class="headerlink" title="路由传参"></a>路由传参</h3><blockquote>
 <p>除了使用 <router-link> 创建 a 标签来定义导航链接，我们还可以借助 router 的实例方法，通过编写代码来实现。<br>在 Vue 实例内部，你可以通过 $router 访问路由实例，因此你可以调用 this.$router.push。</router-link></p>
 </blockquote>
           <!--noindex-->
@@ -2033,9 +2041,9 @@
 
 
 
-<p style="display: inline; padding-left: 10px;">
+<!--<p style="display: inline; padding-left: 10px;">
     Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a>
-</p>
+</p>-->
 
         
 <div class="busuanzi-count">
