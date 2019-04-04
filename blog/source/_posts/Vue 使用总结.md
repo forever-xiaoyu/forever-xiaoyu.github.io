@@ -4,6 +4,88 @@ date: 2017-09-24 19:43:31
 tags: Vue
 categories: Framework
 ---
+## class 与 style 绑定变量
+```
+<template>
+  <!--绑定 class-->
+  <div :class="{'className' : isShow}">
+  </div>
+  <div :class="isShow ? 'className1' : 'className2'">
+  </div>
+  <div :class="[class1, class2]">
+  </div>
+  <div :class="[{ class1: isShow }, errorClass]">
+  </div>
+  
+  <!--绑定 内联样式-->
+  <div :style="{color: 'red'}">
+  </div>
+  <div :style="styleObj">
+  </div>
+  <div :style="[styleObj, styleObj2]">
+  </div>
+</template>
+
+<script>
+ export default {
+   data () {
+     return {
+       isShow: true,
+       class1: 'className1',
+       class2: 'className2',
+       styleObj: {
+         color: 'red'
+       },
+       styleObj2: {
+         color: 'blue'
+       }
+     }
+   }
+ }
+</script>
+```
+
+## prop
+需要注意的是，当 prop 属性为 Object, Function 和 Array 类型时，需要使用 return 返回
+```
+// 基本用法
+props: ['prop1', 'prop2']
+
+// prop 类型
+props: {
+  prop1: String,
+  prop2: Object
+}
+
+// prop 验证
+props: {
+  prop1: [Number, String],
+  prop2: {
+    type: Object,
+    default: function () {
+      return {}
+    }
+  }
+}
+```
+
+## computed
+计算属性将被混入到 Vue 实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例。
+```
+computed: {
+  aDouble: vm => vm.a * 2,
+  // 若希望给计算属性进行传参，可以使用如下方式
+  getValue () {
+    return function (value) {
+      return `value:${value}`
+    }
+  }
+}
+```
+
+## methods
+> 注意，不应该使用箭头函数来定义 method 函数 (例如 plus: () => this.a++)。理由是箭头函数绑定了父级作用域的上下文，所以 this 将不会按照期望指向 Vue 实例，this.a 将是 undefined。
+
 ## 路由 ##
 ### 路由模式 ###
 vue-router 默认使用 hash 模式，通过监听 hashchange 事件来实现局部更新，使用此模式，项目的 url 地址会带有 # 符号，如果不希望使用这种模式的话，可以使用自带的另一种模式即 history 模式：
@@ -137,6 +219,7 @@ mechods:{
 ```
 
 ## 回到顶部 ##
+需要注意的是，若有使用全局监听事件，要在组件销毁之前移除事件，避免影响其它组件。
 ```
 <template>
   <div class="back-to-top" v-show="backTop">
@@ -160,8 +243,13 @@ mechods:{
         }
       }
     },
+    beforeDestory(){
+      if (this.scrollEvent) {
+        window.removeEventListener('scroll', this.handleScroll)
+      }
+    }
     mounted(){
-      window.addEventListener(''scroll'',this.handleScroll,false);
+      this.scrollEvent = window.addEventListener('scroll', this.handleScroll, false);
     }
   }
 </script>
@@ -298,6 +386,64 @@ this.$jsonp('/api', {
 
 })
 ```
+
+## 组件缓存 keep-alive
+keep-alive 是 Vue 提供的抽象组件（或称功能型组件），并不会被渲染在 DOM 结构中。它的作用是在内存中缓存组件（不让组件销毁），等到下次再渲染的时候，还会保持其中的所有状态，并且会触发 activated 钩子函数。因为缓存的需要通常出现在页面切换时，所以常与 router-view 一起出现。
+```
+<keep-alive :include="['ListView', 'DetailView']">
+	<router-view />
+</keep-alive>
+```
+其中，include 属性表示要缓存的组件名（name属性），接收类型有字符串，字符数组以及正则表达式（RegExp）。
+
+除了使用 include 指定缓存的组件之外，有时我们希望从某一个组件跳转到当前组件进行缓存，其它组件跳转当前组件不使用缓存，可以使用导航守卫进行控制。
+
+首先全局定义 keep-alive
+```
+<!-- 通过每一个路由下 meta 属性决定是否使用组件缓存 -->
+<div id="app">
+  <keep-alive>
+    <router-view v-if="$route.meta.keepAlive"></router-view>
+  </keep-alive>
+  <router-view v-if="!$route.meta.keepAlive"></router-view>
+</div>
+```
+在路由中配置是否使用组件缓存
+```
+routes: [
+    {
+      path: '/page',
+      name: 'page',
+      meta: {
+        keepAlive: true
+      },
+      component: () => import('page')
+    }
+]
+```
+在导航守卫中控制组件缓存与否
+```
+// 全局前置守卫进行控制
+router.beforeEach((to, from, next) => {
+  // ...
+})
+
+// 组件内的守卫
+beforeRouteEnter (to, from, next) {
+    if (from.name && from.name === 'page') {
+      to.meta.keepAlive = true
+    } else {
+      to.meta.keepAlive = false
+    }
+    next()
+}
+```
+可以看出，后面的用法对于 keep-alive 的配置性来说要更高一些。
+
+## Vue.use
+安装 Vue.js 插件。如果插件是一个对象，必须提供 install 方法。如果插件是一个函数，它会被作为 install 方法。install 方法调用时，会将 Vue 作为参数传入。
+
+- 该方法需要在调用 new Vue() 之前被调用。
 
 ## 参考文献
 1. [vue-router 官方文档][2]
