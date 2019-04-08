@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.yc609.cn/2017/09/24/Vue%20%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</loc>
-    <lastmod>2019-04-04T06:54:29.147Z</lastmod>
+    <loc>https://www.yc609.cn/2017/10/18/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E2%80%94%EF%BC%88js%E7%AF%87%EF%BC%89/</loc>
+    <lastmod>2019-04-08T04:11:59.337Z</lastmod>
   </url>  <url>
     <loc>https://www.yc609.cn/2017/10/16/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E2%80%94%EF%BC%88html-css%E7%AF%87%EF%BC%89/</loc>
-    <lastmod>2019-03-11T11:38:27.139Z</lastmod>
+    <lastmod>2019-04-04T08:10:12.263Z</lastmod>
+  </url>  <url>
+    <loc>https://www.yc609.cn/2017/09/24/Vue%20%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</loc>
+    <lastmod>2019-04-04T06:54:29.147Z</lastmod>
   </url>  <url>
     <loc>https://www.yc609.cn/2019/02/15/iView%20%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6/</loc>
     <lastmod>2019-02-22T07:48:01.480Z</lastmod>
@@ -24,9 +27,6 @@
   </url>  <url>
     <loc>https://www.yc609.cn/2017/09/16/Git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2019-01-07T07:01:35.065Z</lastmod>
-  </url>  <url>
-    <loc>https://www.yc609.cn/2017/10/18/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E2%80%94%EF%BC%88js%E7%AF%87%EF%BC%89/</loc>
-    <lastmod>2019-01-02T09:22:35.950Z</lastmod>
   </url>  <url>
     <loc>https://www.yc609.cn/2018/07/25/hexo%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97/</loc>
     <lastmod>2018-12-21T07:19:50.920Z</lastmod>
