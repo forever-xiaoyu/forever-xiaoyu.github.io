@@ -37,6 +37,7 @@ onTap: function(swiper) {
 
 
 ## 异步回调解决方案 ##
+### Promise ###
 异步处理一直以来都是 js 极其重要的一部分，这里暂不提框架，原始的异步处理一般是：
     创建异步对象XMLHttpRequest。
     设置请求参数（请求方式，请求资源的相对路径，是否异步）。
@@ -59,8 +60,39 @@ task.then(function(response) {
  // fail
 });
 
+task.then(function(response) {
+
+}).catch(function(error) {
+
+})
 ```
-使用 Promise 可以通过链式调用避免层层嵌套，同时便于代码阅读和理解。
+Promise 中的异常处理函数有两种写法，可以放在 then 中的第二参数位置，也可以放在 catch 中捕获，写在 catch 中的好处是还可以捕获到 then 中出现的异常。
+
+### async/await ###
+ES2017 标准引入了 async 函数，使得异步操作变得更加方便。
+async函数返回一个 Promise 对象，可以使用then方法添加回调函数。当函数执行的时候，一旦遇到await就会先返回，等到异步操作完成，再接着执行函数体内后面的语句。
+
+```
+function timeout(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+async function asyncPrint(value, ms) {
+  await timeout(ms);
+  console.log(value);
+}
+
+asyncPrint('hello world', 50);
+```
+当在 forEach 这种有自身作用域的函数中循环使用 await 时，要声明 async
+
+```
+arr.forEach(async (item) => {
+  await(item)    
+})
+```
 
 ## input readyonly 点击出现光标 ##
 在开发中使用了一个时间插件，设置了 input 为 readonly，在低版本（10.2） IOS中，点击 input 还是会出现光标，尝试了很多方式，最后解决办法：
@@ -68,6 +100,7 @@ task.then(function(response) {
 ```
 <input type="text" readonly unselectable="on" onfocus="this.blur()" value=""/>
 ```
+
 ## IE9 change 事件剪切删除无法触发 ##
 jQuery 的 change 事件，在使用的时候，发现 IE 中剪切和删除无法触发，可以使用 input propertychange 事件来代替。
 
@@ -145,6 +178,93 @@ for (var index in sortedObjKeys) {
 }
 ```
 
+## 对象数组提取指定 key 值
+```
+[{a: 1, b: 2}, {a: 3, b: 3}].map(item => item.a)
+// [1, 3]
+
+[{a: 1, b: 2}, {a: 3, b: 2}].map(item => { return { a: item.a }})
+// [{ a: 1}, { a: 3 }]
+```
+
+## find/findIndex
+数组实例的find方法，用于找出第一个符合条件的数组成员。它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。如果没有符合条件的成员，则返回undefined。
+
+```
+[1, 4, -5, 10].find((n) => n < 0) // -5
+
+[1, 5, 10, 15].find(function(value, index, arr) {
+  return value > 9;
+}) // 10
+```
+
+数组实例的findIndex方法的用法与find方法非常类似，返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回-1。
+
+```
+[1, 5, 10, 15].findIndex(function(value, index, arr) {
+  return value > 9;
+}) // 2
+```
+
+## 固定背景
+移动端有遮罩层，背景通常禁止滚动，需要固定，通常有下面几个方法
+1. overflow: hidden
+2. position: fixed
+3. 阻止 touch 事件的默认行为
+
+上面几种方法不会保留滚动的位置，会回到页面顶部，可以在 2 的基础上，记录一下 top 值
+取消遮罩层之后，使用 scrollTo 回到原位置。
+
+## getBoundingClientRect
+Element.getBoundingClientRect()方法返回元素的大小及其相对于视口的位置。
+
+## 安卓 usb 调试问题
+安卓使用 usb 调试，出现这样一个报错
+
+> Because an app is obscuring a permission request, Settings can't verify your response
+
+如果有悬浮球或侧边栏，关闭它，或者关闭其它有保持应用在最上层的权限关闭掉
+
+## iPhoneX 相关问题
+### 适配问题
+通常遇到 iPhoneX 会给底部加 34 像素的 bottom，但是在 safrai 和 weixin 环境下，会有一个底部的前进后退导航栏，而这个导航栏本身是适配过的，所以需要对 safari 和 weixin 进行单独的处理
+
+```
+function addIphoneXMethod () {
+  // 微信浏览器 history.length 默认为 1
+  if (!this.scrollEvent) {
+    if (this.isIphoneX && navigator.userAgent.indexOf('Safari') > -1) { // Safari
+      this.isIphoneX = false
+      this.scrollEvent = window.addEventListener('scroll', () => {
+        this.iPhoneXMethod()
+      }, false)
+    } else if (this.isIphoneX && navigator.userAgent.indexOf('MicroMessenger') > -1) { // Weixin
+      if (this.viewHeight < 724 && window.history.length > 1) {
+        this.isIphoneX = false
+        this.scrollEvent = window.addEventListener('scroll', () => {
+          this.iPhoneXMethod()
+        }, false)
+      } else {
+        this.scrollEvent = window.addEventListener('resize', () => {
+          this.iPhoneXMethod()
+        }, false)
+      }
+    }
+  }
+}
+
+function iPhoneXMethod () {
+  if (window.innerHeight > 724) {
+    this.isIphoneX = true
+  } else {
+    this.isIphoneX = false
+  }
+}
+```
+
+### 页面刷新问题
+实际开中发现，iphoneX 等部分机型(iphone7等)在返回页面的时候请求接口走缓存，无法拿到最新的数据，所以要在请求的时候加上时间戳
+
 ## Vue 篇
 ### 数据更新无法触发视图更新
 由于 Vue 的限制，不能检测以下变动的数组：
@@ -161,4 +281,14 @@ example1.items.splice(indexOfItem, 1, newValue)
 为了解决第二类问题，你也同样可以使用 splice：
 ```
 example1.items.splice(newLength)
+```
+
+### keep-alive
+keep-alive 第一次赋值 true 的时候无效，第二次返回的时候才有效，目前的解决办法是 keep-alive 默认为 true，不进行修改或者赋值，在导航守卫中判断路由，来刷新数据
+
+### 图片的异常处理
+```
+<img :src="imgUrl" :onerror='this.src="' + errorImg + '";'>
+
+<img :src="imgUrl? imgUrl : errorImg">
 ```
