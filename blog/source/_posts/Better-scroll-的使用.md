@@ -155,3 +155,6 @@ scroll.on('scroll', onScroll)
 
 ### content 最小高度
 在一些场景下，会有 better-scroll content 容器高度小于 wrapper 容器高度的情况，这种情况下是无法触发 better-scroll 的事件的，可以通过计算 wrapper 高度来赋予 content 容器最小高度；也可以在特定场景下通过计算 content 的高度赋予 wrapper 小于 content 容器的高度的值。
+
+### 无法滚动问题
+在当前组件使用缓存的情况下，请求数据完成后，没有滚动 better-scroll，这时进行了路由跳转再返回当前组件的时候，会出现无法滚动的情况，可以通过在钩子函数中执行 refresh 来解决这类问题。
