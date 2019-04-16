@@ -129,3 +129,50 @@
   }
 }
 
+// 以下为新增代码！！
+// 白色区域的最大宽度
+$white_max_width = 1100px
+
+header{ 
+  width: 90% !important;
+  max-width: $white_max_width;
+}
+header.post-header {
+  width: auto !important;
+}
+.container .main-inner {
+  width: 90%;
+  max-width: $white_max_width;
+}
+.content-wrap { width: calc(100% - 260px); }
+
+
+.header {
+  +tablet() {
+    width: auto !important;
+  }
+  +mobile() {
+    width: auto !important;
+  }
+}
+
+
+.container .main-inner {
+  +tablet() {
+    width: auto !important;
+  }
+  +mobile() {
+    width: auto !important;
+  }
+}
+
+.content-wrap {
+  +tablet() {
+    width: 100% !important;
+  }
+  +mobile() {
+    // 为了在手机访问时，内边距不至于太大
+    padding: 20px !important;
+    width: 100% !important;
+  }
+}

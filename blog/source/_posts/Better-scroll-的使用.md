@@ -158,3 +158,8 @@ scroll.on('scroll', onScroll)
 
 ### 无法滚动问题
 在当前组件使用缓存的情况下，请求数据完成后，没有滚动 better-scroll，这时进行了路由跳转再返回当前组件的时候，会出现无法滚动的情况，可以通过在钩子函数中执行 refresh 来解决这类问题。
+
+## 参考
+[better-scroll 文档][1]
+
+[1]: http://ustbhuangyi.github.io/better-scroll/doc/zh-hans/
