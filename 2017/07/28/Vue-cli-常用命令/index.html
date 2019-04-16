@@ -87,7 +87,7 @@
 <meta property="og:description" content="全局安装脚手架1npm install -g vue-cli">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://www.yc609.cn/2017/07/28/Vue-cli-常用命令/vue-cli.jpg">
-<meta property="og:updated_time" content="2019-01-17T12:05:17.189Z">
+<meta property="og:updated_time" content="2019-04-16T09:21:12.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue-cli 的使用">
 <meta name="twitter:description" content="全局安装脚手架1npm install -g vue-cli">
@@ -413,8 +413,21 @@
 <h2 id="安装项目依赖"><a href="#安装项目依赖" class="headerlink" title="安装项目依赖"></a>安装项目依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
 <h2 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
 <p>启动时如果出错很可能就是port被占用了，进入/config/index.js修改port为其它端口号即可。</p>
+<hr>
+<pre><code>2018.10 更新，vue-cli 到现在已经更新到 3.X 版本了，使用方式上也有了很多改变，简单更新一下 vue-cli 3.X 版本的使用。
+</code></pre><h2 id="项目初始化-1"><a href="#项目初始化-1" class="headerlink" title="项目初始化"></a>项目初始化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create Vue-Project</span><br></pre></td></tr></table></figure>
+<h2 id="安装项目依赖-1"><a href="#安装项目依赖-1" class="headerlink" title="安装项目依赖"></a>安装项目依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h2 id="启动项目-1"><a href="#启动项目-1" class="headerlink" title="启动项目"></a>启动项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run serve</span><br></pre></td></tr></table></figure>
+<h2 id="项目配置"><a href="#项目配置" class="headerlink" title="项目配置"></a>项目配置</h2><p>vue.config.js 是一个可选的配置文件，如果项目的 (和 package.json 同级的) 根目录中存在这个文件，那么它会被 @vue/cli-service 自动加载。你也可以使用 package.json 中的 vue 字段，但是注意这种写法需要你严格遵照 JSON 的格式来写。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// vue.config.js</span><br><span class="line">module.exports = &#123;</span><br><span class="line">  // 选项...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="项目打包"><a href="#项目打包" class="headerlink" title="项目打包"></a>项目打包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run bulid</span><br></pre></td></tr></table></figure>
-<p><br><br><img src="/2017/07/28/Vue-cli-常用命令/vue-cli.jpg" alt="vue-cli.jpg"></p>
+<h2 id="本地运行打包项目"><a href="#本地运行打包项目" class="headerlink" title="本地运行打包项目"></a>本地运行打包项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g serve</span><br><span class="line"># -s 参数的意思是将其架设在 Single-Page Application 模式下</span><br><span class="line"># 这个模式会处理即将提到的路由问题</span><br><span class="line">serve -s dist</span><br></pre></td></tr></table></figure>
+<p>或者在 package.json 中配置 dist 命令，使用 npm run dist 运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">  &quot;dist&quot;: &quot;serve -s dist&quot;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="npm-源切换"><a href="#npm-源切换" class="headerlink" title="npm 源切换"></a>npm 源切换</h2><p>有时我们需要使用 npm 官方源来使用 npm 的一些功能，若使用了淘宝镜像或其它第三方镜像，需要切换回 npm 镜像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry http://registry.npmjs.org</span><br></pre></td></tr></table></figure></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://cli.vuejs.org/zh/guide" target="_blank" rel="noopener">vue-cli 官方文档</a></p>
+<p><br></p>
+<p><img src="/2017/07/28/Vue-cli-常用命令/vue-cli.jpg" alt="vue-cli.jpg"></p>
 
       
     </div>
@@ -612,7 +625,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局安装脚手架"><span class="nav-number">1.</span> <span class="nav-text">全局安装脚手架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目初始化"><span class="nav-number">2.</span> <span class="nav-text">项目初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装项目依赖"><span class="nav-number">3.</span> <span class="nav-text">安装项目依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动项目"><span class="nav-number">4.</span> <span class="nav-text">启动项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目打包"><span class="nav-number">5.</span> <span class="nav-text">项目打包</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局安装脚手架"><span class="nav-number">1.</span> <span class="nav-text">全局安装脚手架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目初始化"><span class="nav-number">2.</span> <span class="nav-text">项目初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装项目依赖"><span class="nav-number">3.</span> <span class="nav-text">安装项目依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动项目"><span class="nav-number">4.</span> <span class="nav-text">启动项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目初始化-1"><span class="nav-number">5.</span> <span class="nav-text">项目初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装项目依赖-1"><span class="nav-number">6.</span> <span class="nav-text">安装项目依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动项目-1"><span class="nav-number">7.</span> <span class="nav-text">启动项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目配置"><span class="nav-number">8.</span> <span class="nav-text">项目配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目打包"><span class="nav-number">9.</span> <span class="nav-text">项目打包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地运行打包项目"><span class="nav-number">10.</span> <span class="nav-text">本地运行打包项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-源切换"><span class="nav-number">11.</span> <span class="nav-text">npm 源切换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">12.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
