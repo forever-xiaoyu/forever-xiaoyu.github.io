@@ -445,6 +445,11 @@ beforeRouteEnter (to, from, next) {
 
 - 该方法需要在调用 new Vue() 之前被调用。
 
+## 查看 Vue 版本
+```
+npm list vue
+```
+
 ## 参考文献
 1. [vue-router 官方文档][2]
 2. [axios][1]
