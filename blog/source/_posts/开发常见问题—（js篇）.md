@@ -262,8 +262,20 @@ function iPhoneXMethod () {
 }
 ```
 
+### getBoundingClientRect
+实际开发中发现，在部分浏览器中如微信、Chrome浏览器等环境中，使用 getBoundingClientRect 获取容器顶部距离，会有一些问题
+容器实际上已经使用 fix 定位置顶，但实际上获取到的 getBoundingClientRect().y 的值为 0.25 或者其它值
+所以对于判断置顶问题要给出一个合理的误差范围
+
+### 获取屏幕高度
+在 Chrome、Safari 等浏览器中，由于本身地址栏会有滚动隐藏的问题，所以获取到的屏幕高度也是实时变化的
+所以在这些情况下，不能只获取一次屏幕高度
+
 ### 页面刷新问题
 实际开中发现，iphoneX 等部分机型(iphone7等)在返回页面的时候请求接口走缓存，无法拿到最新的数据，所以要在请求的时候加上时间戳
+
+### getBoundingClientRect
+实测中，在部分内核下，getBoundingClientRect 返回的对象中并没有 x，y 值，尽量用 top 来替代 y，left 替代 x
 
 ## Vue 篇
 ### 数据更新无法触发视图更新
