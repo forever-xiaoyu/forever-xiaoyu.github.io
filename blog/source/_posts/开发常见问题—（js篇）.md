@@ -212,11 +212,16 @@ for (var index in sortedObjKeys) {
 2. position: fixed
 3. 阻止 touch 事件的默认行为
 
-上面几种方法不会保留滚动的位置，会回到页面顶部，可以在 2 的基础上，记录一下 top 值
+上面几种方法不会保留滚动的位置，会回到页面顶部，可以在 2 的基础上，记录一下 top 值。
 取消遮罩层之后，使用 scrollTo 回到原位置。
 
 ## getBoundingClientRect
 Element.getBoundingClientRect()方法返回元素的大小及其相对于视口的位置。
+
+实际开发中发现，在部分浏览器中如微信、Chrome浏览器等环境中，使用 getBoundingClientRect 获取容器顶部距离，会有一些问题。
+容器实际上已经使用 fix 定位置顶，但实际上获取到的 getBoundingClientRect().y 的值为 0.25 或者其它值。
+所以对于判断置顶问题要给出一个合理的误差范围。
+> 实测中，在部分内核下，getBoundingClientRect 返回的对象中并没有 x，y 值，尽量用 top 来替代 y，left 替代 x。
 
 ## 安卓 usb 调试问题
 安卓使用 usb 调试，出现这样一个报错
@@ -262,20 +267,64 @@ function iPhoneXMethod () {
 }
 ```
 
-### getBoundingClientRect
-实际开发中发现，在部分浏览器中如微信、Chrome浏览器等环境中，使用 getBoundingClientRect 获取容器顶部距离，会有一些问题
-容器实际上已经使用 fix 定位置顶，但实际上获取到的 getBoundingClientRect().y 的值为 0.25 或者其它值
-所以对于判断置顶问题要给出一个合理的误差范围
-
 ### 获取屏幕高度
-在 Chrome、Safari 等浏览器中，由于本身地址栏会有滚动隐藏的问题，所以获取到的屏幕高度也是实时变化的
-所以在这些情况下，不能只获取一次屏幕高度
+在 Chrome、Safari 等浏览器中，由于本身地址栏会有滚动隐藏的问题，获取到的屏幕高度也是实时变化的，所以在这些情况下，不能只获取一次屏幕高度。
 
 ### 页面刷新问题
-实际开中发现，iphoneX 等部分机型(iphone7等)在返回页面的时候请求接口走缓存，无法拿到最新的数据，所以要在请求的时候加上时间戳
+实际开中发现，iphoneX 等部分机型(iphone7等)在返回页面的时候请求接口走缓存，无法拿到最新的数据，所以要在请求的时候加上时间戳。
 
-### getBoundingClientRect
-实测中，在部分内核下，getBoundingClientRect 返回的对象中并没有 x，y 值，尽量用 top 来替代 y，left 替代 x
+### Js 后置加载
+在某些情况下，我们会需要指定 js 后置加载
+```javascript
+function loadScript(url,callback){
+　　var script=document.createElement('script');
+　　　　script.type='text/javascript';
+　　　　script.async='async';
+　　　　script.src=url;
+　　　　document.body.appendChild(script);
+　　　　if(script.readyState){   //IE
+　　　　　　script.onreadystatechange=function(){
+　　　　　　　　if(script.readyState=='complete'||script.readyState=='loaded'){
+　　　　　　　　　　script.onreadystatechange=null;
+　　　　　　　　　　callback();
+　　　　　　　　}
+　　　　　　}
+　　　　}else{    //非IE
+　　　　　　script.onload=function(){callback();}
+　　　　}
+}
+
+Jquery：使用 $.holdReady(true);  $.getScript();   $.holdReady(false)   3个函数实现$.holdReady(true);    //hold住，等待a.js加载，后续代码不能执行
+$.getScript('a.js',function(){
+　　$.holdReady(false);     //释放，a.js加载完成，继续执行后续代码
+});
+
+```
+
+### H5 定位
+H5 定位只有在安全来源的情况才才被允许，比较常用的 https，localhost, 127.0.0.1 都被认为是安全来源
+```
+function getLocation()
+{
+    if (navigator.geolocation)
+    {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    }
+    else
+    {
+        console.log("该浏览器不支持获取地理位置。");
+    }
+}
+
+function showPosition(position)
+{
+    console.log("纬度: " + position.coords.latitude + " 经度: " + position.coords.longitude);    
+}
+
+function showError(error) {
+    console.log(error);
+}
+```
 
 ## Vue 篇
 ### 数据更新无法触发视图更新
@@ -296,7 +345,7 @@ example1.items.splice(newLength)
 ```
 
 ### keep-alive
-keep-alive 第一次赋值 true 的时候无效，第二次返回的时候才有效，目前的解决办法是 keep-alive 默认为 true，不进行修改或者赋值，在导航守卫中判断路由，来刷新数据
+keep-alive 第一次赋值 true 的时候无效，第二次返回的时候才有效，目前的解决办法是 keep-alive 默认为 true，不进行修改或者赋值，在导航守卫中判断路由，来刷新数据。
 
 ### 图片的异常处理
 ```
@@ -304,3 +353,20 @@ keep-alive 第一次赋值 true 的时候无效，第二次返回的时候才有
 
 <img :src="imgUrl? imgUrl : errorImg">
 ```
+
+### IOS 微信浏览器填坑
+IOS 的微信浏览器
+- 默认通过扫码第一次进入页面是没有历史记录的，这就意味着没有底部的导航栏，可以通过 window.history.length === 1 是否是第一次进入页面。
+- 一旦有页面跳转行为（使用 replaceState 替换历史记录除外），就会出现底部导航栏。
+- 当用户进行滑动操作时：
+  - 若用户向下滚动，则会隐藏导航栏
+  - 若用户向上滚动，则会显示导航栏
+- 若进入页面时存在导航栏，导航栏会占用屏幕高度，使用 scrollTop 时需要注意：
+  - 若容器高度等于屏幕高度，在上面的前提下需要再给容器高度加上导航栏的高度
+  - 如需要进行特殊处理，可以通过 scroll 事件对导航栏进行监听
+- 若页面不存在导航栏，如需进行特殊处理，可以通过 resize 事件对导航栏进行监听。
+
+### IOS input
+由于 IOS 的安全机制，用户通过非交互触发的 focus 事件无法生效；而在 webview 中，可以通过对 webview 的配置来实现自动聚焦。
+解决办法如下：
+- 使用 SPA ，共用同一个 input 可以避免出现手动聚焦的情况。

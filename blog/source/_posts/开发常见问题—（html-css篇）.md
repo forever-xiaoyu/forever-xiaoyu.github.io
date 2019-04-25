@@ -141,6 +141,9 @@ input[type=search]::-webkit-search-cancel-button {
 
 所以如果想要覆盖一些全局样式的话，要避免使用 scoped 属性。
 
+## 草料二维码
+在使用草料二维码扩展插件的时候，由于该插件内置 injected stylesheet 样式，可能会影响到页面上的样式，需要注意使用该扩展插件。
+
 <br/>   
 
 参考文献
