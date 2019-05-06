@@ -383,3 +383,13 @@ IOS 的微信浏览器
 3. router-view 增加标识区分
 
 1、2 中通过对路由的操作进而进行具体更新的方法，或者使用 this.$router.go(0) 进行路由刷新
+
+### $nextTick
+$nextTick 并不能保证 DOM 结构完全渲染完毕之后才执行，在使用的时候根据实际情况进行校验，如：
+```
+this.$nextTick(() => {
+  if (this.$refs.dom) {
+    // doSomething
+  }  
+})
+```
