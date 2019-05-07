@@ -283,6 +283,26 @@ function showError(error) {
 }
 ```
 
+## 阻止/允许背景滚动 
+```
+let lockMaskScroll = (function (bodyClass) {
+  let scrollTop
+  return {
+    afterOpen: function () {
+      scrollTop = document.scrollingElement.scrollTop || document.body.scrollTop
+      document.body.classList.add(bodyClass)
+      document.body.style.top = -scrollTop + 'px'
+    },
+    beforeClose: function () {
+      if (document.body.classList.contains(bodyClass)) {
+        document.body.classList.remove(bodyClass)
+        document.scrollingElement.scrollTop = scrollTop
+      }
+    }
+  }
+})('dialog-open')
+```
+
 ## iPhoneX 相关问题
 ### 适配问题
 通常遇到 iPhoneX 会给底部加 34 像素的 bottom，但是在 safrai 和 weixin 环境下，会有一个底部的前进后退导航栏，而这个导航栏本身是适配过的，所以需要对 safari 和 weixin 进行单独的处理
