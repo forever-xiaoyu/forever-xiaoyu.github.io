@@ -284,6 +284,7 @@ npm install --save
 2.使用
 
 ```
+/* 使用 params 传参，参数会挂在请求 url 中，使用 data 传参则不会，由于 url 长度限制较小，尽量使用 data 传参 */
 axios.get('/user', {
     params: {
       ID: 12345
