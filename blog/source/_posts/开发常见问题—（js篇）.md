@@ -346,6 +346,14 @@ function iPhoneXMethod () {
 ### 页面刷新问题
 实际开中发现，iphoneX 等部分机型(iphone7等)在返回页面的时候请求接口走缓存，无法拿到最新的数据，所以要在请求的时候加上时间戳。
 
+### CDN 依赖
+使用外部 cdn 加载 js 时，要做好 cdn 挂掉的备用方案
+```
+<link href="//unpkg.com/XXX.js" rel="preload" as="script">
+<script src="//unpkg.com/XXX.js"></script>
+<script>window.XXX || document.write('<script src="../XXX.js"></script>')</script>
+```
+
 ## Vue 篇
 ### 数据更新无法触发视图更新
 由于 Vue 的限制，不能检测以下变动的数组：
