@@ -149,6 +149,9 @@ input[type=search]::-webkit-search-cancel-button {
 - 浮动元素可以通过清楚浮动元素满足条件，因为 BFC 的高度计算包含浮动元素。
 - 在需求满足的情况下可以使用 relative 相对于自身定位。
 
+## nth-child 与 nth-of-type 
+总结起来 nth-child 直接根据父元素下子元素的排列顺序选择，无视标签类型。而 nth-of-type 是父元素下筛选相同标签的元素根据顺序选择，class 直接无视，而没有一个根据 class 来选择的方法。
+
 <br/>   
 
 参考文献
