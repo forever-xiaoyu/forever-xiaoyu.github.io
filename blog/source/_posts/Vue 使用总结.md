@@ -372,12 +372,12 @@ jsonpRequest: function (a, e) {
 npm install vue-jsonp --save
 ```
 
-  引入
+引入
 ```
 import jsonp from 'vue-jsonp'
 ```
 
-  使用
+使用
 ```
 this.$jsonp('/api', {
   callbackName: 'callback' 
@@ -387,6 +387,33 @@ this.$jsonp('/api', {
 
 })
 ```
+
+4. axios-jsonp
+对于使用 axios 进行数据请求的情况，axios 提供了 adapter 配置，允许自定义处理请求
+```
+adapter: function (config) {
+  // doSomeThing
+},
+```
+
+安装 axios-jsonp
+```
+npm install axios-jsonp
+```
+使用
+```
+let axios = require('axios');
+let jsonpAdapter = require('axios-jsonp');
+ 
+axios({
+    url: '/jsonp',
+    adapter: jsonpAdapter,
+    callbackParamName: 'c' // optional, 'callback' by default
+}).then((res) => {
+ 
+});
+```
+
 
 ## 组件缓存 keep-alive
 keep-alive 是 Vue 提供的抽象组件（或称功能型组件），并不会被渲染在 DOM 结构中。它的作用是在内存中缓存组件（不让组件销毁），等到下次再渲染的时候，还会保持其中的所有状态，并且会触发 activated 钩子函数。因为缓存的需要通常出现在页面切换时，所以常与 router-view 一起出现。
