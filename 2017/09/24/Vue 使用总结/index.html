@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="于策的个人博客">
 <meta property="og:description" content="class 与 style 绑定变量12345678910111213141516171819202122232425262728293031323334353637&amp;lt;template&amp;gt;  &amp;lt;!--绑定 class--&amp;gt;  &amp;lt;div :class=&amp;quot;&amp;#123;&amp;apos;className&amp;apos; : isShow&amp;#125;&amp;quot;&amp;gt;  &amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-08T00:59:27.510Z">
+<meta property="og:updated_time" content="2019-05-30T10:42:39.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue 使用总结">
 <meta name="twitter:description" content="class 与 style 绑定变量12345678910111213141516171819202122232425262728293031323334353637&amp;lt;template&amp;gt;  &amp;lt;!--绑定 class--&amp;gt;  &amp;lt;div :class=&amp;quot;&amp;#123;&amp;apos;className&amp;apos; : isShow&amp;#125;&amp;quot;&amp;gt;  &amp;">
@@ -99,7 +99,7 @@
     root: '/',
     scheme: 'Pisces',
     version: '5.1.4',
-    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"slideUpBigIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -175,7 +175,7 @@
     
   
 
-  <div class="container sidebar-position-right page-post-detail">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -372,8 +372,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-05-08T08:59:27+08:00">
-                2019-05-08
+              <time title="更新于" itemprop="dateModified" datetime="2019-05-30T18:42:39+08:00">
+                2019-05-30
               </time>
             
           </span>
@@ -486,12 +486,16 @@
 </li>
 <li><p>使用 vue-jsonp<br>安装</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-jsonp --save</span><br></pre></td></tr></table></figure>
-<p>引入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import jsonp from &apos;vue-jsonp&apos;</span><br></pre></td></tr></table></figure>
-<p>使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">this.$jsonp(&apos;/api&apos;, &#123;</span><br><span class="line">  callbackName: &apos;callback&apos; </span><br><span class="line">&#125;).then(res =&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;).catch(err =&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<p>引入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import jsonp from &apos;vue-jsonp&apos;</span><br></pre></td></tr></table></figure></p>
+<p>使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">this.$jsonp(&apos;/api&apos;, &#123;</span><br><span class="line">  callbackName: &apos;callback&apos; </span><br><span class="line">&#125;).then(res =&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;).catch(err =&gt; &#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li>axios-jsonp<br>对于使用 axios 进行数据请求的情况，axios 提供了 adapter 配置，允许自定义处理请求<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">adapter: function (config) &#123;</span><br><span class="line">  // doSomeThing</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>安装 axios-jsonp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install axios-jsonp</span><br></pre></td></tr></table></figure></p>
+<p>使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let axios = require(&apos;axios&apos;);</span><br><span class="line">let jsonpAdapter = require(&apos;axios-jsonp&apos;);</span><br><span class="line"> </span><br><span class="line">axios(&#123;</span><br><span class="line">    url: &apos;/jsonp&apos;,</span><br><span class="line">    adapter: jsonpAdapter,</span><br><span class="line">    callbackParamName: &apos;c&apos; // optional, &apos;callback&apos; by default</span><br><span class="line">&#125;).then((res) =&gt; &#123;</span><br><span class="line"> </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <h2 id="组件缓存-keep-alive"><a href="#组件缓存-keep-alive" class="headerlink" title="组件缓存 keep-alive"></a>组件缓存 keep-alive</h2><p>keep-alive 是 Vue 提供的抽象组件（或称功能型组件），并不会被渲染在 DOM 结构中。它的作用是在内存中缓存组件（不让组件销毁），等到下次再渲染的时候，还会保持其中的所有状态，并且会触发 activated 钩子函数。因为缓存的需要通常出现在页面切换时，所以常与 router-view 一起出现。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive :include=&quot;[&apos;ListView&apos;, &apos;DetailView&apos;]&quot;&gt;</span><br><span class="line">	&lt;router-view /&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br></pre></td></tr></table></figure></p>
 <p>其中，include 属性表示要缓存的组件名（name属性），接收类型有字符串，字符数组以及正则表达式（RegExp）。</p>
 <p>除了使用 include 指定缓存的组件之外，有时我们希望从某一个组件跳转到当前组件进行缓存，其它组件跳转当前组件不使用缓存，可以使用导航守卫进行控制。</p>
