@@ -372,12 +372,12 @@ jsonpRequest: function (a, e) {
 npm install vue-jsonp --save
 ```
 
-引入
+  引入
 ```
 import jsonp from 'vue-jsonp'
 ```
 
-使用
+  使用
 ```
 this.$jsonp('/api', {
   callbackName: 'callback' 
@@ -396,11 +396,11 @@ adapter: function (config) {
 },
 ```
 
-安装 axios-jsonp
+  安装 axios-jsonp
 ```
 npm install axios-jsonp
 ```
-使用
+  使用
 ```
 let axios = require('axios');
 let jsonpAdapter = require('axios-jsonp');
