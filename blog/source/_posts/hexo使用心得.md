@@ -119,6 +119,12 @@ pace: true
 scrollpercent: true
 ```
 
+### 文章缩略图（NexT）
+通常可以在文章折叠上方插入图片，或者使用文章模板定义图片
+```
+photos: imgUrl
+```
+
 ## 注意事项
 * 使用 git clone 修改 hexo 主题时，如果是在 hexo 项目中，删掉主题中的 .git 文件
 * 使用 hexo new page 生成单页面

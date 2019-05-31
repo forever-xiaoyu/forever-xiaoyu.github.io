@@ -3,8 +3,9 @@ title: 初识 React
 date: 2017-12-25 21:08:24
 categories: Framework
 tags: React
-img: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539667240534&di=5c9b227b5832c0baf7974fcf3287cf83&imgtype=0&src=http%3A%2F%2Fjbcdn2.b0.upaiyun.com%2F2016%2F05%2F2209cdfc47c4e588fbc46d2efa88a9c2.png
 ---
+
+<img src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539667240534&di=5c9b227b5832c0baf7974fcf3287cf83&imgtype=0&src=http%3A%2F%2Fjbcdn2.b0.upaiyun.com%2F2016%2F05%2F2209cdfc47c4e588fbc46d2efa88a9c2.png' width='100' height='100' style='border-radius: 20%;'/>
 
     React 作为时下最流行的框架之一，不可否认其在前端框架当中的地位，很多的项目也都在使用 React；作为一名 Front-end engineer，学习 React 无论是对于项目开发还是自身的水平都会有一定程度的帮助。
 最近开始简单的学习了 [React][1]，所以在此简单的总结一下。
