@@ -129,6 +129,12 @@ photos: imgUrl
 * 使用 git clone 修改 hexo 主题时，如果是在 hexo 项目中，删掉主题中的 .git 文件
 * 使用 hexo new page 生成单页面
 * 修改语言时，依据当前主题的 languages 中的语言进行修改，每个主题都会有所差异
+* 使用 table 表格时，回出现产生多余空白的情况，这时可以将标签修改为紧凑模式，或者使用如下格式编写
+```
+{% raw %}
+html tags & content
+{% endraw %}
+```
 <br/><br/>
 
 
