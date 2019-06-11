@@ -77,6 +77,20 @@ word-break: break-all;
   scrollbar-shadow-color: #C0C0C0;
   scrollbar-dark-shadow-color: #C0C0C0;
 ```
+
+eg:
+```css
+::-webkit-scrollbar {
+  width:10px;
+  height:10px;
+  background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb {
+  border-radius:10px;
+  background-color: #DDDDDD;
+}
+```
+
 Chrome 几乎可以完整修改 scrollbar 样式，但是 IE 比较有局限性，只能修改颜色，如果想要完美兼容，那么只能自己模拟实现一个 scrollbar 了。
 
 ## IE 绝对定位被 img 覆盖问题 ##
@@ -151,6 +165,11 @@ input[type=search]::-webkit-search-cancel-button {
 
 ## nth-child 与 nth-of-type 
 总结起来 nth-child 直接根据父元素下子元素的排列顺序选择，无视标签类型。而 nth-of-type 是父元素下筛选相同标签的元素根据顺序选择，class 直接无视，而没有一个根据 class 来选择的方法。
+
+## flex 防止被挤压
+```css
+flex-shrink: 0;
+```
 
 <br/>   
 

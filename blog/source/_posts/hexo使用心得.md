@@ -119,7 +119,7 @@ pace: true
 scrollpercent: true
 ```
 
-### 文章缩略图（NexT）
+#### 文章缩略图（NexT）
 通常可以在文章折叠上方插入图片，或者使用文章模板定义图片
 ```
 photos: imgUrl
