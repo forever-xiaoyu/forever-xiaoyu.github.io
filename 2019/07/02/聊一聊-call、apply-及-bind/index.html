@@ -78,18 +78,18 @@
 
 
 
-<meta name="description" content="call 和 apply 这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内 this 对象的值。  applyapply() 方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组，其中第二个参数可以是 Array 的实例，也可以是 arguments 的对象。 1234567891011121314function sum(num1, num2) &amp;#123;	r">
+<meta name="description" content="call 和 apply 这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内 this 对象的值。">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="聊一聊 call、apply 及 bind">
 <meta property="og:url" content="https://www.yc609.cn/2019/07/02/聊一聊-call、apply-及-bind/index.html">
 <meta property="og:site_name" content="于策的个人博客">
-<meta property="og:description" content="call 和 apply 这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内 this 对象的值。  applyapply() 方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组，其中第二个参数可以是 Array 的实例，也可以是 arguments 的对象。 1234567891011121314function sum(num1, num2) &amp;#123;	r">
+<meta property="og:description" content="call 和 apply 这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内 this 对象的值。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-03T13:26:40.081Z">
+<meta property="og:updated_time" content="2019-07-04T08:41:35.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="聊一聊 call、apply 及 bind">
-<meta name="twitter:description" content="call 和 apply 这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内 this 对象的值。  applyapply() 方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组，其中第二个参数可以是 Array 的实例，也可以是 arguments 的对象。 1234567891011121314function sum(num1, num2) &amp;#123;	r">
+<meta name="twitter:description" content="call 和 apply 这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内 this 对象的值。">
 
 
 
@@ -372,8 +372,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-03T21:26:40+08:00">
-                2019-07-03
+              <time title="更新于" itemprop="dateModified" datetime="2019-07-04T16:41:35+08:00">
+                2019-07-04
               </time>
             
           </span>
@@ -441,6 +441,7 @@
         <blockquote>
 <p>call 和 apply 这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内 this 对象的值。</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h2><p>apply() 方法接收两个参数：一个是在其中运行函数的作用域，另一个是参数数组，其中第二个参数可以是 Array 的实例，也可以是 arguments 的对象。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> num1 + num2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">applynum1</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">applynum2</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, [num1, num2])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">applynum1(<span class="number">10</span>, <span class="number">10</span>) <span class="comment">// 20</span></span><br><span class="line">applynum2(<span class="number">10</span>, <span class="number">10</span>) <span class="comment">// 20</span></span><br></pre></td></tr></table></figure>
 <p>上面例子中，applynum1() 和 applynum2() 执行时传入了 this 作为 this 值，因为是全局作用域中调用的，所以 this 指向 window 对象。</p>

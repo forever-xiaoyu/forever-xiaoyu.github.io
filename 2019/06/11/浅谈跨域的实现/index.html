@@ -78,18 +78,18 @@
 
 
 
-<meta name="description" content="同源策略同源策略是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSRF等攻击。所谓同源是指”协议+域名+端口”三者相同，即便两个不同的域名指向同一个ip地址，也非同源。 JSONPJSONP（json with padding 填充式json），利用了使用src引用静态资源时不受跨域限制的机制。主要在客户端搞一个回调做一些数据接收与操作的处理，并把这个">
+<meta name="description" content="同源策略同源策略是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSRF等攻击。所谓同源是指”协议+域名+端口”三者相同，即便两个不同的域名指向同一个ip地址，也非同源。">
 <meta name="keywords" content="Cross-domain">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈跨域的实现">
 <meta property="og:url" content="https://www.yc609.cn/2019/06/11/浅谈跨域的实现/index.html">
 <meta property="og:site_name" content="于策的个人博客">
-<meta property="og:description" content="同源策略同源策略是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSRF等攻击。所谓同源是指”协议+域名+端口”三者相同，即便两个不同的域名指向同一个ip地址，也非同源。 JSONPJSONP（json with padding 填充式json），利用了使用src引用静态资源时不受跨域限制的机制。主要在客户端搞一个回调做一些数据接收与操作的处理，并把这个">
+<meta property="og:description" content="同源策略同源策略是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSRF等攻击。所谓同源是指”协议+域名+端口”三者相同，即便两个不同的域名指向同一个ip地址，也非同源。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-02T01:52:32.486Z">
+<meta property="og:updated_time" content="2019-07-03T13:33:49.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈跨域的实现">
-<meta name="twitter:description" content="同源策略同源策略是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSRF等攻击。所谓同源是指”协议+域名+端口”三者相同，即便两个不同的域名指向同一个ip地址，也非同源。 JSONPJSONP（json with padding 填充式json），利用了使用src引用静态资源时不受跨域限制的机制。主要在客户端搞一个回调做一些数据接收与操作的处理，并把这个">
+<meta name="twitter:description" content="同源策略同源策略是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSRF等攻击。所谓同源是指”协议+域名+端口”三者相同，即便两个不同的域名指向同一个ip地址，也非同源。">
 
 
 
@@ -372,8 +372,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-02T09:52:32+08:00">
-                2019-07-02
+              <time title="更新于" itemprop="dateModified" datetime="2019-07-03T21:33:49+08:00">
+                2019-07-03
               </time>
             
           </span>
@@ -439,6 +439,7 @@
 
       
         <h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><p>同源策略是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSRF等攻击。所谓同源是指”协议+域名+端口”三者相同，即便两个不同的域名指向同一个ip地址，也非同源。</p>
+<a id="more"></a>
 <h2 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h2><p>JSONP（json with padding 填充式json），利用了使用src引用静态资源时不受跨域限制的机制。主要在客户端搞一个回调做一些数据接收与操作的处理，并把这个回调函数名告知服务端，而服务端需要做的是按照javascript的语法把数据放到约定好的回调函数之中即可。jQuery很早之前就已经把JSONP语法糖化了，使用起来会更加方便。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">&#123; url, params, callback &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line">    <span class="built_in">window</span>[callback] = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">      resolve(data)</span><br><span class="line">      <span class="built_in">document</span>.body.removeChild(script)</span><br><span class="line">    &#125;</span><br><span class="line">    params = &#123; ...params, callback &#125; <span class="comment">// wd=b&amp;callback=show</span></span><br><span class="line">    <span class="keyword">let</span> arrs = []</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> params) &#123;</span><br><span class="line">      arrs.push(<span class="string">`<span class="subst">$&#123;key&#125;</span>=<span class="subst">$&#123;params[key]&#125;</span>`</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    script.src = <span class="string">`<span class="subst">$&#123;url&#125;</span>?<span class="subst">$&#123;arrs.join(<span class="string">'&amp;'</span>)&#125;</span>`</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(script)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">jsonp(&#123;</span><br><span class="line">  url: <span class="string">'url'</span>,</span><br><span class="line">  params: &#123; <span class="attr">key</span>: <span class="string">'value'</span> &#125;,</span><br><span class="line">  callback: <span class="string">'jsonpCallback'</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// doSomething</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h2 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h2><p>CORS（Cross-origin resource sharing 跨域资源共享），依附于AJAX，通过添加HTTP Hearder部分字段请求与获取有权限访问的资源。CORS对开发者是透明的，因为浏览器会自动根据请求的情况（简单和复杂）做出不同的处理。CORS的关键是服务端的配置支持。</p>
