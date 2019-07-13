@@ -58,23 +58,53 @@ bind() 方法会创建一个函数的实例，其 this 值会被绑定到传给 
 
 ```javascript
 Function.prototype.bind = function (_this) {
+  // 若调用者非函数，return 或抛出异常
   if (typeof this !== 'function') {
   	return
   }
 
+  // 保存原始调用函数
   let self = this
+
+  // 保存通过 bind 传入的参数
   let args = Array.prototype.slice.call(arguments, 1)
 
+  // 定义 bind 返回的函数
   let fbind = function () {
  
+    // 若是直接使用 fbind 函数，则可以直接绑定 _this 即可
+    // 如果通过 new 创建 fbind 函数，此时需要将上下文绑定到新生成的实例上，即 this
+    // 若是 new 创建的实例，那么此时上下文则是指向 fbind 函数
+    // 因此可以通过 this instanceof fbind 来判断是 new 创建的实例还是直接调用
+
+    // 除此之外，调用 find 函数时传入新的参数，需要将 bind 传入的参数与 fbind 传入的参数进行合并
     return self.apply(
-      this instanceof fbound ? this : _this,
+      this instanceof fbind ? this : _this,
       args.concat(Array.prototype.slice.call(arguments))
       )
   }
 
+
+  // 返回一个新的 fbind 函数
   return fbind
 }
 ```
 
-至此，一个 bind 函数就完成了。
+至此，一个 bind 函数就完成了。 再看下一个例子：
+
+```javascript
+let obj = {
+    msg: 'msg',
+    func: function () {
+        console.log(this.msg)
+    }
+}
+
+let func1 = obj.func
+let func2 = obj.func.bind(obj)
+
+func1() // undefined
+func2() // msg
+```
+
+这里注意到 func1() 调用的时候输出了 undefined，是因为 func 是通过函数名传递并执行的，此时方法内部的 this 会丢失（同理，通过传入回调函数再调用也会出现同样的问题），指向 window（严格模式下为 undefined）。所以 func2 在调用时为其绑定了上下文至 obj，此时无论如何调用，函数内部的 this 都永远指向 obj。
