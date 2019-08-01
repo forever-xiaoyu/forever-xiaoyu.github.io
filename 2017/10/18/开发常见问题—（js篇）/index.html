@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="于策的个人博客">
 <meta property="og:description" content="在日常开发中，时常会碰到各种各样的坑，本文总结了开发过程中碰到的常见问题。  配置 SwiperSwiper 是一个使用率很高的插件，这里说一些比较陌生的属性与方法：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-31T13:02:02.586Z">
+<meta property="og:updated_time" content="2019-08-01T00:36:48.279Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发常见问题（js篇）">
 <meta name="twitter:description" content="在日常开发中，时常会碰到各种各样的坑，本文总结了开发过程中碰到的常见问题。  配置 SwiperSwiper 是一个使用率很高的插件，这里说一些比较陌生的属性与方法：">
@@ -372,8 +372,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-07-31T21:02:02+08:00">
-                2019-07-31
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-01T08:36:48+08:00">
+                2019-08-01
               </time>
             
           </span>
@@ -549,7 +549,7 @@
 <p>1、2 中通过对路由的操作进而进行具体更新的方法，或者使用 this.$router.go(0) 进行路由刷新</p>
 <h3 id="nextTick"><a href="#nextTick" class="headerlink" title="$nextTick"></a>$nextTick</h3><p>$nextTick 并不能保证 DOM 结构完全渲染完毕之后才执行，在使用的时候根据实际情况进行校验，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.$nextTick(() =&gt; &#123;</span><br><span class="line">  if (this.$refs.dom) &#123;</span><br><span class="line">    // doSomething</span><br><span class="line">  &#125;  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <h3 id="computed-相关问题"><a href="#computed-相关问题" class="headerlink" title="computed 相关问题"></a>computed 相关问题</h3><p>父组件传给子组件数据之前，子组件数据为空，若使用 computed 的方法，若数据为对象属性，则不能监听变化，无法更新视图，可以重新 setter 方法，或者使用 watch 监听解决。</p>
-<h3 id="多页面监听-VueX-state-中的变量"><a href="#多页面监听-VueX-state-中的变量" class="headerlink" title="多页面监听 VueX state 中的变量"></a>多页面监听 VueX state 中的变量</h3><p>有时会出现多个组件 watch 同一个 VueX 中 state 的值，这时会同时触发多个组件中对应的 watch 函数，可以通过判断当前路由来解决，而对于使用组件缓存视图和非缓存视图而言，可以在 keep-alive 中的生命周期中增加一个判断标识来解决，如果是新视图，关闭缓存视图中的 watch 函数相关事件</p>
+<h3 id="多页面监听-VueX-state-中的变量"><a href="#多页面监听-VueX-state-中的变量" class="headerlink" title="多页面监听 VueX state 中的变量"></a>多页面监听 VueX state 中的变量</h3><p>有时会出现多个组件 watch 同一个 VueX 中 state 的值，这时会同时触发多个组件中对应的 watch 函数，可以通过判断当前路由来解决，而对于使用组件缓存视图和非缓存视图而言，可以在 keep-alive 的生命周期中增加一个判断标识来解决，如果是新视图，关闭缓存视图中的 watch 函数相关事件。</p>
 
       
     </div>
