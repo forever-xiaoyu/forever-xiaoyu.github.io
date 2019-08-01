@@ -194,4 +194,228 @@ swiperChange (e) {
 }
 ```
 
+### 9. create poster by wxCanvas
+```html
+<canvas canvas-id="shareCanvas" class='canvas-container' style="width:{{posterWidth}}px; height:{{posterHeight}}px;"></canvas>
+```
+
+```javascript
+data: {
+  posterWidth: 600,
+  posterHeight: 900,
+  hidePosterPopUp: true,
+  isSavePoster: false
+},
+
+onLoad: function (options) {
+  this.getSysInfo()
+},
+
+createPoster: function (e) {
+  wx.showLoading({
+    title: 'loading',
+  })
+
+  this.setData({
+    hidePosterPopUp: !this.data.hidePosterPopUp,
+  })
+
+  let params = {
+    // some config
+  }
+
+  this.makerPoster(params)
+},
+
+makerPoster ({
+  content,
+  img  
+}) {
+  const ctx = wx.createCanvasContext('myCanvas')
+
+  // fill background
+  ctx.setFillStyle('#ffffff')
+  ctx.fillRect(0, 0, this.data.posterWidth, this.data.posterHeight)
+
+  // fill text
+  let clamp = ''
+  var [contentLeng, contentArray, contentRows] = this.textByteLength(content, 40)
+  contentArray.length > 3 && (clamp = '...')
+  for (let i = 0; i < contentArray.length; i++) {
+    if (i < 3) {
+      this.drawText({
+        ctx,
+        fillText: contentArray[i] + (i === 2 ? clamp : ''),
+        fontSize: 11,
+        top: this.data.posterHeight * 0.05 + i * 15
+      })
+    }
+  }
+
+  // fill image
+  ctx.save()
+  ctx.beginPath()
+  ctx.arc(
+    this.data.posterWidth * 0.125,
+    this.data.posterHeight * 0.87 + this.data.posterWidth * 0.075,
+    this.data.posterWidth * 0.075,
+    0, 2 * Math.PI
+  )
+  // clip img to a circle
+  ctx.clip()
+  this.drawImage({
+    ctx,
+    imgUrl: img,
+    width: this.data.posterWidth * 0.15,
+    height: this.data.posterWidth * 0.15,
+    left: this.data.posterWidth * 0.05,
+    top: this.data.posterHeight * 0.87,
+  })
+  ctx.restore()
+
+  ctx.stroke()
+  ctx.draw()
+  wx.hideLoading()
+},
+
+drawImage ({
+  ctx,
+  imgUrl,
+  width,
+  height,
+  left = 0,
+  top = 0
+}) {
+  ctx.drawImage(imgUrl, left, top, width, height)
+},
+
+drawText ({ 
+  ctx,
+  fontSize = 14,
+  textAlign = 'center',
+  fillStyle = '#000000',
+  fontWeight = 'normal',
+  fillText,
+  width = this.data.posterWidth / 2,
+  top = this.data.posterHeight / 2
+}) {
+  ctx.font = `normal ${fontWeight} ${fontSize}px MicrosoftYaHei`
+  // ctx.setFontSize(fontSize)
+  ctx.setTextAlign(textAlign)
+  ctx.setFillStyle(fillStyle)
+  ctx.fillText(fillText, width, top)
+},
+
+textByteLength(text, num) {
+  let strLength = 0; // text byte length
+  let rows = 1;
+  let str = 0;
+  let arr = [];
+  for (let j = 0; j < text.length; j++) {
+    if (text.charCodeAt(j) > 255) {
+      strLength += 2;
+      if (strLength > rows * num) {
+        strLength++;
+        arr.push(text.slice(str, j));
+        str = j;
+        rows++;
+      }
+    } else {
+      strLength++;
+      if (strLength > rows * num) {
+        arr.push(text.slice(str, j));
+        str = j;
+        rows++;
+      }
+    }
+  }
+  arr.push(text.slice(str, text.length));
+  return [strLength, arr, rows]   //  [处理文字的总字节长度，每行显示内容的数组，行数]
+},
+
+getSetting: function() {
+  var This = this;
+  wx.getSetting({
+    success(res) {
+      if (!res.authSetting['scope.writePhotosAlbum']) {
+        wx.authorize({
+          scope: 'scope.writePhotosAlbum',
+          success() {
+            This.savePoster();
+          },
+          fail() {
+            wx.hideLoading()
+            wx.showToast({
+              title: 'save failed, please try again later',
+              icon: 'none',
+              duration: 1000
+            })
+          }
+        })
+      } else {
+        This.savePoster();
+      }
+    }
+  })
+},
+
+savePoster: function () {
+  let This = this
+  wx.canvasToTempFilePath({
+    canvasId: 'shareCanvas',
+    success: function (res) {
+      wx.saveImageToPhotosAlbum({
+        filePath: res.tempFilePath,
+        success: function () {
+          This.setData({
+            isSavePoster: true
+          })
+        },
+        fail: function (err) {
+          wx.showToast({
+            title: 'save failed, please try again later',
+            icon: 'none',
+            duration: 1000
+          })
+        },
+        complete: function () {
+          wx.hideLoading()
+        }
+      })
+    },
+    fail: function (err) {
+      wx.hideLoading()
+      wx.showToast({
+        title: 'save failed, please try again later',
+        icon: 'none',
+        duration: 1000
+      })
+    }
+  }, this)
+},
+
+closePosterPopUp: function () {
+  wx.hideLoading()
+  this.setData({
+    hidePosterPopUp: !this.data.hidePosterPopUp,
+    isSavePoster: false
+  })
+},
+
+getSysInfo: function () {
+  wx.getSystemInfo({
+    success: (res) => {
+      console.log(res)
+      let posterWidth = Math.round(res.screenWidth * 0.8)
+      let posterHeight = Math.round(posterWidth * 1080 / 900)
+
+      this.setData({
+        posterWidth,
+        posterHeight
+      })
+    },
+  })
+},
+```
+
 ![universe](https://ss1.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3546744997,114540464&fm=11&gp=0.jpg)
