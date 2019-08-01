@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.yc609.cn/2018/09/05/mini-program/</loc>
+    <lastmod>2019-08-01T09:24:33.344Z</lastmod>
+  </url>  <url>
     <loc>https://www.yc609.cn/2017/10/16/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E2%80%94%EF%BC%88html-css%E7%AF%87%EF%BC%89/</loc>
     <lastmod>2019-08-01T00:38:57.766Z</lastmod>
   </url>  <url>
@@ -93,8 +96,5 @@
   </url>  <url>
     <loc>https://www.yc609.cn/2018/07/18/FE-interview-questions/</loc>
     <lastmod>2018-11-30T07:50:27.860Z</lastmod>
-  </url>  <url>
-    <loc>https://www.yc609.cn/2018/09/05/mini-program/</loc>
-    <lastmod>2018-11-30T07:12:39.927Z</lastmod>
   </url>
 </urlset>
