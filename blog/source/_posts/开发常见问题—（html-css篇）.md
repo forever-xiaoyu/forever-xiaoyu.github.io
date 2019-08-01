@@ -171,6 +171,9 @@ input[type=search]::-webkit-search-cancel-button {
 flex-shrink: 0;
 ```
 
+## 定位遮挡
+使用嵌套定位，如 fixed 定位套 fixed 定位的结构，在部分真机中会出现内层盒模型被外层遮挡的现象，尽量将内部盒模型抽离出来，或者改为 absolute 定位。
+
 <br/>   
 
 参考文献
