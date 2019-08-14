@@ -93,3 +93,10 @@ ignorecase = false
 ```
 git config --system --unset credential.helper 
 ```
+
+## 合并部分文件
+比如 dev 分支想要合并 xiaoyu 分支上的 /src/assets 文件夹
+切换到 dev 分支，并执行以下命令
+```
+git checkout xiaoyu /src/assets
+```
