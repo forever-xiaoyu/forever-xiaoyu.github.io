@@ -21,6 +21,11 @@ categories: Others
 2. git push origin : refs/for/master（如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支，等同于 git push origin --delete master）
 3. git push origin（如果当前分支与远程分支存在追踪关系，则本地分支和远程分支都可以省略，将当前分支推送到origin主机的对应分支）
 4. git push（如果当前分支只有一个远程分支，那么主机名都可以省略，形如git push，可以使用git branch -r 查看远程的分支名）
+
+### 强制更新远程分支
+```bash
+git push -f -u origin branch
+```
  
 ## Git 代码冲突解决方案
 
