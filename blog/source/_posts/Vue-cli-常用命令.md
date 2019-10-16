@@ -88,6 +88,9 @@ serve -s dist
 npm config set registry http://registry.npmjs.org 
 ```
 
+## 关于项目构建
+使用项目构建有两种模式，一种development,一种production模式，使用开发模式构建时，不会对项目进行压缩等处理，会导致包体积过大
+
 ## 参考
 [vue-cli 官方文档][1]
 
