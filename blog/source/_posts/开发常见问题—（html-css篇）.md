@@ -69,13 +69,20 @@ word-break: break-all;
 
 /* IE */
   scrollbar-base-color: #C0C0C0;
-  scrollbar-base-color: #C0C0C0;
   scrollbar-3dlight-color: #C0C0C0;
   scrollbar-highlight-color: #C0C0C0;
   scrollbar-track-color: #EBEBEB;
   scrollbar-arrow-color: black;
   scrollbar-shadow-color: #C0C0C0;
   scrollbar-dark-shadow-color: #C0C0C0;
+  -ms-scrollbar-track-color: transparent;
+  -ms-overflow-style: none;
+
+/* firefox */
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+  scrollbar-track-color: transparent;
+  overflow: -moz-scrollbars-none;
 ```
 
 eg:

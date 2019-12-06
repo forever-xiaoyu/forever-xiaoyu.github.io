@@ -123,5 +123,5 @@ deploy:
   type: git
   repo: 
     github: https://github.com/forever-xiaoyu/forever-xiaoyu.github.io.git,master
-    # coding: https://git.coding.net/forever-xiaoyu/forever-xiaoyu.coding.me.git,master
+    coding: https://git.coding.net/forever-xiaoyu/forever-xiaoyu.coding.me.git,master
   # branch: master
