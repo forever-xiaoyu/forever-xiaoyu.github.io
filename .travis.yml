@@ -1,0 +1,17 @@
+language: node_js
+node_js: 
+  - "10.15.1"
+
+install:
+  - npm install
+  - npm install hexo -g
+  - npm install hexo-deployer-git
+
+script:
+  - hexo c
+  - hexo g
+  - hexo d
+
+branches:
+  only:
+    - hexo
