@@ -473,6 +473,15 @@ beforeRouteEnter (to, from, next) {
 
 - 该方法需要在调用 new Vue() 之前被调用。
 
+## 开启 Vue 调试
+对于 vue-cli3，如下方式开启源码调试
+
+```js
+configureWebpack: config => {
+    config.devtool = 'source-map'
+}
+```
+
 ## 查看 Vue 版本
 ```
 npm list vue
