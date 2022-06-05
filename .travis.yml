@@ -16,8 +16,6 @@ install:
 
 script:
   - hexo clean
-
-after_success:
   - rm -rf .deploy_git
   - hexo generate
 
