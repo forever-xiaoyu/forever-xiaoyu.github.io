@@ -18,4 +18,4 @@ script:
   - hexo clean
 
 after_success:
-  - hexo deploy
+  - hexo generate
