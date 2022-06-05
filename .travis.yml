@@ -20,11 +20,11 @@ script:
   - hexo generate
 
 deploy:
-  provider: pages
+  provider: pages # 重要，指定这是一份github pages的部署配置
   skip-cleanup: true
-  github-token: $GH_TOKEN
-  keep-history: true
-  target-branch: master
+  github-token: $GH_TOKEN # $GITHUB_TOKEN是变量，需要在GitHub上申请、再到配置到Travis
+  local-dir: public # 静态站点文件所在目录
+  keep-history: true # 是否保持target-branch分支的提交记录
+  target-branch: master # 发布分支
   on:
-    branch: hexo2.0
-  local-dir: public
+    branch: hexo2.0 # 源码分支
