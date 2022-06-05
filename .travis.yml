@@ -1,16 +1,20 @@
 language: node_js
 node_js: 
-  - "10.15.1"
-
-install:
-  - npm install
-  - npm install -g hexo-cli
-  - npm install hexo-deployer-git
-
-script:
-  - hexo clean
-  - hexo deploy
+  - "12.18.1"
 
 branches:
   only:
     - hexo2.0
+
+# Start: Build Lifecycle
+before_install: # 配置环境 安装 hexo 和 pandoc
+  - npm install -g hexo-cli
+
+install:
+  - npm install
+
+script:
+  - hexo clean
+
+after_success:
+  - hexo deploy
