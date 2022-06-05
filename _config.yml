@@ -1,11 +1,11 @@
-title: Hexo
+title: 晓策随笔记
 subtitle: ''
 description: ''
-keywords: null
-author: John Doe
+keywords: '晓策,随笔,随笔记,博客,个人博客,Blog,blog'
+author: 晓策
 language: zh-CN
 timezone: ''
-url: http://example.com
+url: https://yc609.cn
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:

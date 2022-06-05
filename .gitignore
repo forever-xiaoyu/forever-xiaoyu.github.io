@@ -8,7 +8,8 @@ yarn-debug.log*
 yarn-error.log*
 yarn.lock
 
-node_modules/
+# 修改模板 ejs 的话，不能忽略这个文件夹，源码都在这里
+# node_modules/
 
 dist/
 
