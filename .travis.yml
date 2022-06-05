@@ -9,6 +9,7 @@ branches:
 # Start: Build Lifecycle
 before_install: # 配置环境 安装 hexo 和 pandoc
   - npm install -g hexo-cli
+  - npm install --save bulma-stylus@0.8.0 hexo-pagination@^2.0.0
 
 install:
   - npm install
