@@ -10762,6 +10762,10 @@ body > .section {
   overflow: visible;
   border-radius: 4px;
 }
+.card#toc {
+  max-height: 45vh;
+  overflow-y: auto;
+}
 .card + .card,
 .card + .column-right-shadow {
   margin-top: 1.5rem;
