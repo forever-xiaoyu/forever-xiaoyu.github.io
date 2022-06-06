@@ -60,6 +60,20 @@ include: null
 exclude: null
 ignore: null
 theme: icarus
+
+# Security
+# hexo-blog-encrypt 
+# https://github.com/D0n9X1n/hexo-blog-encrypt/blob/master/ReadMe.zh.md
+encrypt:
+  abstract: 本篇文章加了禁制, 请解开禁制查看 # 列表摘要
+  message: 请输入密文查看
+  # tags:
+  #   - {name: tagName, password: 密码A}
+  #   - {name: tagName, password: 密码B}
+  theme: wave # default blink shrinkflip up surge wave xray
+  wrong_pass_message: 抱歉, 这个密文不匹配
+  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.
+
 deploy:
   type: git
   repo: 
