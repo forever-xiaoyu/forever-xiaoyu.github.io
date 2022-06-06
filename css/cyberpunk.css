@@ -10751,7 +10751,7 @@ body > .section {
   object-fit: cover;
 }
 .image .fill {
-  object-fit: cover;
+  object-fit: fill;
   width: 100% !important;
   height: 100% !important;
 }
@@ -11533,6 +11533,11 @@ figure.highlight .section {
 }
 #back-to-top.rise-up {
   transform: translateY(0);
+}
+.gallery-item {
+  display: block;
+  text-align: center;
+  margin: 15px auto 0;
 }
 .gallery-item .caption {
   color: #848484;
