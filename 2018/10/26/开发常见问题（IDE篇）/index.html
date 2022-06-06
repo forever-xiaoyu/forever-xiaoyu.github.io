@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>开发常见问题（IDE篇） - 晓策随笔记</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="晓策随笔记"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="晓策随笔记"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="在日常开发中，时常会碰到各种各样的坑，本文总结了开发过程中碰到的常见问题。   WScss 预编译配置以 scss 为例： 1npm install sass -g"><meta property="og:type" content="blog"><meta property="og:title" content="开发常见问题（IDE篇）"><meta property="og:url" content="https://yc609.cn/2018/10/26/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%EF%BC%88IDE%E7%AF%87%EF%BC%89/"><meta property="og:site_name" content="晓策随笔记"><meta property="og:description" content="在日常开发中，时常会碰到各种各样的坑，本文总结了开发过程中碰到的常见问题。   WScss 预编译配置以 scss 为例： 1npm install sass -g"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://yc609.cn/img/og_image.png"><meta property="article:published_time" content="2018-10-26T10:52:29.000Z"><meta property="article:modified_time" content="2022-06-05T12:27:35.309Z"><meta property="article:author" content="晓策"><meta property="article:tag" content="IDE"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://yc609.cn/2018/10/26/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%EF%BC%88IDE%E7%AF%87%EF%BC%89/"},"headline":"开发常见问题（IDE篇）","image":["https://yc609.cn/img/og_image.png"],"datePublished":"2018-10-26T10:52:29.000Z","dateModified":"2022-06-05T12:27:35.309Z","author":{"@type":"Person","name":"晓策"},"publisher":{"@type":"Organization","name":"晓策随笔记","logo":{"@type":"ImageObject","url":"https://yc609.cn/img/logo.svg"}},"description":"在日常开发中，时常会碰到各种各样的坑，本文总结了开发过程中碰到的常见问题。   WScss 预编译配置以 scss 为例： 1npm install sass -g"}</script><link rel="canonical" href="https://yc609.cn/2018/10/26/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%EF%BC%88IDE%E7%AF%87%EF%BC%89/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 6.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2018-10-26T10:52:29.000Z" title="10/26/2018, 6:52:29 PM">2018-10-26</time>发表</span><span class="level-item"><time dateTime="2022-06-05T12:27:35.309Z" title="6/5/2022, 8:27:35 PM">2022-06-05</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Others/">Others</a></span><span class="level-item">12 分钟读完 (大约1777个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">开发常见问题（IDE篇）</h1><div class="content"><pre><code>在日常开发中，时常会碰到各种各样的坑，本文总结了开发过程中碰到的常见问题。
+</code></pre>
+<hr>
+<h2 id="WS"><a href="#WS" class="headerlink" title="WS"></a>WS</h2><h3 id="css-预编译配置"><a href="#css-预编译配置" class="headerlink" title="css 预编译配置"></a>css 预编译配置</h3><p>以 scss 为例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install sass -g</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>在 Setting -&gt; Tools -&gt; File Watchers 进行如下配置：<br></p>
+<ol>
+<li>Program：C:\Users\yuce\AppData\Roaming\npm\sass.cmd</li>
+<li>Arguments：$FileName$:$FileNameWithoutExtension$.css</li>
+<li>Output：$FileNameWithoutExtension$.css:$FileNameWithoutExtension$.css.map</li>
+</ol>
+<p>sourcemap: 在生产环境中，以 scss 为例，我希望看到的未经编译文件的调试信息，而非编译后的，这样会方便开发人员调试，快速定位问题，生成的 source map,  同时需要在 chrome 中开启才能生效。</p>
+<hr>
+<h3 id="nodejs-环境配置"><a href="#nodejs-环境配置" class="headerlink" title="nodejs 环境配置"></a>nodejs 环境配置</h3><p>打开 setting 搜索 node.js<br>配置 Node interpreter<br>勾选 code assistance for node.js</p>
+<div align=center>![ws配置nodejs环境.png](开发常见问题（IDE篇）/nodejs.png)
+
+<p>最后重启 ws 即可。</p>
+<hr>
+<h3 id="WS-优化"><a href="#WS-优化" class="headerlink" title="WS 优化"></a>WS 优化</h3><h4 id="exclude项目中不用的文件"><a href="#exclude项目中不用的文件" class="headerlink" title="exclude项目中不用的文件"></a>exclude项目中不用的文件</h4><p>进入Settings-&gt;Project-&gt;Directories，把用不到的文件目录都Excluded（选中该文件目录，右击鼠标，点Excluded）<br>进入Settings-&gt;Editor-&gt;File Types，在最下面的Ignore files and folders中加入要ignore的文件或文件夹<br>在project窗口的文件夹上，右击鼠标，点击Mark Directory As-&gt;Excluded</p>
+<h4 id="优化代码检查"><a href="#优化代码检查" class="headerlink" title="优化代码检查"></a>优化代码检查</h4><p>进入Settings-&gt;Editor-&gt;Inspections，把用不到的检查都关掉<br>进入Settings-&gt;Editor-&gt;General，把最下面的Error highlighting-&gt;Autoreparse delay(ms) 改成比较大的值（如20000)</p>
+<h4 id="去掉平时用不到的插件"><a href="#去掉平时用不到的插件" class="headerlink" title="去掉平时用不到的插件"></a>去掉平时用不到的插件</h4><p>进入Settings-&gt;Plugins，去掉平常用不到的插件，在一定程度上会提高软件打开时的加载速度。</p>
+<h4 id="优化typescript编译"><a href="#优化typescript编译" class="headerlink" title="优化typescript编译"></a>优化typescript编译</h4><p>进入Settings-&gt;Languages &amp; Frameworks-&gt;Typescript，取消Track changes</p>
+<h4 id="优化文件保存"><a href="#优化文件保存" class="headerlink" title="优化文件保存"></a>优化文件保存</h4><p>可以取消自动保存功能（建议保留该功能！）：</p>
+<p>进入Settings-&gt;Apparence &amp; Behavior-&gt;Synchronization，取消 Synchronize file on frame deactivation 和 Save files automatically 的选择。</p>
+<h4 id="清除缓存"><a href="#清除缓存" class="headerlink" title="清除缓存"></a>清除缓存</h4><p>项目久了之后可以清除缓存：点击File -&gt; Invalidate Caches &#x2F; Restart</p>
+<hr>
+<h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3>
+<p><strong> 搜索类 </strong></p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alt + f7</td>
+<td style="text-align:left">查找实例</td>
+</tr>
+<tr>
+<td>Ctrl + f7</td>
+<td style="text-align:left">在文件中查找实例</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + f7</td>
+<td style="text-align:left">在文件中高亮实例</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + F7</td>
+<td style="text-align:left">显示实例</td>
+</tr>
+</tbody>
+</table>
+<p><strong> 编辑类 </strong></p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + Space</td>
+<td style="text-align:left">基本代码完成 （任何类、 方法或变量名称）</td>
+</tr>
+<tr>
+<td>Alt + Enter</td>
+<td style="text-align:left">展示意图动作和快速修复</td>
+</tr>
+<tr>
+<td>Ctrl + P</td>
+<td style="text-align:left">显示调用方法内参数信息</td>
+</tr>
+<tr>
+<td>Ctrl + Q</td>
+<td style="text-align:left">快速记录查找</td>
+</tr>
+<tr>
+<td>Ctrl + mouse</td>
+<td style="text-align:left">放在代码上面-显示简短的代码信息</td>
+</tr>
+<tr>
+<td>Ctrl + F1</td>
+<td style="text-align:left">在插入符号显示错误或警告的说明</td>
+</tr>
+<tr>
+<td>Alt + Insert</td>
+<td style="text-align:left">生成代码</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + T</td>
+<td style="text-align:left">快速生成（if..else, try..catch, for, etc.）等</td>
+</tr>
+<tr>
+<td>Ctrl + J</td>
+<td style="text-align:left">插入Live模板</td>
+</tr>
+<tr>
+<td>Ctrl + /</td>
+<td style="text-align:left">行注释与取消行注释</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + /</td>
+<td style="text-align:left">块注释与取消块注释</td>
+</tr>
+<tr>
+<td>Ctrl + W</td>
+<td style="text-align:left">增加选择中代码块</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + W</td>
+<td style="text-align:left">减少当前所选内容代码块</td>
+</tr>
+<tr>
+<td>Alt + Q</td>
+<td style="text-align:left">上下文信息</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + L</td>
+<td style="text-align:left">格式化代码</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + I</td>
+<td style="text-align:left">自动缩进的行数</td>
+</tr>
+<tr>
+<td>Tab / Shift + Tab</td>
+<td style="text-align:left">缩进/取消缩进选定的行</td>
+</tr>
+<tr>
+<td>Ctrl + X , Shift + Delete</td>
+<td style="text-align:left">剪切到剪贴板的当前行或者所选代码块</td>
+</tr>
+<tr>
+<td>Ctrl + C</td>
+<td style="text-align:left">Ctrl + 插入复制当前行或者所选代码块到剪贴板</td>
+</tr>
+<tr>
+<td>Ctrl + V</td>
+<td style="text-align:left">Shift + 从剪贴板插入粘贴</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + V</td>
+<td style="text-align:left">最近缓冲区粘贴</td>
+</tr>
+<tr>
+<td>Ctrl + D</td>
+<td style="text-align:left">复制当前行或者所选代码块</td>
+</tr>
+<tr>
+<td>Ctrl + Y</td>
+<td style="text-align:left">删除行</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + J</td>
+<td style="text-align:left">加入行</td>
+</tr>
+<tr>
+<td>Ctrl + enter</td>
+<td style="text-align:left">拆分行</td>
+</tr>
+<tr>
+<td>shift + Enter</td>
+<td style="text-align:left">重新开始一行（无论光标在哪个位置）</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + U</td>
+<td style="text-align:left">切换选中词或所选代码块的大小写</td>
+</tr>
+<tr>
+<td>Ctrl + Shift +]</td>
+<td style="text-align:left">选中直到代码块的开始</td>
+</tr>
+<tr>
+<td>Ctrl + Shift +[</td>
+<td style="text-align:left">选择直到代码块的结束</td>
+</tr>
+<tr>
+<td>Ctrl + Delete</td>
+<td style="text-align:left">删除光标右侧的词</td>
+</tr>
+<tr>
+<td>Ctrl + backspace</td>
+<td style="text-align:left">删除光标左侧的词</td>
+</tr>
+<tr>
+<td>Ctrl + NumPad+</td>
+<td style="text-align:left">展开代码块</td>
+</tr>
+<tr>
+<td>Ctrl + NumPad-</td>
+<td style="text-align:left">折叠代码块</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + NumPad+</td>
+<td style="text-align:left">展开所有代码块</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + NumPad-</td>
+<td style="text-align:left">折叠所有代码块</td>
+</tr>
+</tbody>
+</table>
+<p><strong> 同时编辑多行 </strong></p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + F4</td>
+<td style="text-align:left">关闭当前标签页</td>
+</tr>
+<tr>
+<td>Alt + Click</td>
+<td style="text-align:left">同时选中多行，同时编辑</td>
+</tr>
+<tr>
+<td>Shift + Ctrl + Alt + J</td>
+<td style="text-align:left">选择所有当前选中的词</td>
+</tr>
+<tr>
+<td>Alt + J</td>
+<td style="text-align:left">选择下一个相同的词</td>
+</tr>
+</tbody>
+</table>
+<p><strong> 运行类 </strong></p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alt + Shift + J</td>
+<td style="text-align:left">取消所有选中的词</td>
+</tr>
+<tr>
+<td>Esc</td>
+<td style="text-align:left">取消选择所有选中的词或插入符号</td>
+</tr>
+<tr>
+<td>Alt + Shift + F10/F9</td>
+<td style="text-align:left">选择配置和运行/调试</td>
+</tr>
+<tr>
+<td>Shift + F10/F9</td>
+<td style="text-align:left">运行/调试</td>
+</tr>
+</tbody>
+</table>
+<p><strong> 调试类 </strong></p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + Shift + F10/F9</td>
+<td style="text-align:left">运行/调试上下文配置从编辑器</td>
+</tr>
+<tr>
+<td>Alt + Shift + R</td>
+<td style="text-align:left">重新运行测试</td>
+</tr>
+<tr>
+<td>F8</td>
+<td style="text-align:left">不进入函数</td>
+</tr>
+<tr>
+<td>F7</td>
+<td style="text-align:left">单步执行</td>
+</tr>
+<tr>
+<td>Shift + F7</td>
+<td style="text-align:left">只能单步执行</td>
+</tr>
+<tr>
+<td>Shift + F8</td>
+<td style="text-align:left">跳出</td>
+</tr>
+<tr>
+<td>Alt + F9</td>
+<td style="text-align:left">运行到光标处</td>
+</tr>
+<tr>
+<td>Alt + F8</td>
+<td style="text-align:left">计算表达式的值</td>
+</tr>
+<tr>
+<td>F9</td>
+<td style="text-align:left">重新开始</td>
+</tr>
+</tbody>
+</table>
+<p><strong> 导航类 </strong></p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + f8</td>
+<td style="text-align:left">切换断点</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + F8</td>
+<td style="text-align:left">查看断点</td>
+</tr>
+<tr>
+<td>Ctrl + N</td>
+<td style="text-align:left">跳转到指定类</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + N</td>
+<td style="text-align:left">通过文件名快速查找工程内的文件</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + Shift + N</td>
+<td style="text-align:left">通过一个字符查找函数位置</td>
+</tr>
+<tr>
+<td>Alt + Right</td>
+<td style="text-align:left">进入下一个编辑器选项</td>
+</tr>
+<tr>
+<td>Alt + Left</td>
+<td style="text-align:left">进入上一个编辑器选项</td>
+</tr>
+<tr>
+<td>f12</td>
+<td style="text-align:left">进入上一个工具窗口</td>
+</tr>
+<tr>
+<td>esc</td>
+<td style="text-align:left">从工具窗口进入编辑器</td>
+</tr>
+<tr>
+<td>Shift + Esc</td>
+<td style="text-align:left">隐藏活动窗口</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + F4</td>
+<td style="text-align:left">关闭活动运行/消息/查找/选项卡</td>
+</tr>
+<tr>
+<td>Ctrl + G</td>
+<td style="text-align:left">跳转到指定行</td>
+</tr>
+<tr>
+<td>Ctrl + E</td>
+<td style="text-align:left">弹出最近打开的文件列表</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + Left</td>
+<td style="text-align:left">导航前进</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + Right</td>
+<td style="text-align:left">导航回退</td>
+</tr>
+<tr>
+<td>Ctrl + Shift +Backspace</td>
+<td style="text-align:left">定位到最近编辑窗口</td>
+</tr>
+<tr>
+<td>Alt + F1</td>
+<td style="text-align:left">查找当前选中的代码或文件在其他界面模块的位置</td>
+</tr>
+<tr>
+<td>Ctrl + B/Click</td>
+<td style="text-align:left">跳转到定义处</td>
+</tr>
+<tr>
+<td>Ctrl + 单击</td>
+<td style="text-align:left">转到声明</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + B</td>
+<td style="text-align:left">跳转方法实现处</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + I</td>
+<td style="text-align:left">打开定义快速查找</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + B</td>
+<td style="text-align:left">跳转方法定义处</td>
+</tr>
+<tr>
+<td>Ctrl + U</td>
+<td style="text-align:left">转到超级方法/超级类</td>
+</tr>
+<tr>
+<td>Alt + Up/Down</td>
+<td style="text-align:left">在方法间快速移动定位</td>
+</tr>
+<tr>
+<td>Ctrl +]/[</td>
+<td style="text-align:left">移动到代码块结束/启动</td>
+</tr>
+<tr>
+<td>Ctrl + f12</td>
+<td style="text-align:left">弹出文件结构</td>
+</tr>
+<tr>
+<td>Ctrl + H</td>
+<td style="text-align:left">类型层次结构</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + H</td>
+<td style="text-align:left">调用层次结构</td>
+</tr>
+<tr>
+<td>F2/Shift + F2</td>
+<td style="text-align:left">跳转到后一个/前一个错误，在出错的语句之间进行跳转。</td>
+</tr>
+<tr>
+<td>F4/Ctrl + Enter</td>
+<td style="text-align:left">编辑源代码/查看源代码</td>
+</tr>
+<tr>
+<td>Alt + home</td>
+<td style="text-align:left">显示导航栏</td>
+</tr>
+<tr>
+<td>F11</td>
+<td style="text-align:left">切换标记</td>
+</tr>
+<tr>
+<td>Ctrl + F11</td>
+<td style="text-align:left">采用记忆切换标记</td>
+</tr>
+</tbody>
+</table>
+<p><strong> 搜索/替换 </strong></p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + T</td>
+<td style="text-align:left">从VCS更新项目</td>
+</tr>
+<tr>
+<td>Alt + Shift + C</td>
+<td style="text-align:left">查看最近的更改</td>
+</tr>
+<tr>
+<td>Ctrl + F</td>
+<td style="text-align:left">查找</td>
+</tr>
+<tr>
+<td>F3</td>
+<td style="text-align:left">查找下一个</td>
+</tr>
+<tr>
+<td>Shift + F3</td>
+<td style="text-align:left">查找上一个</td>
+</tr>
+<tr>
+<td>Ctrl + R</td>
+<td style="text-align:left">替换</td>
+</tr>
+</tbody>
+</table>
+<p><strong> 重构类 </strong></p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + Shift + F</td>
+<td style="text-align:left">在路径中找到</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + R</td>
+<td style="text-align:left">替换路径中的查找</td>
+</tr>
+<tr>
+<td>F5</td>
+<td style="text-align:left">拷贝当前文件</td>
+</tr>
+<tr>
+<td>F6</td>
+<td style="text-align:left">移动当前文件</td>
+</tr>
+<tr>
+<td>Alt + delete</td>
+<td style="text-align:left">安全删除</td>
+</tr>
+<tr>
+<td>Shift + F6</td>
+<td style="text-align:left">重命名</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + N</td>
+<td style="text-align:left">嵌入变量</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + M</td>
+<td style="text-align:left">提取函数</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + V</td>
+<td style="text-align:left">引入变量</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + C</td>
+<td style="text-align:left">引入常量</td>
+</tr>
+</tbody>
+</table>
+<p><strong> 常规类 </strong></p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + Alt + P</td>
+<td style="text-align:left">引入参数</td>
+</tr>
+<tr>
+<td>Ctrl + F6</td>
+<td style="text-align:left">改变方法名</td>
+</tr>
+<tr>
+<td>Ctrl + Shift +a</td>
+<td style="text-align:left">查找当前</td>
+</tr>
+<tr>
+<td>双击shift</td>
+<td style="text-align:left">查找所有的（包括文件、命令等）</td>
+</tr>
+<tr>
+<td>Alt + #[0-9]</td>
+<td style="text-align:left">打开相应的工具窗口</td>
+</tr>
+<tr>
+<td>Ctrl + Shift + f12</td>
+<td style="text-align:left">键切换最大化编辑器</td>
+</tr>
+<tr>
+<td>Alt + Shift + F</td>
+<td style="text-align:left">将添加到收藏夹</td>
+</tr>
+<tr>
+<td>Alt + Shift + I</td>
+<td style="text-align:left">检查当前文件与当前配置文件</td>
+</tr>
+<tr>
+<td>Ctrl + 反引号 (‘)</td>
+<td style="text-align:left">快速切换当前计划</td>
+</tr>
+<tr>
+<td>Ctrl + Alt + S</td>
+<td style="text-align:left">打开设置</td>
+</tr>
+<tr>
+<td>Ctrl + Tab</td>
+<td style="text-align:left">切换选项卡和工具窗口</td>
+</tr>
+</tbody>
+</table>
+
+</div><div class="article-licensing box"><div class="licensing-title"><p>开发常见问题（IDE篇）</p><p><a href="https://yc609.cn/2018/10/26/开发常见问题（IDE篇）/">https://yc609.cn/2018/10/26/开发常见问题（IDE篇）/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>晓策</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2018-10-26</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-06-05</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/IDE/">IDE</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2018/11/14/GitHub-Pages-%E5%90%AF%E7%94%A8-https/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">GitHub Pages 启用 https</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2018/09/05/mini-program/"><span class="level-item">Mini Programs</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://yc609.cn/2018/10/26/%E5%BC%80%E5%8F%91%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%EF%BC%88IDE%E7%AF%87%EF%BC%89/';
+            this.page.identifier = '2018/10/26/开发常见问题（IDE篇）/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'my-blog-izeas49jog' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-4-widescreen  order-3 is-sticky"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="晓策"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">晓策</p><p class="is-size-6 is-block">元婴老怪</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Our Earch</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">30</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">4</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">22</p></a></div></div></nav></div></div><!--!--><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Framework/"><span class="level-start"><span class="level-item">Framework</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/categories/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/Others/"><span class="level-start"><span class="level-item">Others</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/Utility/"><span class="level-start"><span class="level-item">Utility</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2019-07-02T11:51:23.000Z">2019-07-02</time></p><p class="title"><a href="/2019/07/02/%E8%81%8A%E4%B8%80%E8%81%8A-call%E3%80%81apply-%E5%8F%8A-bind/">聊一聊 call、apply 与 bind</a></p><p class="categories"><a href="/categories/JavaScript/">JavaScript</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2019-06-11T11:06:06.000Z">2019-06-11</time></p><p class="title"><a href="/2019/06/11/%E6%B5%85%E8%B0%88%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%AE%9E%E7%8E%B0/">浅谈跨域的实现</a></p><p class="categories"><a href="/categories/JavaScript/">JavaScript</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2019-05-14T12:26:35.000Z">2019-05-14</time></p><p class="title"><a href="/2019/05/14/%E5%9F%BA%E4%BA%8E%E8%85%BE%E8%AE%AF%E5%9C%B0%E5%9B%BE%E7%9A%84%E5%AE%9E%E6%97%B6%E5%AE%9A%E4%BD%8D/">基于腾讯地图的实时定位</a></p><p class="categories"><a href="/categories/JavaScript/">JavaScript</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2019-04-26T08:58:52.000Z">2019-04-26</time></p><p class="title"><a href="/2019/04/26/%E6%B5%85%E8%B0%88%E5%89%8D%E7%AB%AF%E7%9A%84%E5%AE%9A%E4%BD%8D%E5%AE%9E%E7%8E%B0/">浅谈前端的定位实现</a></p><p class="categories"><a href="/categories/JavaScript/">JavaScript</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2019-03-25T12:11:04.000Z">2019-03-25</time></p><p class="title"><a href="/2019/03/25/Better-scroll-%E7%9A%84%E4%BD%BF%E7%94%A8/">Better-scroll 的使用</a></p><p class="categories"><a href="/categories/Framework/">Framework</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2019/07/"><span class="level-start"><span class="level-item">七月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/06/"><span class="level-start"><span class="level-item">六月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/05/"><span class="level-start"><span class="level-item">五月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/04/"><span class="level-start"><span class="level-item">四月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/03/"><span class="level-start"><span class="level-item">三月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/02/"><span class="level-start"><span class="level-item">二月 2019</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/01/"><span class="level-start"><span class="level-item">一月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/12/"><span class="level-start"><span class="level-item">十二月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/11/"><span class="level-start"><span class="level-item">十一月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/10/"><span class="level-start"><span class="level-item">十月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/09/"><span class="level-start"><span class="level-item">九月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/08/"><span class="level-start"><span class="level-item">八月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/07/"><span class="level-start"><span class="level-item">七月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2018/06/"><span class="level-start"><span class="level-item">六月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/12/"><span class="level-start"><span class="level-item">十二月 2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/11/"><span class="level-start"><span class="level-item">十一月 2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/10/"><span class="level-start"><span class="level-item">十月 2017</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/09/"><span class="level-start"><span class="level-item">九月 2017</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/08/"><span class="level-start"><span class="level-item">八月 2017</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/07/"><span class="level-start"><span class="level-item">七月 2017</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2017/05/"><span class="level-start"><span class="level-item">五月 2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Cross-domain/"><span class="tag">Cross-domain</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Framework/"><span class="tag">Framework</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Git/"><span class="tag">Git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GitHub/"><span class="tag">GitHub</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Grunt/"><span class="tag">Grunt</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML-CSS/"><span class="tag">HTML/CSS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/IDE/"><span class="tag">IDE</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Interview/"><span class="tag">Interview</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Markdown/"><span class="tag">Markdown</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mini-Programs/"><span class="tag">Mini Programs</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/RN/"><span class="tag">RN</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/React/"><span class="tag">React</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vue/"><span class="tag">Vue</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/better-scroll/"><span class="tag">better-scroll</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/canvas/"><span class="tag">canvas</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/css/"><span class="tag">css</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/iView/"><span class="tag">iView</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/location/"><span class="tag">location</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/map/"><span class="tag">map</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sass/"><span class="tag">sass</span><span class="tag">1</span></a></div></div></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><p class="is-size-7"><span>冲击多元宇宙</span></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
