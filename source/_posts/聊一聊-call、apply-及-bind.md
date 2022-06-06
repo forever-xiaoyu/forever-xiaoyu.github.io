@@ -3,6 +3,7 @@ title: 聊一聊 call、apply 与 bind
 date: 2019-07-02 19:51:23
 tags: JavaScript
 categories: JavaScript
+toc: true
 ---
 
 > call 和 apply 这两个方法的用途都是在特定的作用域中调用函数，实际上等于设置函数体内 this 对象的值。
