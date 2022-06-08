@@ -1,10 +1,11 @@
 ---
 title: Sass 常用语法
 date: 2018-12-21 21:03:01
+categories: 基础技术
 tags: 
-- sass
-- css
-categories: Utility
+  - sass
+  - css
+toc: true
 ---
 
 	Sass 是一个将脚本解析成CSS的脚本语言，即SassScript。

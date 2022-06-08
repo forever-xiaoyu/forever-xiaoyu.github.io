@@ -1,9 +1,9 @@
 ---
 title: RN 常见的一些问题
 date: 2019-2-19 20:00:00
+categories: 技术框架
 tags: RN
-categories: Framework
-author: xiaoyu
+toc: true
 ---
 ## 启动项目常见错误
 ### unable to load script from asset/index.android.bundle
@@ -18,7 +18,7 @@ react-native bundle --platform android --dev false --entry-file index.android.js
 react-native run-android
 ```
 ** 注 ** ：在 0.49 版本后， react-native 项目中 index.android.js 和 index.ios.js 统一合并成了 index.js，所以0.49 版本以后使用上述命令需要将入口文件改为 index.js。
-  
+
 ### Could not install the app on the device
 1. :app:processDebugResources 
     ```

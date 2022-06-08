@@ -2,7 +2,8 @@
 title: 浅谈 lazyload 的实现原理
 date: 2017-10-12 18:28:05
 tags: JavaScript
-categories: JavaScript
+categories: 基础技术
+toc: true
 ---
 
 	说道前端的性能优化，一定少不了懒加载这个名词。
@@ -20,11 +21,11 @@ categories: JavaScript
 
 ## 简易懒加载的实现
 
-![lazyload.png](lazyload1.png) 
+![lazyload.png](/img/images/lazyload1.png) 
 
 如上代码所述，经过简单的封装，使用lazyload的方法也很简单：
 
-![lazyload.png](lazyload2.png) 
+![lazyload.png](/img/images/lazyload2.png) 
 
 至此，一个简单的懒加载基本就实现了，当然这只是简单的模拟，还有很多需要考虑的问题（如兼容性、水平方向、时间间隔等）没有具体实现。
 
@@ -32,4 +33,4 @@ categories: JavaScript
 
 
 
-![lazyload.gif](lazyload.gif)
+![lazyload.gif](/img/images/lazyload.gif)

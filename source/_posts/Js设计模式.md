@@ -2,13 +2,15 @@
 title: JavaScript 设计模式
 date: 2019-01-10 20:53:37
 tags: JavaScript
-categories: JavaScript
+categories: 基础技术
+toc: true
 ---
 
 ## 构造函数模式 ##
 ECMAScript中的构造函数可以用来创建特定类型的对象。像Object 和 Array 这样的原生构造函数，在运行时会自动出行在执行环境中。
 此外，也可以创建自定义构造函数，从而定义自定义对象类型的属性和方法。
 <!-- more -->
+
 ```
 function Person(name, age, job) {
     this.name = name;
@@ -429,7 +431,7 @@ var childClass = new BicycleChild("龙恩");
 console.log(childClass);
 ```
 实例化子类，然后打印出该实例, 如下截图所示：
-![](factory.png)
+![](/img/images/factory.png)
 
 ```
 console.log(childClass.name);  // 龙恩

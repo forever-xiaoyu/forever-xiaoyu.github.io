@@ -1,0 +1,56 @@
+---
+title: npm、yarn 小结
+date: 2018-8-25 21:21:45
+categories: 常用工具
+tags:
+  - npm
+  - yarn
+toc: true
+---
+
+## npm
+
+### 查看 package 版本
+
+```zsh
+npm list <package name>
+```
+
+
+
+<!-- more -->
+
+
+
+### 常见问题
+
+#### npm install 卡住
+
+**方案一：安装国内镜像**
+
+这个是比较常用的方法，使用了 cnpm 镜像，这个是国内的镜像，其他的也可以参考 [npm.taobao.org/](https://link.juejin.cn?target=http%3A%2F%2Fnpm.taobao.org%2F)
+
+```zsh
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
+输入以上命令就可以了，然后输入
+
+```zsh
+cnpm install
+```
+
+**方案二：使用代理 registry**
+
+```zsh
+npm config set registry https://registry.npm.taobao.org
+```
+
+后续 install 等命令还是通过 npm 运作，而不是cnpm。
+
+**npm 全局配置切换到官方源**
+
+```zsh
+npm config set registry http://www.npmjs.org
+```
+

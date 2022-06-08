@@ -1,9 +1,9 @@
 ---
 title: iView 常用组件
 date: 2019-2-15 21:35:10
-tags: iView
-categories: Framework
-author: xiaoyu
+tags: 组件库
+categories: 技术框架
+toc: true
 ---
 ## iView
     iView 是一套基于 Vue.js 的 UI 组件库。

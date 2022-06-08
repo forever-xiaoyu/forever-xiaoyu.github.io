@@ -1,7 +1,9 @@
 ---
-title: Vue-cli 的使用
+title: Vue-Cli 的使用
 date: 2017-7-28 15:48:53
-tags: Framework
+categories: 技术框架
+tags: Vue
+toc: true
 ---
 
 ## 全局安装脚手架
@@ -96,6 +98,6 @@ npm config set registry http://registry.npmjs.org
 
 <br/>
 
-![vue-cli.jpg](vue-cli.jpg)
+![Vue-Cli](/img/images/vue-cli.jpg)
 
 [1]: https://cli.vuejs.org/zh/guide

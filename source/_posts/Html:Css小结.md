@@ -1,0 +1,208 @@
+---
+title: Html/Css小结
+date: 2017-10-16 20:40:28
+categories: 基础技术
+tags: HTML/CSS
+toc: true
+---
+
+    在日常开发中，时常会碰到各种各样的坑，本文总结了开发过程中碰到的常见问题。
+
+----------
+
+## margin 重叠问题 ##
+这是一个比较常见的经常在开发中碰到的问题，这里就不多说了，常见解决办法：
+
+```
+1. 创建新的 BFC 如 overflow: hidden;
+2. 使用 padding
+3. 尽量使用同一方向的 margin
+```
+<!-- more -->
+## placeholder 自定义样式 ##
+之前开发项目中碰到的需求，兼容写法如下：
+
+```
+/* IE 9 及以下版本不支持 */
+input:-ms-input-placeholder {
+
+}
+input:-moz-placeholder {
+
+}
+input::-moz-placeholder {
+
+}
+input::-webkit-input-placeholder {
+
+}
+```
+## 伪类和伪元素 ##
+这两者很容易混淆，说的简单的一点，两者的区别在于：
+
+```
+CSS 伪类用于向某些选择器添加特殊的效果。
+CSS 伪元素用于将特殊的效果添加到某些选择器。
+```
+## title 超出省略 ##
+在移动端标题超出部分还是比较常见的，兼容性也 ok：
+
+```
+display: -webkit-box;
+overflow: hidden;
+text-overflow: ellipsis;
+word-break: break-all;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 1;
+```
+## scroll 自定义样式 ##
+<div align=center>![](/img/images/scroll-info.png)</div>
+
+```
+/* Chrome */
+::-webkit-scrollbar    //滚动条整体部分
+::-webkit-scrollbar-button   //滚动条两端的按钮
+::-webkit-scrollbar-track   // 外层轨道
+::-webkit-scrollbar-track-piece    //内层轨道，滚动条中间部分（除去）
+::-webkit-scrollbar-thumb //滚动条里面可以拖动的那个
+::-webkit-scrollbar-corner   //边角
+::-webkit-resizer   ///定义右下角拖动块的样式
+
+/* IE */
+  scrollbar-base-color: #C0C0C0;
+  scrollbar-3dlight-color: #C0C0C0;
+  scrollbar-highlight-color: #C0C0C0;
+  scrollbar-track-color: #EBEBEB;
+  scrollbar-arrow-color: black;
+  scrollbar-shadow-color: #C0C0C0;
+  scrollbar-dark-shadow-color: #C0C0C0;
+  -ms-scrollbar-track-color: transparent;
+  -ms-overflow-style: none;
+
+/* firefox */
+  scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+  scrollbar-track-color: transparent;
+  overflow: -moz-scrollbars-none;
+```
+
+eg:
+```css
+::-webkit-scrollbar {
+  width:10px;
+  height:10px;
+  background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb {
+  border-radius:10px;
+  background-color: #DDDDDD;
+}
+```
+
+Chrome 几乎可以完整修改 scrollbar 样式，但是 IE 比较有局限性，只能修改颜色，如果想要完美兼容，那么只能自己模拟实现一个 scrollbar 了。
+
+## IE 绝对定位被 img 覆盖问题 ##
+有这样一个场景，给浏览器插入一张 img ，其中有一些链接，通过绝对定位的办法，定位到 img 对应的位置，在chrome，firefox 中均没有问题，但是在 IE 中测试发现，链接被 img 挡住了。遇到这种问题，可以分两种方式解决。
+
+```
+1. 使用 css 背景图片替换 img
+2. 给链接添加如下属性：
+    background: url(about:blank);
+```
+## IOS 元素点击触发高亮 ##
+-webkit-tap-highlight-color 是一个 不规范的属性（unsupported WebKit property），它没有出现在 CSS 规范草案中。
+
+当用户点击iOS的Safari浏览器中的链接或JavaScript的可点击的元素时，覆盖显示的高亮颜色。
+
+该属性可以只设置透明度。如果未设置透明度，iOS Safari使用默认的透明度。当透明度设为0，则会禁用此属性；当透明度设为1，元素在点击时不可见
+```
+-webkit-tap-highlight-color：color
+```
+
+## IOS9 以下版本之 background
+IOS9 以下版本之 background 中的 url('') no-repeat center center 必须要按照正确顺序写，
+如果写 url('') center center no-repeat 无法正确展示出来
+```css
+background: url('') no-repeat center center
+```
+
+## 超出宽度横向滚动 ##
+通常情况下，使用 white-space 和 overflow 即可解决
+
+## inline-block 间隙 ##
+ * 父元素设置 font-size: 0
+ * 调整 margin
+ * 如果是 span ，标签之间不换行
+ * 垂直方向可以使用 vertical-align: bottom
+
+ ## inline-block 错位
+ 在 IOS9 以前版本有可能出现文字错位现象，解决办法
+ ```css
+white-space: nowrap;
+vertical-align: top;
+ ```
+
+## vertical-align
+使用 vertical-align 进行垂直居中的时候，父元素需要设置行高，否则无效
+
+## display 无法触发 transition
+
+## z-index
+使用 z-index 对元素进行层级定位的时候，该元素必须要设置 position 才能够生效
+
+## touch-action
+该属性可以阻止当前元素上的默认事件，如 touch 事件等
+
+## 移动端软键盘变为搜索方式
+默认情况下软键盘上该键位为前往或者确认等文字，要使其变为搜索文字，需要在 input 上加上 type 声明：
+```
+<input type='search' />
+```
+同时，使用了 search 类型后，搜索框上会默认自带删除按钮，如需屏蔽，可以使用如下方式：
+```
+input[type=search]::-webkit-search-cancel-button {
+  display: none;
+}
+```
+
+## onerror 处理图片异常
+使用 onerror 异常处理时，若 onerror 的图片也出现问题，则图片显示会陷入死循环，所以要在赋值异常图片之后，将地址置空：
+```
+<img onerror="this.src='url;this.onerror=null'" />
+```
+
+## 关于 vue 中的 scoped 属性
+使用 scoped 属性后，组件中的样式会成为局部css，就是通过 vue-loader 这个插件，在编译打包的时候将带有 scoped 属性的 css 打上 tag，同时将 template 内的所有 html 都打上相同的tag，最后通过 css 的属性选择器定位。
+
+所以如果想要覆盖一些全局样式的话，要避免使用 scoped 属性。
+
+## 草料二维码
+在使用草料二维码扩展插件的时候，由于该插件内置 injected stylesheet 样式，可能会影响到页面上的样式，需要注意使用该扩展插件。
+
+## 定位元素撑开父元素高度
+- 父容器中的子元素设置了 absolute 或 fixed 之后，会脱离文档流，不会被计算在父元素高度之内，也没有办法清除浮动，所以这种情况无法满足要求。
+- 浮动元素可以通过清楚浮动元素满足条件，因为 BFC 的高度计算包含浮动元素。
+- 在需求满足的情况下可以使用 relative 相对于自身定位。
+
+## nth-child 与 nth-of-type 
+总结起来 nth-child 直接根据父元素下子元素的排列顺序选择，无视标签类型。而 nth-of-type 是父元素下筛选相同标签的元素根据顺序选择，class 直接无视，而没有一个根据 class 来选择的方法。
+
+## flex 防止被挤压
+```css
+flex-shrink: 0;
+```
+
+## 定位遮挡
+使用嵌套定位，如 fixed 定位套 fixed 定位的结构，在部分真机中会出现内层盒模型被外层遮挡的现象，尽量将内部盒模型抽离出来，或者改为 absolute 定位。
+
+<br/>   
+
+参考文献
+====
+1. [详解 CSS 属性 - 伪类和伪元素的区别][2]
+2. [CSS | MDN][3]
+
+
+[1]: https://jsfiddle.net/api/mdn/
+[2]: https://segmentfault.com/a/1190000000484493
+[3]: https://developer.mozilla.org/zh-CN/docs/Web/CSS

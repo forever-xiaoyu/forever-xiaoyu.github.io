@@ -2,7 +2,8 @@
 title: GitHub Pages 启用 https
 date: 2018-11-14 11:30:02
 tags: GitHub
-categories: Others
+categories: 基础技术
+toc: true
 ---
 
 ## 启用 https
@@ -14,15 +15,18 @@ categories: Others
 
 启用 https 之前，需要先添加 CNAME 文件（内容为自定义域名的顶级域名，这样 GitHub 会自动为你绑定 www 子域名）到存储库中，GitHub 会根据 CNAME 值设置 Custom domain，但是在设置自定义域名的时候，出现了如下的警告：
 
-<div align=center>![github.png](github.png)
+![github](/img/images/github.png)
+
 
 “the CNAME is already taken”，在网上并没有多少相关的问题，于是给 GitHub Support 发了邮件：
 
-<div align=center>![github.png](github-support.png)
+![github](/img/images/github-support.png)
+
 
 很快收到 GitHub Support 的回复：
 
-<div align=center>![github.png](github-support2.png)
+![github](/img/images/github-support2.png)
+
 
 大意是，需要在 DNS 解析记录中个新增一个 TXT 类型的记录，记录值为邮件中给出的内容，然后让其对此进行验证，验证通过后，GitHub Support 会告知你已经释放域名，之后就重新解析域名就可以了。
 

@@ -1,8 +1,9 @@
 ---
 title: Better-scroll 的使用
 tags: better-scroll
-category: Framework
+category: 技术框架
 date: 2019-03-25 20:11:04
+toc: true
 ---
 
 

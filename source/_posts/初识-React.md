@@ -1,13 +1,10 @@
 ---
 title: 初识 React
 date: 2017-12-25 21:08:24
-cover: /img/covers/pic_1.png
-categories: Framework
+categories: 技术框架
 tags: React
 toc: true
 ---
-
-<img src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539667240534&di=5c9b227b5832c0baf7974fcf3287cf83&imgtype=0&src=http%3A%2F%2Fjbcdn2.b0.upaiyun.com%2F2016%2F05%2F2209cdfc47c4e588fbc46d2efa88a9c2.png' width='100' height='100' style='border-radius: 20%;'/>
 
     React 作为时下最流行的框架之一，不可否认其在前端框架当中的地位，很多的项目也都在使用 React；作为一名 Front-end engineer，学习 React 无论是对于项目开发还是自身的水平都会有一定程度的帮助。
 最近开始简单的学习了 [React][1]，所以在此简单的总结一下。
@@ -43,7 +40,7 @@ toc: true
 ----------
 项目创建后，如图，目录结构也比较清晰：
 
-{% img class-names /img/covers/pic_1.png 400 100 [title text [alt text]] %}
+{% img class-names /img/images/pic_1.png 400 100 [title text [alt text]] %}
 
 
 - node_modules：存放项目依赖
@@ -53,7 +50,7 @@ toc: true
 
 关于目录结构，可以依据实际项目需求进行划分，如下图结构：
 
-{% img class-names /img/covers/pic_2.png 400 100 [title text [alt text]] %}
+{% img class-names /img/images/pic_2.png 400 100 [title text [alt text]] %}
 
 - assets -- 存放项目静态资源
 - components -- 存放组件
@@ -103,7 +100,7 @@ React 简单上手
 ## getDefaultProps 的疑惑 ##
 在创建了一个组件后，使用 getDefaultProps 设置默认属性时，控制台报了这样一条警告：
 
-{% img class-names /img/covers/pic_3.png 400 100 [title text [alt text]] %}
+{% img class-names /img/images/pic_3.png %}
 
 经查阅后了解到： getDefaultProps 方法是用在使用 React.createClass 方式创建组件的，应该使用 ES6 语法：
 

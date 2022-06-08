@@ -2,7 +2,8 @@
 title: 浅谈 null 与 undefined
 date: 2017-8-13 16:19:33
 tags: JavaScript
-categories: JavaScript
+categories: 基础技术
+toc: true
 ---
 
 ## undefined类型
