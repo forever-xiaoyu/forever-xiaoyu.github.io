@@ -58,5 +58,13 @@ toc: true
 }
 ```
 
+#### background
+可以自定义背景
+
 #### z-reader
 支持本地、在线浏览小说、文本等内容
+
+#### fisher
+
+#### 我不爱掘金
+嵌入 vscode 中的掘金
