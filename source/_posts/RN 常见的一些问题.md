@@ -1,8 +1,8 @@
 ---
-title: RN 常见的一些问题
+title: React Native 常见的一些问题
 date: 2019-2-19 20:00:00
 categories: 技术框架
-tags: RN
+tags: React Native
 toc: true
 ---
 ## 启动项目常见错误
