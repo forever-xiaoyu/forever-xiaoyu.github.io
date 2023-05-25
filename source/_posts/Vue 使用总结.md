@@ -491,6 +491,9 @@ configureWebpack: config => {
 ```
 npm list vue
 ```
+	
+## nextTick 获取不到DOM
+nextTick只在当前组件dom更新后触发，并不能监听到子组件渲染完成，可以使用$emit监听或者在mounted中使用setTimeout来解决。
 
 ## 参考文献
 1. [vue-router 官方文档][2]
