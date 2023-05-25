@@ -136,6 +136,11 @@ photos: imgUrl
 html tags & content
 {% endraw %}
 ```
+
+## 常见问题
+### 部署时报 protected branch hook declined
+需要在 Github 中设置部署分支的 Allow force pushes
+
 <br/><br/>
 
 
