@@ -13,15 +13,25 @@ toc: true
 ## VSCode ##
 ### 插件篇
 
-#### Gitlens
+#### Code Runner
 
-#### Color Highlight
+#### GitLens
 
 #### Git History
 
-#### Volar
+#### Color Highlight
+
+#### Color Picker
+
+#### Vue Language Features（Volar）
 
 #### vue3-snippets-for-vscode
+
+#### ES7+ React/Redux/React-Native snippets
+
+#### Open In Default Browser
+
+#### Prettier
 
 #### luzhenqian.juejin
 可以在vscode中浏览掘金
