@@ -75,3 +75,5 @@ toc: true
 
 #### 我不爱掘金
 嵌入 vscode 中的掘金
+
+#### ChatGPT - EasyCode
