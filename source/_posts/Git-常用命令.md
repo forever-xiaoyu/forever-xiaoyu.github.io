@@ -1,5 +1,5 @@
 ---
-title: Git 常用命令
+title: Git 小结
 date: 2017-9-16 15:33:11
 tags: Git
 categories: 常用工具
@@ -96,6 +96,7 @@ ignorecase = false
 ```
 
 ## 重置密码
+mac 端若权限不够需要加 sudo
 ```
 git config --system --unset credential.helper 
 ```
