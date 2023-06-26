@@ -7,10 +7,10 @@ categories: AI
 toc: true
 ---
 
-> Github Copilot
+> GitHub Copilot 使用 OpenAI Codex 来实时建议代码和整个功能，就在你的编辑器中。
 
 <!-- more -->
-## 一些使用
+## 快捷操作
 <pre>
 操作系统	查看下一个建议	        见之前的建议
 苹果系统	Option (⌥) or Alt+]	Option (⌥) or Alt+[
