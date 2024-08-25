@@ -1,7 +1,7 @@
 ---
 title: 聊一聊 call、apply 与 bind
 date: 2019-07-02 19:51:23
-cover: /img/covers/call-apply.png
+cover: /assets/img/covers/call-apply.png
 tags: JavaScript
 categories: 基础技术
 toc: true

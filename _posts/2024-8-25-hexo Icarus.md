@@ -15,7 +15,7 @@ toc: true
 ## 插入图片
 {% raw %}
 ```ejs
-{% img class-names /img/covers/pic_1.png 400 100 [title text [alt text]] %}
+{% img class-names /assets/img/covers/pic_1.png 400 100 [title text [alt text]] %}
 ```
 {% endraw %}
 

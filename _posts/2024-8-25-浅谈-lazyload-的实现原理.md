@@ -21,11 +21,11 @@ toc: true
 
 ## 简易懒加载的实现
 
-![lazyload.png](/img/images/lazyload1.png) 
+![lazyload.png](/assets/img/images/lazyload1.png) 
 
 如上代码所述，经过简单的封装，使用lazyload的方法也很简单：
 
-![lazyload.png](/img/images/lazyload2.png) 
+![lazyload.png](/assets/img/images/lazyload2.png) 
 
 至此，一个简单的懒加载基本就实现了，当然这只是简单的模拟，还有很多需要考虑的问题（如兼容性、水平方向、时间间隔等）没有具体实现。
 
@@ -33,4 +33,4 @@ toc: true
 
 
 
-![lazyload.gif](/img/images/lazyload.gif)
+![lazyload.gif](/assets/img/images/lazyload.gif)
