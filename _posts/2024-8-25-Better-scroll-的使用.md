@@ -163,4 +163,4 @@ scroll.on('scroll', onScroll)
 ## 参考
 [better-scroll 文档][1]
 
-[1]: http://ustbhuangyi.github.io/better-scroll/doc/zh-hans/
+[1]: https://ustbhuangyi.github.io/better-scroll/doc/zh-hans/
