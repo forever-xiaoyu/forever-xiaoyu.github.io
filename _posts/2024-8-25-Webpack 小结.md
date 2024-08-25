@@ -1,0 +1,140 @@
+---
+title: Webpack 常用 Plugin
+date: 2019-7-25 20:46:56
+categories: 常用工具
+tags: Webapck
+toc: true
+---
+
+
+
+## 安装
+
+```zsh
+sudo npm install webpack webpack-cli -g
+```
+
+<!-- more -->
+
+## Plugin
+
+### clean-webpack-plugin
+
+主要作用是清除打包文件。
+
+```javascript
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
+module.exports = {
+	plugins: [
+    new CleanWebpackPlugin()
+  ],
+}
+```
+
+
+
+### mini-css-extract-plugin
+
+将 css 单独打包成文件，常在生产环境使用。
+
+```javascript
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+module.exports = {
+	plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    }),
+  ],
+}
+```
+
+
+
+### optimize-css-assets-webpack-plugin
+
+用于优化或者压缩CSS资源。
+
+```javascript
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+
+module.exports = {
+	plugins: [
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.css$/g, // 一个正则表达式，指示应优化/最小化文件的名称。提供的正则表达式针对配置中ExtractTextPlugin实例导出文件的文件名运行，而不是源CSS文件的文件名。默认为/\.css$/g
+      cssProcessor: require('cssnano'), // 用于优化/最小化 CSS 的处理器，默认为 cssnano
+      cssProcessorOptions: { // 传递给 cssProcessor 的选项，默认为{}
+        safe: true,
+        discardComments: { removeAll: true } // 移除 css 中注释
+      },
+      canPrint: true // 指示插件是否可以将消息打印到控制台，默认为 true
+    })
+  ],
+}
+```
+
+
+
+### BundleAnalyzerPlugin
+
+模块打包可视化分析。
+
+```javascript
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
+module.exports = {
+	plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerMode: "static",
+      analyzerHost: "127.0.0.1",
+      analyzerPort: 8888,
+      reportFilename: "report.html",
+      defaultSizes: "parsed",
+      openAnalyzer: false,
+      generateStatsFile: false,
+      statsFilename: "stats.json",
+      statsOptions: null,
+      logLevel: "info"
+    })
+  ],
+}
+```
+
+
+
+## optimization
+
+### splitChunks
+
+模块分包。
+
+```javascript
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
+module.exports = {
+	optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        jquery: {
+          name: 'chunk-jquery', // 单独将 jquery 拆包
+          priority: 15,
+          test: /[\\/]node_modules[\\/]jquery[\\/]/
+        }
+      }
+    }
+  },
+}
+```
+
+
+
+## devServer
+
+
+
+## 参考
+
+1. [webpack 中文文档](https://webpack.docschina.org/api/)
