@@ -5,7 +5,7 @@ tags: ECharts
 categories: 技术框架
 ---
 
-# 调研过程
+## 调研过程
 接到需求后，起初查阅了一番ECharts官方文档，发现官方文档中并没有相关方法可以添加动态效果，然后又调研了一番相关技术文章加上在明宇的帮助下，一共想出两种实现方案：
 1. 通过动态修改 3dmap 的 label 的背景间接达到实现动画的效果
 2. 放弃 ECharts，使用 Three.js 重写整个3d地图
@@ -16,10 +16,10 @@ categories: 技术框架
 
 整体思路已经确定下来，下面就是按照既定思路去实现动态效果了，在这个过程中，也是处在不断遇到问题不断解决问题中。
 
-# 实现过程
+## 实现过程
 3dmap 的 label 不单单可以设置为背景图片，同样可以设置为 dataURI、HTMLImageElement 对象或者 HTMLCanvasElement 对象，对于现有需求，我分别尝试了使用背景图片和 HTMLCanvasElement 对象，最后决定使用后者，通过 canvas 实现动画的好处是可以随意对图片进行剪裁、移动等处理，不需要再用图片处理工具单独处理图片了。
 
-## label 配置 HTMLCanvasElement  
+### label 配置 HTMLCanvasElement  
 ```javascript
 label: {
     show: true,
@@ -77,7 +77,7 @@ async function createCanvas() {
 }
 ```
 
-## 解决 hover 和 tootip 问题
+### 解决 hover 和 tootip 问题
 因 map3D 加入了动态效果，动态效果需要实时更新，会实时触发 ECharts 的渲染因此会产生一些额外的问题：
 1. 地图区域的 hover 效果会因为动态更新而被重置
 2. 地图区域的 tooltip 会因动态更新而被重置
@@ -209,7 +209,7 @@ function bindEvent() {
 }
 ```
 
-## 解决动画卡顿问题
+### 解决动画卡顿问题
 解决上述问题后，接下来碰到了优化问题，因为是逐帧动画，在初始化时候浏览器需要加载几十张图片，这会导致在渲染动画时产生卡顿感，对此需要对所有图片预加载并将图片缓存，待预加载完成之后再加载动画。
 ```javascript
 // 预加载图片
@@ -246,7 +246,7 @@ function loadImage(src) {
 }
 ```
 
-## 优化拖拽地图卡顿
+### 优化拖拽地图卡顿
 大部分情况是由于事件中存在频繁触发更新图表的逻辑，比如上面提到的自定义 hover 效果，就会在 mouseover 中频繁触发图表更新，因此在拖拽过程中尽量不触发任何事件，可以避免因频繁更新图表导致的卡顿。
 
 但是map3d拖拽事件并没有，要自己实现，通过监听地图的 mousedown 和 mouseup 事件来实现，简易方式就是鼠标按下时候认为是在拖拽，鼠标松开结束拖拽，再优化一下则是再按下鼠标时，mousemove 了一段距离后，判定为正在拖拽，鼠标松开结束拖拽。
@@ -290,7 +290,7 @@ myChart.getZr().on('mouseup', (params) => {
 })
 ```
 
-## map3D DEMO
+### map3D DEMO
 地图json数据可以到[地图数据-阿里云DataV数据可视化][2]中去下载。
 ```javascript
 let json // 这里添加地图数据
