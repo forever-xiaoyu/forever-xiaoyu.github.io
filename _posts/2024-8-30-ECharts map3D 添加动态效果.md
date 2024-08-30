@@ -292,7 +292,6 @@ myChart.getZr().on('mouseup', (params) => {
 
 ## map3D DEMO
 地图json数据可以到[地图数据-阿里云DataV数据可视化][2]中去下载。
-### DEMO
 ```javascript
 let json // 这里添加地图数据
 echarts.registerMap('3dMap', json)
