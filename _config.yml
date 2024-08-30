@@ -16,7 +16,7 @@ timezone: Asia/Shanghai
 
 title: 晓策菌 # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the sub-title
+tagline: 记录、分享、回顾、感受 # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
