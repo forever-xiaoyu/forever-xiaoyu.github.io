@@ -45,6 +45,12 @@ $ bundle
 
 Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
 
+## Start
+```bash
+bundle exec jekyll s # 重新生成
+jekyll serve # 启动服务
+```
+
 ## Contributing
 
 The contents of this repository are automatically updated when new releases are made to the [main repository][chirpy].  
