@@ -84,6 +84,7 @@ async function createCanvas() {
 对上述两种情况，分别进行了如下处理：
 1. 取消地图的 hover 效果，通过 mouseover 事件设置当前地区的 itemStyle，鼠标移出地图再清空所有地区的 itemStyle。
 2. 默认设置 tooltip 的 alwaysShowContent 为 true，让tooltip 保持始终显示，鼠标移出地图或画布再改为 false，并主动触发一次 hideTip，让 tooltip 隐藏。
+
 ```javascript
 // map3D 富文本标签部分
 label: {
