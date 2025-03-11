@@ -1,0 +1,102 @@
+---
+title: 微信小程序用户隐私保护提示的实现及注意事项
+date: 2024-09-09 07:00:38 +0800
+tags: 微信小程序
+categories: 技术框架
+---
+
+## 需求背景
+在开发微信小程序的需求中，需要实现进入小程序或登录前对用户隐私保护指引的校验，若是用户没有同意用户隐私保护指引，需拉起用户隐私保护指引的提示，要求用户同意或拒绝，若是用户拒绝，则重复上述过程。
+
+## 需求分析
+小程序中的用户隐私保护指引为微信小程序官方组件，在实现之前有几个前置条件，首先需要在小程序公众号后台进行用户隐私保护指引的填写，需等待官方审核完成。其次需要在项目中增加对该组件的配置，这其中涉及到官方规范的变动以及因变动踩的坑。接下来除了小程序自身对用户隐私保护指引的校验，还涉及到手动进行校验。
+
+## 需求实现
+关于小程序公众号后台用户隐私保护指引参考用户隐私保护指引填写说明操作即可，等待审核通过就可继续下面的实现。
+按照微信官方通告的说法，在 2023年9月15日之后，不论 app.json 中是否有配置 usePrivacyCheck，隐私相关功能都会启用。一开始开发过程因当前公众号还未申请下来，所以使用了其他小程序的 appid，确实可以直接启用隐私相关功能，但是当换到了新的公众号之后，尝试了多次后都无法再主动弹出隐私保护指引的提示，于是我怀疑到新的小程序可能默认不会启用该功能，再参考微信官方指南中提到的 “在 2023年9月15日之前，在 app.json 中配置 usePrivacyCheck: true 后，会启用隐私相关功能，如果不配置或者配置为 false 则不会启用。” 的说法，尝试进行了配置，果然生效了，这是小程序的坑。
+
+微信登录的 button 会唤起小程序的一键登录组件，该组件和用户隐私保护提示是耦合的，在点击时会自动进行隐私功能的校验，但是在测试过程中发现并不是每次点击时都会自动拉起隐私保护指引的提示，微信隐私保护协议弹窗每10s弹一次，这期间会返回 104 状态码，需要手动自行触发弹窗但自行触发的弹窗同意后无法自动弹出手机号弹窗，需要用户同意后自行点击登录 button。
+
+核心代码：
+```vue
+<template>
+    <up-button
+        class="button"
+        type="primary"
+        open-type="getPhoneNumber"
+        @getphonenumber="usePhoneNumber"
+    >
+        demotextclk
+    </up-button>
+</template>
+
+<script>
+async function usePhoneNumber(res) {
+    console.log('getPhoneNumber', res)
+    const detail = res?.detail || {}
+    if (detail.errno == 104) {
+        // 微信隐私保护协议弹窗每10s弹一次
+        // 期间会返回 104 状态码，自行触发弹窗
+        // 但自行触发的弹窗同意后无法自动弹出手机号弹窗
+        wx.getPrivacySetting({
+            success(res) {
+                console.log('getPrivacySetting success', res)
+                if (res.needAuthorization) {
+                    wx.requirePrivacyAuthorize({
+                        success: (res) => {
+                            console.log('getPrivacySetting agreed', res)
+                        },
+                        fail: (res) => {
+                            console.log('getPrivacySetting refused', res)
+                        },
+                    })
+                } else {
+                    callback && callback()
+                }
+            },
+            fail(res) {
+                console.log('getPrivacySetting fail', res)
+            },
+        })
+    }
+}
+</script>
+```
+
+另外，因该微信小程序使用 uniapp 开发，所以需要在项目完全启动或打包后，再在 app.json 中进行配置，添加 usePrivacyCheck 的选项，也可以自行添加一个同步执行的脚本，每次构建项目完成后自动执行该操作。
+```json
+{
+  "pages": [
+    "pages/tabBar/index",
+    "pages/tabBar/mine",
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "minprogram",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#0292fe",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/index",
+        "iconPath": "static/img/tabBar/home.png",
+        "selectedIconPath": "static/img/tabBar/active-home.png",
+        "text": "home"
+      },
+      {
+        "pagePath": "pages/tabBar/mine",
+        "iconPath": "static/img/tabBar/mine.png",
+        "selectedIconPath": "static/img/tabBar/active-mine.png",
+        "text": "mine"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "__usePrivacyCheck__": true
+}
+```
