@@ -1,4 +1,9 @@
-
+---
+title: Uniapp APP 权限说明
+date: 2025-08-20 22:00:03 +0800
+tags: uniapp
+categories: 技术
+---
 
 # 模块权限说明
 
@@ -126,6 +131,7 @@
 
 # 配置权限
 
+```
 <uses-permission android:name="android.permission.CHANGE\_NETWORK\_STATE"/>
 
 ~~<uses-permission android:name="android.permission.MOUNT\_UNMOUNT\_FILESYSTEMS"/>~~
@@ -157,3 +163,10 @@
 <uses-permission android:name="android.permission.WRITE\_SETTINGS"/>
 
 <uses-permission android:name="android.permission.CALL\_PHONE"/>
+```
+
+其中有几个可能会导致应用商店拒审，oppo拒审过：
+- ACCESS_WIFI_STATE → 获取 MAC。
+- READ_PHONE_STATE → 获取 IMEI、IMSI、本机号码。
+- READ_LOGS / MOUNT_UNMOUNT_FILESYSTEMS → 可能涉及应用列表或隐私。
+- GET_ACCOUNTS 也会被判定为敏感（涉及用户账号）。
