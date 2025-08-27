@@ -1,4 +1,9 @@
-
+---
+title: uni-app Android APP权限说明及可能导致拒审的配置项
+date: 2025-08-27 22:00:03 +0800
+tags: uniapp
+categories: 技术
+---
 
 # 前言
 
